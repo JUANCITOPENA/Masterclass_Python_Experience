@@ -1,0 +1,1001 @@
+ID_Factura,Sucursal,Producto,Cantidad,Precio_Unitario,Total_Factura
+FAC-1001,Punta Cana,Teclado Mecánico,5,2500,12500
+FAC-1002,La Romana,Monitor 4K,2,8000,16000
+FAC-1003,Baní,Mouse Inalámbrico,1,45000,45000
+FAC-1004,La Romana,Teclado Mecánico,3,3500,10500
+FAC-1005,Santo Domingo,Teclado Mecánico,3,3500,10500
+FAC-1006,Santiago,Mouse Inalámbrico,1,45000,45000
+FAC-1007,Punta Cana,Laptop Pro,1,15000,15000
+FAC-1008,Punta Cana,Monitor 4K,5,45000,225000
+FAC-1009,Punta Cana,Monitor 4K,2,2500,5000
+FAC-1010,La Romana,Laptop Pro,3,8000,24000
+FAC-1011,Santiago,Laptop Pro,3,2500,7500
+FAC-1012,Santiago,Laptop Pro,4,3500,14000
+FAC-1013,Santo Domingo,Teclado Mecánico,5,45000,225000
+FAC-1014,Santo Domingo,Mouse Inalámbrico,3,45000,135000
+FAC-1015,La Romana,Webcam HD,5,2500,12500
+FAC-1016,Baní,Teclado Mecánico,4,15000,60000
+FAC-1017,Santiago,Webcam HD,4,2500,10000
+FAC-1018,La Romana,Mouse Inalámbrico,2,15000,30000
+FAC-1019,Santiago,Mouse Inalámbrico,3,15000,45000
+FAC-1020,Santiago,Monitor 4K,2,2500,5000
+FAC-1021,Santiago,Laptop Pro,1,45000,45000
+FAC-1022,Santo Domingo,Laptop Pro,4,3500,14000
+FAC-1023,La Romana,Webcam HD,5,8000,40000
+FAC-1024,Santiago,Laptop Pro,2,2500,5000
+FAC-1025,Santo Domingo,Webcam HD,3,3500,10500
+FAC-1026,Baní,Monitor 4K,1,3500,3500
+FAC-1027,Santiago,Teclado Mecánico,5,2500,12500
+FAC-1028,Baní,Webcam HD,4,8000,32000
+FAC-1029,Baní,Teclado Mecánico,2,8000,16000
+FAC-1030,Santo Domingo,Mouse Inalámbrico,5,3500,17500
+FAC-1031,Santiago,Monitor 4K,2,2500,5000
+FAC-1032,Baní,Laptop Pro,1,2500,2500
+FAC-1033,Punta Cana,Monitor 4K,3,3500,10500
+FAC-1034,Santo Domingo,Teclado Mecánico,3,8000,24000
+FAC-1035,Santo Domingo,Webcam HD,4,15000,60000
+FAC-1036,La Romana,Monitor 4K,2,45000,90000
+FAC-1037,Santiago,Teclado Mecánico,5,15000,75000
+FAC-1038,Baní,Mouse Inalámbrico,1,15000,15000
+FAC-1039,Santo Domingo,Mouse Inalámbrico,3,15000,45000
+FAC-1040,Santo Domingo,Teclado Mecánico,5,3500,17500
+FAC-1041,Santo Domingo,Monitor 4K,4,2500,10000
+FAC-1042,Punta Cana,Mouse Inalámbrico,3,45000,135000
+FAC-1043,Baní,Monitor 4K,5,8000,40000
+FAC-1044,Punta Cana,Monitor 4K,1,15000,15000
+FAC-1045,La Romana,Laptop Pro,2,2500,5000
+FAC-1046,La Romana,Mouse Inalámbrico,4,15000,60000
+FAC-1047,Baní,Mouse Inalámbrico,5,2500,12500
+FAC-1048,Punta Cana,Webcam HD,3,45000,135000
+FAC-1049,Punta Cana,Webcam HD,4,2500,10000
+FAC-1050,Punta Cana,Teclado Mecánico,4,8000,32000
+FAC-1051,Punta Cana,Laptop Pro,1,3500,3500
+FAC-1052,La Romana,Laptop Pro,1,8000,8000
+FAC-1053,Santo Domingo,Mouse Inalámbrico,4,3500,14000
+FAC-1054,Baní,Laptop Pro,1,8000,8000
+FAC-1055,Santo Domingo,Laptop Pro,5,8000,40000
+FAC-1056,La Romana,Mouse Inalámbrico,1,45000,45000
+FAC-1057,Santo Domingo,Webcam HD,2,2500,5000
+FAC-1058,Baní,Mouse Inalámbrico,2,15000,30000
+FAC-1059,Punta Cana,Mouse Inalámbrico,1,3500,3500
+FAC-1060,Punta Cana,Mouse Inalámbrico,1,45000,45000
+FAC-1061,Baní,Teclado Mecánico,1,8000,8000
+FAC-1062,La Romana,Teclado Mecánico,4,2500,10000
+FAC-1063,Santiago,Teclado Mecánico,5,8000,40000
+FAC-1064,La Romana,Teclado Mecánico,1,45000,45000
+FAC-1065,Santiago,Monitor 4K,1,45000,45000
+FAC-1066,Santiago,Laptop Pro,4,8000,32000
+FAC-1067,Santo Domingo,Laptop Pro,5,2500,12500
+FAC-1068,Punta Cana,Webcam HD,1,3500,3500
+FAC-1069,Punta Cana,Monitor 4K,4,45000,180000
+FAC-1070,La Romana,Monitor 4K,2,8000,16000
+FAC-1071,Baní,Monitor 4K,5,8000,40000
+FAC-1072,Santo Domingo,Laptop Pro,4,2500,10000
+FAC-1073,Baní,Laptop Pro,1,45000,45000
+FAC-1074,Punta Cana,Monitor 4K,1,8000,8000
+FAC-1075,Santo Domingo,Laptop Pro,2,3500,7000
+FAC-1076,Santo Domingo,Mouse Inalámbrico,5,8000,40000
+FAC-1077,Santiago,Webcam HD,1,3500,3500
+FAC-1078,La Romana,Monitor 4K,5,15000,75000
+FAC-1079,Santo Domingo,Mouse Inalámbrico,4,8000,32000
+FAC-1080,Santo Domingo,Laptop Pro,2,45000,90000
+FAC-1081,La Romana,Mouse Inalámbrico,3,15000,45000
+FAC-1082,La Romana,Teclado Mecánico,5,2500,12500
+FAC-1083,Santiago,Teclado Mecánico,2,8000,16000
+FAC-1084,Baní,Webcam HD,2,8000,16000
+FAC-1085,Santo Domingo,Teclado Mecánico,3,8000,24000
+FAC-1086,Punta Cana,Monitor 4K,5,15000,75000
+FAC-1087,Punta Cana,Mouse Inalámbrico,5,3500,17500
+FAC-1088,Baní,Monitor 4K,3,45000,135000
+FAC-1089,Santo Domingo,Webcam HD,5,15000,75000
+FAC-1090,Baní,Teclado Mecánico,5,15000,75000
+FAC-1091,Punta Cana,Monitor 4K,3,8000,24000
+FAC-1092,Santiago,Mouse Inalámbrico,2,8000,16000
+FAC-1093,Punta Cana,Mouse Inalámbrico,4,8000,32000
+FAC-1094,Baní,Webcam HD,2,15000,30000
+FAC-1095,Punta Cana,Laptop Pro,1,15000,15000
+FAC-1096,Santo Domingo,Webcam HD,5,2500,12500
+FAC-1097,La Romana,Mouse Inalámbrico,4,2500,10000
+FAC-1098,Baní,Webcam HD,1,15000,15000
+FAC-1099,Santo Domingo,Webcam HD,5,15000,75000
+FAC-1100,Santo Domingo,Monitor 4K,4,8000,32000
+FAC-1101,Santo Domingo,Webcam HD,5,8000,40000
+FAC-1102,Baní,Teclado Mecánico,3,8000,24000
+FAC-1103,Baní,Mouse Inalámbrico,3,2500,7500
+FAC-1104,Santo Domingo,Mouse Inalámbrico,3,45000,135000
+FAC-1105,Santo Domingo,Laptop Pro,5,45000,225000
+FAC-1106,Santiago,Monitor 4K,1,45000,45000
+FAC-1107,Santiago,Teclado Mecánico,2,8000,16000
+FAC-1108,La Romana,Webcam HD,1,15000,15000
+FAC-1109,Santo Domingo,Monitor 4K,5,45000,225000
+FAC-1110,Punta Cana,Mouse Inalámbrico,4,8000,32000
+FAC-1111,Punta Cana,Monitor 4K,2,15000,30000
+FAC-1112,Punta Cana,Mouse Inalámbrico,4,2500,10000
+FAC-1113,Santiago,Mouse Inalámbrico,5,8000,40000
+FAC-1114,Baní,Teclado Mecánico,4,8000,32000
+FAC-1115,Baní,Teclado Mecánico,4,3500,14000
+FAC-1116,Baní,Monitor 4K,5,3500,17500
+FAC-1117,Punta Cana,Laptop Pro,4,2500,10000
+FAC-1118,Santiago,Webcam HD,2,2500,5000
+FAC-1119,Baní,Mouse Inalámbrico,5,45000,225000
+FAC-1120,Baní,Laptop Pro,5,45000,225000
+FAC-1121,La Romana,Teclado Mecánico,4,3500,14000
+FAC-1122,La Romana,Teclado Mecánico,4,8000,32000
+FAC-1123,Santiago,Webcam HD,4,8000,32000
+FAC-1124,Santiago,Monitor 4K,1,15000,15000
+FAC-1125,Santo Domingo,Laptop Pro,5,8000,40000
+FAC-1126,Santiago,Webcam HD,3,3500,10500
+FAC-1127,Punta Cana,Monitor 4K,2,8000,16000
+FAC-1128,Baní,Monitor 4K,5,8000,40000
+FAC-1129,Punta Cana,Teclado Mecánico,2,3500,7000
+FAC-1130,Santo Domingo,Mouse Inalámbrico,1,45000,45000
+FAC-1131,Baní,Mouse Inalámbrico,1,8000,8000
+FAC-1132,Punta Cana,Mouse Inalámbrico,3,2500,7500
+FAC-1133,Santo Domingo,Mouse Inalámbrico,2,15000,30000
+FAC-1134,Santiago,Monitor 4K,1,3500,3500
+FAC-1135,Santo Domingo,Teclado Mecánico,4,2500,10000
+FAC-1136,La Romana,Teclado Mecánico,3,3500,10500
+FAC-1137,Santo Domingo,Laptop Pro,3,3500,10500
+FAC-1138,La Romana,Teclado Mecánico,1,8000,8000
+FAC-1139,Baní,Laptop Pro,3,2500,7500
+FAC-1140,Santo Domingo,Monitor 4K,2,2500,5000
+FAC-1141,Santiago,Monitor 4K,3,45000,135000
+FAC-1142,Santo Domingo,Teclado Mecánico,4,3500,14000
+FAC-1143,Punta Cana,Mouse Inalámbrico,3,45000,135000
+FAC-1144,La Romana,Laptop Pro,4,3500,14000
+FAC-1145,Santiago,Mouse Inalámbrico,2,8000,16000
+FAC-1146,Baní,Laptop Pro,3,15000,45000
+FAC-1147,Punta Cana,Laptop Pro,1,3500,3500
+FAC-1148,Baní,Monitor 4K,1,2500,2500
+FAC-1149,La Romana,Laptop Pro,2,15000,30000
+FAC-1150,Santiago,Webcam HD,4,45000,180000
+FAC-1151,Santiago,Monitor 4K,2,8000,16000
+FAC-1152,Santiago,Mouse Inalámbrico,3,45000,135000
+FAC-1153,Punta Cana,Webcam HD,4,3500,14000
+FAC-1154,Santo Domingo,Mouse Inalámbrico,5,2500,12500
+FAC-1155,Santo Domingo,Teclado Mecánico,4,3500,14000
+FAC-1156,Punta Cana,Teclado Mecánico,3,8000,24000
+FAC-1157,Punta Cana,Teclado Mecánico,4,45000,180000
+FAC-1158,Baní,Mouse Inalámbrico,1,8000,8000
+FAC-1159,Santiago,Mouse Inalámbrico,5,3500,17500
+FAC-1160,Baní,Webcam HD,3,8000,24000
+FAC-1161,Punta Cana,Monitor 4K,4,3500,14000
+FAC-1162,Santiago,Monitor 4K,2,8000,16000
+FAC-1163,Punta Cana,Mouse Inalámbrico,1,45000,45000
+FAC-1164,Baní,Mouse Inalámbrico,3,15000,45000
+FAC-1165,Santo Domingo,Webcam HD,2,2500,5000
+FAC-1166,Punta Cana,Monitor 4K,4,2500,10000
+FAC-1167,Santo Domingo,Laptop Pro,1,45000,45000
+FAC-1168,Baní,Webcam HD,3,8000,24000
+FAC-1169,Santo Domingo,Laptop Pro,2,3500,7000
+FAC-1170,Punta Cana,Monitor 4K,5,8000,40000
+FAC-1171,Punta Cana,Teclado Mecánico,5,3500,17500
+FAC-1172,Baní,Monitor 4K,4,3500,14000
+FAC-1173,Baní,Mouse Inalámbrico,5,8000,40000
+FAC-1174,La Romana,Teclado Mecánico,3,8000,24000
+FAC-1175,Punta Cana,Webcam HD,3,8000,24000
+FAC-1176,Santiago,Teclado Mecánico,3,3500,10500
+FAC-1177,La Romana,Monitor 4K,4,8000,32000
+FAC-1178,La Romana,Mouse Inalámbrico,3,2500,7500
+FAC-1179,La Romana,Laptop Pro,3,3500,10500
+FAC-1180,Punta Cana,Webcam HD,5,15000,75000
+FAC-1181,Santiago,Webcam HD,3,15000,45000
+FAC-1182,Baní,Monitor 4K,4,15000,60000
+FAC-1183,Santiago,Laptop Pro,5,15000,75000
+FAC-1184,La Romana,Teclado Mecánico,2,3500,7000
+FAC-1185,Santo Domingo,Laptop Pro,3,15000,45000
+FAC-1186,Santo Domingo,Webcam HD,4,2500,10000
+FAC-1187,Santo Domingo,Webcam HD,4,3500,14000
+FAC-1188,Punta Cana,Monitor 4K,5,3500,17500
+FAC-1189,Santiago,Laptop Pro,5,45000,225000
+FAC-1190,Punta Cana,Teclado Mecánico,2,3500,7000
+FAC-1191,Punta Cana,Teclado Mecánico,4,15000,60000
+FAC-1192,Santo Domingo,Mouse Inalámbrico,1,3500,3500
+FAC-1193,Santo Domingo,Mouse Inalámbrico,4,2500,10000
+FAC-1194,Santiago,Laptop Pro,1,8000,8000
+FAC-1195,La Romana,Laptop Pro,5,2500,12500
+FAC-1196,Punta Cana,Laptop Pro,2,45000,90000
+FAC-1197,Santo Domingo,Webcam HD,1,15000,15000
+FAC-1198,Baní,Mouse Inalámbrico,4,15000,60000
+FAC-1199,Santiago,Webcam HD,3,8000,24000
+FAC-1200,La Romana,Mouse Inalámbrico,2,2500,5000
+FAC-1201,Santiago,Teclado Mecánico,3,2500,7500
+FAC-1202,Baní,Laptop Pro,5,45000,225000
+FAC-1203,Baní,Laptop Pro,2,2500,5000
+FAC-1204,Santiago,Webcam HD,5,3500,17500
+FAC-1205,Santo Domingo,Monitor 4K,1,15000,15000
+FAC-1206,Santo Domingo,Teclado Mecánico,4,3500,14000
+FAC-1207,Santiago,Teclado Mecánico,4,3500,14000
+FAC-1208,Santiago,Teclado Mecánico,1,3500,3500
+FAC-1209,Santo Domingo,Webcam HD,4,8000,32000
+FAC-1210,Baní,Monitor 4K,1,8000,8000
+FAC-1211,La Romana,Monitor 4K,2,45000,90000
+FAC-1212,Baní,Teclado Mecánico,5,45000,225000
+FAC-1213,Santiago,Webcam HD,3,45000,135000
+FAC-1214,Santo Domingo,Mouse Inalámbrico,5,8000,40000
+FAC-1215,Santiago,Teclado Mecánico,4,3500,14000
+FAC-1216,La Romana,Webcam HD,5,3500,17500
+FAC-1217,Punta Cana,Laptop Pro,1,3500,3500
+FAC-1218,Punta Cana,Monitor 4K,5,2500,12500
+FAC-1219,La Romana,Mouse Inalámbrico,5,15000,75000
+FAC-1220,Santiago,Webcam HD,3,3500,10500
+FAC-1221,Baní,Mouse Inalámbrico,2,15000,30000
+FAC-1222,Santo Domingo,Mouse Inalámbrico,3,15000,45000
+FAC-1223,La Romana,Laptop Pro,5,45000,225000
+FAC-1224,Santiago,Teclado Mecánico,3,3500,10500
+FAC-1225,Punta Cana,Teclado Mecánico,2,3500,7000
+FAC-1226,Punta Cana,Mouse Inalámbrico,4,45000,180000
+FAC-1227,La Romana,Monitor 4K,1,45000,45000
+FAC-1228,La Romana,Monitor 4K,3,3500,10500
+FAC-1229,Baní,Teclado Mecánico,3,2500,7500
+FAC-1230,La Romana,Monitor 4K,4,45000,180000
+FAC-1231,Santiago,Mouse Inalámbrico,5,3500,17500
+FAC-1232,Santiago,Laptop Pro,5,3500,17500
+FAC-1233,La Romana,Teclado Mecánico,1,3500,3500
+FAC-1234,La Romana,Mouse Inalámbrico,4,8000,32000
+FAC-1235,Baní,Laptop Pro,4,15000,60000
+FAC-1236,Santiago,Laptop Pro,3,15000,45000
+FAC-1237,Santiago,Teclado Mecánico,3,3500,10500
+FAC-1238,Punta Cana,Laptop Pro,2,2500,5000
+FAC-1239,Santo Domingo,Monitor 4K,3,8000,24000
+FAC-1240,Baní,Teclado Mecánico,1,2500,2500
+FAC-1241,Baní,Teclado Mecánico,1,15000,15000
+FAC-1242,Baní,Webcam HD,3,15000,45000
+FAC-1243,Punta Cana,Teclado Mecánico,1,2500,2500
+FAC-1244,Santo Domingo,Mouse Inalámbrico,4,15000,60000
+FAC-1245,La Romana,Laptop Pro,1,8000,8000
+FAC-1246,Punta Cana,Webcam HD,1,3500,3500
+FAC-1247,Santiago,Monitor 4K,5,8000,40000
+FAC-1248,Santo Domingo,Monitor 4K,1,45000,45000
+FAC-1249,Punta Cana,Mouse Inalámbrico,1,45000,45000
+FAC-1250,Santo Domingo,Mouse Inalámbrico,3,15000,45000
+FAC-1251,Santiago,Teclado Mecánico,2,15000,30000
+FAC-1252,La Romana,Webcam HD,3,3500,10500
+FAC-1253,Santiago,Teclado Mecánico,4,3500,14000
+FAC-1254,Santiago,Mouse Inalámbrico,2,3500,7000
+FAC-1255,Santo Domingo,Laptop Pro,5,8000,40000
+FAC-1256,Santiago,Laptop Pro,2,3500,7000
+FAC-1257,Santiago,Teclado Mecánico,4,2500,10000
+FAC-1258,Santiago,Laptop Pro,3,2500,7500
+FAC-1259,La Romana,Laptop Pro,4,2500,10000
+FAC-1260,Santo Domingo,Mouse Inalámbrico,2,8000,16000
+FAC-1261,Baní,Teclado Mecánico,1,8000,8000
+FAC-1262,Santo Domingo,Laptop Pro,3,45000,135000
+FAC-1263,Santo Domingo,Webcam HD,2,3500,7000
+FAC-1264,La Romana,Mouse Inalámbrico,5,2500,12500
+FAC-1265,La Romana,Mouse Inalámbrico,3,2500,7500
+FAC-1266,Baní,Webcam HD,5,2500,12500
+FAC-1267,Santiago,Webcam HD,5,45000,225000
+FAC-1268,Punta Cana,Webcam HD,4,3500,14000
+FAC-1269,Santiago,Mouse Inalámbrico,3,8000,24000
+FAC-1270,Santo Domingo,Monitor 4K,1,8000,8000
+FAC-1271,Punta Cana,Teclado Mecánico,4,15000,60000
+FAC-1272,Santiago,Mouse Inalámbrico,4,8000,32000
+FAC-1273,Punta Cana,Webcam HD,1,45000,45000
+FAC-1274,La Romana,Mouse Inalámbrico,2,8000,16000
+FAC-1275,Punta Cana,Laptop Pro,4,15000,60000
+FAC-1276,La Romana,Webcam HD,3,3500,10500
+FAC-1277,La Romana,Teclado Mecánico,4,3500,14000
+FAC-1278,La Romana,Laptop Pro,4,2500,10000
+FAC-1279,Santiago,Teclado Mecánico,1,45000,45000
+FAC-1280,Santo Domingo,Monitor 4K,1,15000,15000
+FAC-1281,Santiago,Laptop Pro,4,8000,32000
+FAC-1282,Baní,Teclado Mecánico,5,2500,12500
+FAC-1283,Punta Cana,Monitor 4K,3,2500,7500
+FAC-1284,Punta Cana,Monitor 4K,4,3500,14000
+FAC-1285,La Romana,Laptop Pro,1,8000,8000
+FAC-1286,La Romana,Laptop Pro,5,15000,75000
+FAC-1287,La Romana,Mouse Inalámbrico,1,45000,45000
+FAC-1288,Santo Domingo,Laptop Pro,5,3500,17500
+FAC-1289,Punta Cana,Mouse Inalámbrico,5,3500,17500
+FAC-1290,Santo Domingo,Teclado Mecánico,2,2500,5000
+FAC-1291,Baní,Laptop Pro,3,45000,135000
+FAC-1292,Santiago,Monitor 4K,2,2500,5000
+FAC-1293,Punta Cana,Teclado Mecánico,1,8000,8000
+FAC-1294,Baní,Webcam HD,2,15000,30000
+FAC-1295,Santo Domingo,Laptop Pro,4,15000,60000
+FAC-1296,La Romana,Monitor 4K,3,15000,45000
+FAC-1297,La Romana,Webcam HD,2,8000,16000
+FAC-1298,Santiago,Laptop Pro,1,2500,2500
+FAC-1299,Punta Cana,Webcam HD,1,2500,2500
+FAC-1300,Punta Cana,Mouse Inalámbrico,3,3500,10500
+FAC-1301,Santo Domingo,Mouse Inalámbrico,5,45000,225000
+FAC-1302,Santiago,Webcam HD,5,15000,75000
+FAC-1303,Punta Cana,Laptop Pro,1,3500,3500
+FAC-1304,La Romana,Mouse Inalámbrico,1,15000,15000
+FAC-1305,La Romana,Webcam HD,4,15000,60000
+FAC-1306,Santo Domingo,Mouse Inalámbrico,4,3500,14000
+FAC-1307,Santiago,Monitor 4K,4,45000,180000
+FAC-1308,Santiago,Teclado Mecánico,3,8000,24000
+FAC-1309,Baní,Teclado Mecánico,1,8000,8000
+FAC-1310,Baní,Monitor 4K,5,15000,75000
+FAC-1311,Baní,Mouse Inalámbrico,3,15000,45000
+FAC-1312,Santo Domingo,Teclado Mecánico,1,15000,15000
+FAC-1313,La Romana,Webcam HD,1,2500,2500
+FAC-1314,Santo Domingo,Laptop Pro,1,3500,3500
+FAC-1315,La Romana,Monitor 4K,5,45000,225000
+FAC-1316,Santiago,Mouse Inalámbrico,3,2500,7500
+FAC-1317,La Romana,Mouse Inalámbrico,5,45000,225000
+FAC-1318,Punta Cana,Monitor 4K,4,45000,180000
+FAC-1319,Santo Domingo,Webcam HD,4,2500,10000
+FAC-1320,Baní,Monitor 4K,2,2500,5000
+FAC-1321,Punta Cana,Mouse Inalámbrico,2,15000,30000
+FAC-1322,La Romana,Laptop Pro,1,45000,45000
+FAC-1323,Baní,Monitor 4K,1,45000,45000
+FAC-1324,La Romana,Monitor 4K,2,3500,7000
+FAC-1325,Punta Cana,Mouse Inalámbrico,3,45000,135000
+FAC-1326,Baní,Webcam HD,1,3500,3500
+FAC-1327,Punta Cana,Teclado Mecánico,1,3500,3500
+FAC-1328,La Romana,Monitor 4K,4,15000,60000
+FAC-1329,Santo Domingo,Webcam HD,5,3500,17500
+FAC-1330,Baní,Teclado Mecánico,1,15000,15000
+FAC-1331,La Romana,Webcam HD,5,45000,225000
+FAC-1332,Santo Domingo,Monitor 4K,2,8000,16000
+FAC-1333,Punta Cana,Laptop Pro,3,15000,45000
+FAC-1334,Punta Cana,Teclado Mecánico,2,15000,30000
+FAC-1335,La Romana,Webcam HD,3,45000,135000
+FAC-1336,Punta Cana,Monitor 4K,4,15000,60000
+FAC-1337,Punta Cana,Mouse Inalámbrico,2,45000,90000
+FAC-1338,Santiago,Laptop Pro,2,15000,30000
+FAC-1339,Santo Domingo,Webcam HD,4,2500,10000
+FAC-1340,Santiago,Mouse Inalámbrico,3,45000,135000
+FAC-1341,Santo Domingo,Webcam HD,3,2500,7500
+FAC-1342,Santiago,Webcam HD,5,45000,225000
+FAC-1343,Baní,Webcam HD,3,45000,135000
+FAC-1344,Santiago,Webcam HD,2,45000,90000
+FAC-1345,Punta Cana,Webcam HD,5,15000,75000
+FAC-1346,La Romana,Monitor 4K,2,8000,16000
+FAC-1347,Santiago,Mouse Inalámbrico,4,3500,14000
+FAC-1348,Santiago,Teclado Mecánico,5,8000,40000
+FAC-1349,La Romana,Mouse Inalámbrico,1,45000,45000
+FAC-1350,La Romana,Mouse Inalámbrico,5,8000,40000
+FAC-1351,Punta Cana,Monitor 4K,5,2500,12500
+FAC-1352,Santiago,Monitor 4K,2,45000,90000
+FAC-1353,La Romana,Webcam HD,2,15000,30000
+FAC-1354,Baní,Monitor 4K,1,15000,15000
+FAC-1355,Santo Domingo,Webcam HD,3,2500,7500
+FAC-1356,Baní,Monitor 4K,3,15000,45000
+FAC-1357,Baní,Mouse Inalámbrico,5,3500,17500
+FAC-1358,Baní,Laptop Pro,3,45000,135000
+FAC-1359,La Romana,Mouse Inalámbrico,1,3500,3500
+FAC-1360,Punta Cana,Laptop Pro,5,2500,12500
+FAC-1361,Santiago,Monitor 4K,1,45000,45000
+FAC-1362,Baní,Webcam HD,5,45000,225000
+FAC-1363,Baní,Teclado Mecánico,1,3500,3500
+FAC-1364,La Romana,Mouse Inalámbrico,5,15000,75000
+FAC-1365,Punta Cana,Monitor 4K,2,3500,7000
+FAC-1366,Baní,Laptop Pro,3,2500,7500
+FAC-1367,Baní,Teclado Mecánico,3,3500,10500
+FAC-1368,Baní,Teclado Mecánico,3,3500,10500
+FAC-1369,La Romana,Teclado Mecánico,4,2500,10000
+FAC-1370,Santo Domingo,Webcam HD,2,2500,5000
+FAC-1371,Santo Domingo,Mouse Inalámbrico,4,8000,32000
+FAC-1372,Punta Cana,Teclado Mecánico,4,45000,180000
+FAC-1373,Punta Cana,Teclado Mecánico,2,3500,7000
+FAC-1374,Santo Domingo,Monitor 4K,4,15000,60000
+FAC-1375,Baní,Webcam HD,1,15000,15000
+FAC-1376,La Romana,Monitor 4K,4,8000,32000
+FAC-1377,Santo Domingo,Laptop Pro,2,3500,7000
+FAC-1378,Santo Domingo,Teclado Mecánico,1,45000,45000
+FAC-1379,Santiago,Webcam HD,5,3500,17500
+FAC-1380,Punta Cana,Laptop Pro,2,15000,30000
+FAC-1381,Santiago,Mouse Inalámbrico,2,2500,5000
+FAC-1382,Santiago,Mouse Inalámbrico,3,15000,45000
+FAC-1383,Santo Domingo,Mouse Inalámbrico,2,3500,7000
+FAC-1384,Punta Cana,Laptop Pro,1,3500,3500
+FAC-1385,Baní,Teclado Mecánico,5,45000,225000
+FAC-1386,Baní,Teclado Mecánico,2,45000,90000
+FAC-1387,Punta Cana,Monitor 4K,4,3500,14000
+FAC-1388,Baní,Laptop Pro,3,15000,45000
+FAC-1389,Santiago,Teclado Mecánico,4,8000,32000
+FAC-1390,Punta Cana,Monitor 4K,2,8000,16000
+FAC-1391,Santo Domingo,Laptop Pro,4,3500,14000
+FAC-1392,La Romana,Mouse Inalámbrico,1,3500,3500
+FAC-1393,Santo Domingo,Mouse Inalámbrico,2,3500,7000
+FAC-1394,Punta Cana,Mouse Inalámbrico,1,15000,15000
+FAC-1395,Punta Cana,Teclado Mecánico,3,3500,10500
+FAC-1396,La Romana,Webcam HD,3,2500,7500
+FAC-1397,Santiago,Webcam HD,3,8000,24000
+FAC-1398,La Romana,Mouse Inalámbrico,2,2500,5000
+FAC-1399,La Romana,Laptop Pro,1,15000,15000
+FAC-1400,La Romana,Laptop Pro,1,45000,45000
+FAC-1401,Baní,Webcam HD,1,45000,45000
+FAC-1402,Santo Domingo,Teclado Mecánico,4,3500,14000
+FAC-1403,Santiago,Mouse Inalámbrico,2,3500,7000
+FAC-1404,Santiago,Laptop Pro,5,45000,225000
+FAC-1405,Santiago,Mouse Inalámbrico,5,2500,12500
+FAC-1406,Santiago,Monitor 4K,1,15000,15000
+FAC-1407,Santo Domingo,Monitor 4K,1,15000,15000
+FAC-1408,Baní,Teclado Mecánico,1,8000,8000
+FAC-1409,Santo Domingo,Monitor 4K,1,8000,8000
+FAC-1410,Baní,Laptop Pro,5,15000,75000
+FAC-1411,Santiago,Webcam HD,1,2500,2500
+FAC-1412,La Romana,Teclado Mecánico,3,2500,7500
+FAC-1413,Baní,Mouse Inalámbrico,3,8000,24000
+FAC-1414,Baní,Mouse Inalámbrico,2,45000,90000
+FAC-1415,Santiago,Teclado Mecánico,4,15000,60000
+FAC-1416,Punta Cana,Laptop Pro,3,15000,45000
+FAC-1417,La Romana,Webcam HD,2,8000,16000
+FAC-1418,Santiago,Webcam HD,2,15000,30000
+FAC-1419,Santiago,Webcam HD,1,8000,8000
+FAC-1420,Santo Domingo,Monitor 4K,4,45000,180000
+FAC-1421,Punta Cana,Teclado Mecánico,5,8000,40000
+FAC-1422,Santo Domingo,Laptop Pro,5,3500,17500
+FAC-1423,La Romana,Laptop Pro,1,15000,15000
+FAC-1424,Baní,Monitor 4K,2,15000,30000
+FAC-1425,Santo Domingo,Mouse Inalámbrico,1,45000,45000
+FAC-1426,Punta Cana,Laptop Pro,3,2500,7500
+FAC-1427,Santo Domingo,Monitor 4K,5,8000,40000
+FAC-1428,Baní,Laptop Pro,3,3500,10500
+FAC-1429,Punta Cana,Mouse Inalámbrico,1,8000,8000
+FAC-1430,Baní,Teclado Mecánico,3,8000,24000
+FAC-1431,Santiago,Webcam HD,2,45000,90000
+FAC-1432,Baní,Laptop Pro,5,15000,75000
+FAC-1433,Santo Domingo,Monitor 4K,3,8000,24000
+FAC-1434,Santo Domingo,Laptop Pro,4,3500,14000
+FAC-1435,Punta Cana,Laptop Pro,5,2500,12500
+FAC-1436,Punta Cana,Laptop Pro,5,8000,40000
+FAC-1437,Punta Cana,Mouse Inalámbrico,1,3500,3500
+FAC-1438,Santiago,Mouse Inalámbrico,5,3500,17500
+FAC-1439,Santo Domingo,Mouse Inalámbrico,1,8000,8000
+FAC-1440,Baní,Teclado Mecánico,2,45000,90000
+FAC-1441,Baní,Webcam HD,2,2500,5000
+FAC-1442,Punta Cana,Webcam HD,4,15000,60000
+FAC-1443,Santiago,Laptop Pro,2,3500,7000
+FAC-1444,Santiago,Mouse Inalámbrico,5,8000,40000
+FAC-1445,Punta Cana,Laptop Pro,4,2500,10000
+FAC-1446,Santiago,Monitor 4K,5,3500,17500
+FAC-1447,La Romana,Teclado Mecánico,2,2500,5000
+FAC-1448,La Romana,Webcam HD,4,8000,32000
+FAC-1449,Baní,Mouse Inalámbrico,1,8000,8000
+FAC-1450,La Romana,Monitor 4K,2,15000,30000
+FAC-1451,Santiago,Laptop Pro,3,2500,7500
+FAC-1452,La Romana,Monitor 4K,5,8000,40000
+FAC-1453,Punta Cana,Mouse Inalámbrico,2,45000,90000
+FAC-1454,Santiago,Teclado Mecánico,5,8000,40000
+FAC-1455,Santo Domingo,Monitor 4K,5,8000,40000
+FAC-1456,Punta Cana,Laptop Pro,3,15000,45000
+FAC-1457,Baní,Laptop Pro,5,8000,40000
+FAC-1458,La Romana,Mouse Inalámbrico,3,8000,24000
+FAC-1459,Punta Cana,Webcam HD,5,3500,17500
+FAC-1460,Baní,Laptop Pro,1,2500,2500
+FAC-1461,La Romana,Mouse Inalámbrico,3,45000,135000
+FAC-1462,La Romana,Monitor 4K,1,3500,3500
+FAC-1463,Santiago,Teclado Mecánico,3,3500,10500
+FAC-1464,Punta Cana,Monitor 4K,2,3500,7000
+FAC-1465,La Romana,Teclado Mecánico,4,2500,10000
+FAC-1466,Santo Domingo,Webcam HD,4,45000,180000
+FAC-1467,Punta Cana,Laptop Pro,4,8000,32000
+FAC-1468,Santo Domingo,Teclado Mecánico,1,8000,8000
+FAC-1469,Punta Cana,Webcam HD,5,8000,40000
+FAC-1470,Baní,Mouse Inalámbrico,5,8000,40000
+FAC-1471,Punta Cana,Monitor 4K,1,2500,2500
+FAC-1472,Santiago,Laptop Pro,4,2500,10000
+FAC-1473,Santo Domingo,Teclado Mecánico,1,2500,2500
+FAC-1474,Punta Cana,Monitor 4K,3,2500,7500
+FAC-1475,La Romana,Laptop Pro,3,45000,135000
+FAC-1476,Baní,Mouse Inalámbrico,3,15000,45000
+FAC-1477,Punta Cana,Monitor 4K,1,15000,15000
+FAC-1478,Baní,Laptop Pro,5,3500,17500
+FAC-1479,La Romana,Teclado Mecánico,1,3500,3500
+FAC-1480,Baní,Webcam HD,5,45000,225000
+FAC-1481,Santo Domingo,Monitor 4K,1,3500,3500
+FAC-1482,Santiago,Teclado Mecánico,3,45000,135000
+FAC-1483,Santiago,Laptop Pro,1,3500,3500
+FAC-1484,Santiago,Teclado Mecánico,5,45000,225000
+FAC-1485,Punta Cana,Teclado Mecánico,1,8000,8000
+FAC-1486,Santo Domingo,Monitor 4K,2,45000,90000
+FAC-1487,Santo Domingo,Webcam HD,3,8000,24000
+FAC-1488,Santo Domingo,Teclado Mecánico,1,8000,8000
+FAC-1489,Punta Cana,Webcam HD,2,45000,90000
+FAC-1490,Santiago,Webcam HD,3,8000,24000
+FAC-1491,Santiago,Webcam HD,1,8000,8000
+FAC-1492,La Romana,Webcam HD,5,45000,225000
+FAC-1493,Santiago,Teclado Mecánico,1,8000,8000
+FAC-1494,Santo Domingo,Teclado Mecánico,2,2500,5000
+FAC-1495,Santo Domingo,Laptop Pro,3,45000,135000
+FAC-1496,Punta Cana,Mouse Inalámbrico,5,15000,75000
+FAC-1497,Punta Cana,Laptop Pro,2,8000,16000
+FAC-1498,Santo Domingo,Teclado Mecánico,3,3500,10500
+FAC-1499,Santiago,Webcam HD,1,8000,8000
+FAC-1500,Baní,Monitor 4K,1,2500,2500
+FAC-1501,Punta Cana,Monitor 4K,5,15000,75000
+FAC-1502,La Romana,Monitor 4K,5,3500,17500
+FAC-1503,Santiago,Teclado Mecánico,1,45000,45000
+FAC-1504,Santiago,Monitor 4K,4,15000,60000
+FAC-1505,Santo Domingo,Webcam HD,2,15000,30000
+FAC-1506,Baní,Monitor 4K,1,45000,45000
+FAC-1507,La Romana,Laptop Pro,3,15000,45000
+FAC-1508,Baní,Laptop Pro,1,2500,2500
+FAC-1509,Santo Domingo,Mouse Inalámbrico,1,8000,8000
+FAC-1510,Punta Cana,Teclado Mecánico,2,45000,90000
+FAC-1511,Santo Domingo,Webcam HD,3,15000,45000
+FAC-1512,Santo Domingo,Webcam HD,4,8000,32000
+FAC-1513,Santo Domingo,Webcam HD,3,8000,24000
+FAC-1514,Santo Domingo,Monitor 4K,4,15000,60000
+FAC-1515,Baní,Webcam HD,5,45000,225000
+FAC-1516,Punta Cana,Mouse Inalámbrico,2,8000,16000
+FAC-1517,Santo Domingo,Laptop Pro,2,2500,5000
+FAC-1518,Santo Domingo,Laptop Pro,2,15000,30000
+FAC-1519,Baní,Teclado Mecánico,4,3500,14000
+FAC-1520,Santo Domingo,Mouse Inalámbrico,3,3500,10500
+FAC-1521,Punta Cana,Monitor 4K,5,2500,12500
+FAC-1522,Punta Cana,Mouse Inalámbrico,3,2500,7500
+FAC-1523,Santo Domingo,Webcam HD,5,8000,40000
+FAC-1524,La Romana,Laptop Pro,4,2500,10000
+FAC-1525,Santiago,Webcam HD,3,15000,45000
+FAC-1526,Baní,Monitor 4K,1,8000,8000
+FAC-1527,Santo Domingo,Teclado Mecánico,2,8000,16000
+FAC-1528,Baní,Monitor 4K,4,8000,32000
+FAC-1529,La Romana,Laptop Pro,2,45000,90000
+FAC-1530,Santo Domingo,Mouse Inalámbrico,1,45000,45000
+FAC-1531,Santo Domingo,Teclado Mecánico,4,3500,14000
+FAC-1532,Baní,Laptop Pro,2,15000,30000
+FAC-1533,Santo Domingo,Mouse Inalámbrico,1,8000,8000
+FAC-1534,La Romana,Webcam HD,2,15000,30000
+FAC-1535,Punta Cana,Monitor 4K,2,2500,5000
+FAC-1536,Santo Domingo,Laptop Pro,4,8000,32000
+FAC-1537,Santo Domingo,Monitor 4K,4,3500,14000
+FAC-1538,Santiago,Laptop Pro,4,2500,10000
+FAC-1539,La Romana,Mouse Inalámbrico,2,8000,16000
+FAC-1540,Santo Domingo,Mouse Inalámbrico,2,3500,7000
+FAC-1541,Santiago,Webcam HD,3,45000,135000
+FAC-1542,Santiago,Mouse Inalámbrico,2,8000,16000
+FAC-1543,Santo Domingo,Laptop Pro,4,15000,60000
+FAC-1544,Punta Cana,Teclado Mecánico,2,3500,7000
+FAC-1545,La Romana,Laptop Pro,4,2500,10000
+FAC-1546,Santo Domingo,Webcam HD,1,15000,15000
+FAC-1547,Punta Cana,Mouse Inalámbrico,4,2500,10000
+FAC-1548,La Romana,Mouse Inalámbrico,3,2500,7500
+FAC-1549,La Romana,Webcam HD,1,8000,8000
+FAC-1550,La Romana,Laptop Pro,4,2500,10000
+FAC-1551,Santo Domingo,Mouse Inalámbrico,3,2500,7500
+FAC-1552,Santo Domingo,Laptop Pro,5,3500,17500
+FAC-1553,La Romana,Webcam HD,1,2500,2500
+FAC-1554,Punta Cana,Laptop Pro,3,2500,7500
+FAC-1555,Santo Domingo,Webcam HD,2,8000,16000
+FAC-1556,Punta Cana,Mouse Inalámbrico,3,2500,7500
+FAC-1557,Punta Cana,Monitor 4K,4,45000,180000
+FAC-1558,Punta Cana,Mouse Inalámbrico,2,15000,30000
+FAC-1559,Punta Cana,Webcam HD,5,15000,75000
+FAC-1560,La Romana,Monitor 4K,1,45000,45000
+FAC-1561,Punta Cana,Teclado Mecánico,5,45000,225000
+FAC-1562,Santo Domingo,Monitor 4K,3,3500,10500
+FAC-1563,Baní,Laptop Pro,3,3500,10500
+FAC-1564,Baní,Monitor 4K,4,45000,180000
+FAC-1565,Punta Cana,Teclado Mecánico,3,3500,10500
+FAC-1566,La Romana,Monitor 4K,4,2500,10000
+FAC-1567,Baní,Mouse Inalámbrico,5,8000,40000
+FAC-1568,Punta Cana,Mouse Inalámbrico,2,15000,30000
+FAC-1569,Baní,Monitor 4K,5,15000,75000
+FAC-1570,La Romana,Monitor 4K,3,15000,45000
+FAC-1571,La Romana,Monitor 4K,1,2500,2500
+FAC-1572,Punta Cana,Laptop Pro,4,15000,60000
+FAC-1573,La Romana,Laptop Pro,1,8000,8000
+FAC-1574,Santo Domingo,Webcam HD,1,3500,3500
+FAC-1575,Santo Domingo,Mouse Inalámbrico,4,8000,32000
+FAC-1576,Punta Cana,Monitor 4K,3,45000,135000
+FAC-1577,La Romana,Teclado Mecánico,5,45000,225000
+FAC-1578,Santo Domingo,Teclado Mecánico,5,45000,225000
+FAC-1579,La Romana,Laptop Pro,2,45000,90000
+FAC-1580,Santiago,Teclado Mecánico,4,45000,180000
+FAC-1581,Punta Cana,Monitor 4K,5,3500,17500
+FAC-1582,Santiago,Teclado Mecánico,2,15000,30000
+FAC-1583,Punta Cana,Monitor 4K,5,3500,17500
+FAC-1584,Santiago,Mouse Inalámbrico,2,8000,16000
+FAC-1585,Punta Cana,Webcam HD,4,3500,14000
+FAC-1586,Santo Domingo,Laptop Pro,5,2500,12500
+FAC-1587,Santo Domingo,Mouse Inalámbrico,3,8000,24000
+FAC-1588,Santo Domingo,Mouse Inalámbrico,2,8000,16000
+FAC-1589,Santo Domingo,Webcam HD,4,2500,10000
+FAC-1590,Santo Domingo,Laptop Pro,1,2500,2500
+FAC-1591,Baní,Webcam HD,5,2500,12500
+FAC-1592,La Romana,Laptop Pro,2,3500,7000
+FAC-1593,Baní,Teclado Mecánico,1,3500,3500
+FAC-1594,Santiago,Teclado Mecánico,3,45000,135000
+FAC-1595,Santiago,Teclado Mecánico,5,45000,225000
+FAC-1596,Punta Cana,Mouse Inalámbrico,5,8000,40000
+FAC-1597,La Romana,Teclado Mecánico,5,2500,12500
+FAC-1598,Punta Cana,Monitor 4K,4,45000,180000
+FAC-1599,Punta Cana,Webcam HD,3,2500,7500
+FAC-1600,Baní,Monitor 4K,1,45000,45000
+FAC-1601,Baní,Webcam HD,1,15000,15000
+FAC-1602,La Romana,Monitor 4K,5,2500,12500
+FAC-1603,Santiago,Laptop Pro,3,15000,45000
+FAC-1604,Santiago,Teclado Mecánico,2,3500,7000
+FAC-1605,Santiago,Teclado Mecánico,4,8000,32000
+FAC-1606,Punta Cana,Mouse Inalámbrico,2,45000,90000
+FAC-1607,Santiago,Laptop Pro,2,15000,30000
+FAC-1608,Santo Domingo,Monitor 4K,4,45000,180000
+FAC-1609,Baní,Webcam HD,5,3500,17500
+FAC-1610,Baní,Laptop Pro,2,2500,5000
+FAC-1611,Santo Domingo,Mouse Inalámbrico,4,45000,180000
+FAC-1612,Santiago,Teclado Mecánico,4,3500,14000
+FAC-1613,Santiago,Webcam HD,2,8000,16000
+FAC-1614,Punta Cana,Mouse Inalámbrico,3,3500,10500
+FAC-1615,Santo Domingo,Webcam HD,5,15000,75000
+FAC-1616,Santo Domingo,Laptop Pro,5,15000,75000
+FAC-1617,Punta Cana,Teclado Mecánico,3,2500,7500
+FAC-1618,Punta Cana,Teclado Mecánico,5,45000,225000
+FAC-1619,Santo Domingo,Webcam HD,1,3500,3500
+FAC-1620,Baní,Laptop Pro,3,15000,45000
+FAC-1621,Baní,Monitor 4K,5,45000,225000
+FAC-1622,La Romana,Webcam HD,4,8000,32000
+FAC-1623,Punta Cana,Monitor 4K,5,2500,12500
+FAC-1624,Baní,Laptop Pro,4,8000,32000
+FAC-1625,Baní,Monitor 4K,5,45000,225000
+FAC-1626,Santo Domingo,Webcam HD,5,8000,40000
+FAC-1627,Santiago,Mouse Inalámbrico,5,2500,12500
+FAC-1628,Santiago,Monitor 4K,1,45000,45000
+FAC-1629,Santiago,Mouse Inalámbrico,5,8000,40000
+FAC-1630,La Romana,Teclado Mecánico,5,45000,225000
+FAC-1631,Santiago,Monitor 4K,2,8000,16000
+FAC-1632,Baní,Mouse Inalámbrico,2,3500,7000
+FAC-1633,Santo Domingo,Mouse Inalámbrico,2,15000,30000
+FAC-1634,Baní,Teclado Mecánico,3,45000,135000
+FAC-1635,Baní,Webcam HD,2,3500,7000
+FAC-1636,La Romana,Monitor 4K,3,45000,135000
+FAC-1637,Baní,Webcam HD,5,2500,12500
+FAC-1638,Baní,Mouse Inalámbrico,1,3500,3500
+FAC-1639,Punta Cana,Webcam HD,2,2500,5000
+FAC-1640,Baní,Webcam HD,5,8000,40000
+FAC-1641,Santiago,Webcam HD,5,15000,75000
+FAC-1642,Punta Cana,Mouse Inalámbrico,5,8000,40000
+FAC-1643,Santiago,Webcam HD,5,8000,40000
+FAC-1644,Santo Domingo,Laptop Pro,5,3500,17500
+FAC-1645,Baní,Webcam HD,4,2500,10000
+FAC-1646,Punta Cana,Laptop Pro,4,45000,180000
+FAC-1647,Punta Cana,Webcam HD,3,45000,135000
+FAC-1648,Punta Cana,Teclado Mecánico,5,15000,75000
+FAC-1649,Santiago,Mouse Inalámbrico,2,2500,5000
+FAC-1650,La Romana,Laptop Pro,1,15000,15000
+FAC-1651,Santiago,Monitor 4K,3,8000,24000
+FAC-1652,La Romana,Laptop Pro,4,8000,32000
+FAC-1653,Santo Domingo,Webcam HD,3,8000,24000
+FAC-1654,Punta Cana,Laptop Pro,3,2500,7500
+FAC-1655,Baní,Webcam HD,3,15000,45000
+FAC-1656,Santiago,Webcam HD,5,3500,17500
+FAC-1657,Santo Domingo,Teclado Mecánico,5,2500,12500
+FAC-1658,Baní,Mouse Inalámbrico,1,8000,8000
+FAC-1659,Baní,Teclado Mecánico,1,2500,2500
+FAC-1660,La Romana,Teclado Mecánico,3,2500,7500
+FAC-1661,Santo Domingo,Laptop Pro,2,45000,90000
+FAC-1662,Baní,Mouse Inalámbrico,4,45000,180000
+FAC-1663,La Romana,Monitor 4K,2,8000,16000
+FAC-1664,Santo Domingo,Mouse Inalámbrico,1,45000,45000
+FAC-1665,Santo Domingo,Teclado Mecánico,3,15000,45000
+FAC-1666,Santiago,Teclado Mecánico,5,15000,75000
+FAC-1667,Baní,Mouse Inalámbrico,5,45000,225000
+FAC-1668,Santiago,Laptop Pro,3,15000,45000
+FAC-1669,Baní,Monitor 4K,1,2500,2500
+FAC-1670,La Romana,Webcam HD,2,45000,90000
+FAC-1671,La Romana,Monitor 4K,5,15000,75000
+FAC-1672,Punta Cana,Mouse Inalámbrico,1,45000,45000
+FAC-1673,Punta Cana,Mouse Inalámbrico,1,8000,8000
+FAC-1674,La Romana,Laptop Pro,1,3500,3500
+FAC-1675,Santo Domingo,Teclado Mecánico,4,15000,60000
+FAC-1676,La Romana,Webcam HD,1,15000,15000
+FAC-1677,Santiago,Webcam HD,1,2500,2500
+FAC-1678,Santiago,Laptop Pro,4,3500,14000
+FAC-1679,Santiago,Laptop Pro,3,8000,24000
+FAC-1680,Santo Domingo,Laptop Pro,2,8000,16000
+FAC-1681,Santiago,Laptop Pro,2,2500,5000
+FAC-1682,Baní,Laptop Pro,5,8000,40000
+FAC-1683,La Romana,Monitor 4K,1,2500,2500
+FAC-1684,Santiago,Mouse Inalámbrico,5,3500,17500
+FAC-1685,Santiago,Laptop Pro,1,45000,45000
+FAC-1686,Santo Domingo,Webcam HD,5,3500,17500
+FAC-1687,Santiago,Webcam HD,5,45000,225000
+FAC-1688,Baní,Monitor 4K,1,2500,2500
+FAC-1689,La Romana,Mouse Inalámbrico,1,3500,3500
+FAC-1690,Santiago,Webcam HD,3,8000,24000
+FAC-1691,Santo Domingo,Mouse Inalámbrico,2,45000,90000
+FAC-1692,Santo Domingo,Monitor 4K,4,15000,60000
+FAC-1693,Santiago,Laptop Pro,4,2500,10000
+FAC-1694,La Romana,Webcam HD,3,2500,7500
+FAC-1695,Santiago,Mouse Inalámbrico,4,2500,10000
+FAC-1696,Santo Domingo,Laptop Pro,1,15000,15000
+FAC-1697,Baní,Monitor 4K,3,3500,10500
+FAC-1698,Santiago,Laptop Pro,4,3500,14000
+FAC-1699,Santo Domingo,Monitor 4K,1,45000,45000
+FAC-1700,Baní,Teclado Mecánico,4,15000,60000
+FAC-1701,La Romana,Webcam HD,1,15000,15000
+FAC-1702,Punta Cana,Laptop Pro,2,45000,90000
+FAC-1703,Santo Domingo,Webcam HD,1,2500,2500
+FAC-1704,Santiago,Laptop Pro,5,3500,17500
+FAC-1705,Santo Domingo,Monitor 4K,4,3500,14000
+FAC-1706,La Romana,Webcam HD,5,3500,17500
+FAC-1707,Punta Cana,Monitor 4K,4,8000,32000
+FAC-1708,Punta Cana,Laptop Pro,1,8000,8000
+FAC-1709,Baní,Laptop Pro,1,15000,15000
+FAC-1710,Santo Domingo,Webcam HD,2,8000,16000
+FAC-1711,Baní,Teclado Mecánico,5,15000,75000
+FAC-1712,Santiago,Teclado Mecánico,1,15000,15000
+FAC-1713,Baní,Laptop Pro,1,2500,2500
+FAC-1714,La Romana,Teclado Mecánico,4,2500,10000
+FAC-1715,Santo Domingo,Webcam HD,5,3500,17500
+FAC-1716,Baní,Teclado Mecánico,4,3500,14000
+FAC-1717,La Romana,Webcam HD,4,2500,10000
+FAC-1718,Santiago,Laptop Pro,4,3500,14000
+FAC-1719,Baní,Webcam HD,2,2500,5000
+FAC-1720,Punta Cana,Laptop Pro,5,2500,12500
+FAC-1721,Santiago,Mouse Inalámbrico,4,8000,32000
+FAC-1722,La Romana,Webcam HD,2,2500,5000
+FAC-1723,Santo Domingo,Mouse Inalámbrico,4,8000,32000
+FAC-1724,Punta Cana,Teclado Mecánico,1,45000,45000
+FAC-1725,Santo Domingo,Mouse Inalámbrico,1,3500,3500
+FAC-1726,La Romana,Teclado Mecánico,5,8000,40000
+FAC-1727,Punta Cana,Teclado Mecánico,4,45000,180000
+FAC-1728,Santiago,Webcam HD,5,8000,40000
+FAC-1729,Santo Domingo,Laptop Pro,1,3500,3500
+FAC-1730,Punta Cana,Teclado Mecánico,4,3500,14000
+FAC-1731,Baní,Teclado Mecánico,3,8000,24000
+FAC-1732,Santo Domingo,Monitor 4K,1,3500,3500
+FAC-1733,La Romana,Teclado Mecánico,2,15000,30000
+FAC-1734,Santiago,Monitor 4K,2,8000,16000
+FAC-1735,Santiago,Webcam HD,2,8000,16000
+FAC-1736,Punta Cana,Mouse Inalámbrico,4,45000,180000
+FAC-1737,Santo Domingo,Webcam HD,2,15000,30000
+FAC-1738,Santiago,Laptop Pro,5,15000,75000
+FAC-1739,Baní,Webcam HD,1,3500,3500
+FAC-1740,Santiago,Teclado Mecánico,4,15000,60000
+FAC-1741,Baní,Webcam HD,3,8000,24000
+FAC-1742,Punta Cana,Teclado Mecánico,1,3500,3500
+FAC-1743,Santo Domingo,Webcam HD,4,2500,10000
+FAC-1744,Santiago,Webcam HD,2,3500,7000
+FAC-1745,Santiago,Laptop Pro,2,8000,16000
+FAC-1746,Punta Cana,Webcam HD,5,3500,17500
+FAC-1747,Baní,Mouse Inalámbrico,4,8000,32000
+FAC-1748,Santo Domingo,Mouse Inalámbrico,3,8000,24000
+FAC-1749,La Romana,Teclado Mecánico,3,3500,10500
+FAC-1750,Punta Cana,Teclado Mecánico,3,3500,10500
+FAC-1751,Santiago,Teclado Mecánico,2,2500,5000
+FAC-1752,Baní,Monitor 4K,5,8000,40000
+FAC-1753,La Romana,Webcam HD,2,2500,5000
+FAC-1754,Santo Domingo,Laptop Pro,1,8000,8000
+FAC-1755,Punta Cana,Mouse Inalámbrico,5,2500,12500
+FAC-1756,La Romana,Laptop Pro,4,2500,10000
+FAC-1757,La Romana,Monitor 4K,3,15000,45000
+FAC-1758,Santo Domingo,Webcam HD,3,15000,45000
+FAC-1759,Santiago,Mouse Inalámbrico,4,2500,10000
+FAC-1760,Santo Domingo,Webcam HD,5,45000,225000
+FAC-1761,Baní,Webcam HD,4,3500,14000
+FAC-1762,La Romana,Monitor 4K,2,8000,16000
+FAC-1763,Santiago,Mouse Inalámbrico,5,45000,225000
+FAC-1764,Punta Cana,Teclado Mecánico,3,45000,135000
+FAC-1765,Baní,Mouse Inalámbrico,4,2500,10000
+FAC-1766,Santo Domingo,Teclado Mecánico,3,45000,135000
+FAC-1767,Santo Domingo,Webcam HD,5,8000,40000
+FAC-1768,Punta Cana,Monitor 4K,3,15000,45000
+FAC-1769,La Romana,Mouse Inalámbrico,1,45000,45000
+FAC-1770,Santiago,Webcam HD,4,45000,180000
+FAC-1771,Punta Cana,Teclado Mecánico,3,2500,7500
+FAC-1772,Punta Cana,Teclado Mecánico,2,45000,90000
+FAC-1773,Punta Cana,Monitor 4K,5,45000,225000
+FAC-1774,Punta Cana,Webcam HD,3,2500,7500
+FAC-1775,La Romana,Webcam HD,1,3500,3500
+FAC-1776,Santiago,Mouse Inalámbrico,3,8000,24000
+FAC-1777,Punta Cana,Webcam HD,1,3500,3500
+FAC-1778,Santo Domingo,Teclado Mecánico,2,8000,16000
+FAC-1779,La Romana,Mouse Inalámbrico,1,8000,8000
+FAC-1780,La Romana,Teclado Mecánico,4,8000,32000
+FAC-1781,La Romana,Webcam HD,3,45000,135000
+FAC-1782,Santiago,Teclado Mecánico,4,15000,60000
+FAC-1783,Santiago,Laptop Pro,4,3500,14000
+FAC-1784,La Romana,Teclado Mecánico,5,2500,12500
+FAC-1785,Santiago,Laptop Pro,4,8000,32000
+FAC-1786,Baní,Mouse Inalámbrico,4,15000,60000
+FAC-1787,La Romana,Laptop Pro,2,2500,5000
+FAC-1788,Santiago,Teclado Mecánico,2,15000,30000
+FAC-1789,Santo Domingo,Teclado Mecánico,5,3500,17500
+FAC-1790,Santo Domingo,Webcam HD,4,2500,10000
+FAC-1791,Baní,Monitor 4K,2,15000,30000
+FAC-1792,Santo Domingo,Webcam HD,1,45000,45000
+FAC-1793,Santiago,Mouse Inalámbrico,3,3500,10500
+FAC-1794,Punta Cana,Monitor 4K,1,8000,8000
+FAC-1795,Santiago,Monitor 4K,4,2500,10000
+FAC-1796,Punta Cana,Mouse Inalámbrico,1,15000,15000
+FAC-1797,Santiago,Teclado Mecánico,4,2500,10000
+FAC-1798,Punta Cana,Monitor 4K,1,45000,45000
+FAC-1799,Punta Cana,Mouse Inalámbrico,3,15000,45000
+FAC-1800,Punta Cana,Laptop Pro,2,45000,90000
+FAC-1801,Santiago,Mouse Inalámbrico,2,15000,30000
+FAC-1802,Punta Cana,Laptop Pro,2,2500,5000
+FAC-1803,La Romana,Webcam HD,2,3500,7000
+FAC-1804,La Romana,Laptop Pro,2,2500,5000
+FAC-1805,Santo Domingo,Laptop Pro,1,45000,45000
+FAC-1806,Santiago,Laptop Pro,3,3500,10500
+FAC-1807,Baní,Mouse Inalámbrico,5,3500,17500
+FAC-1808,Baní,Laptop Pro,3,3500,10500
+FAC-1809,Punta Cana,Teclado Mecánico,1,2500,2500
+FAC-1810,Santiago,Teclado Mecánico,4,8000,32000
+FAC-1811,Santo Domingo,Webcam HD,1,8000,8000
+FAC-1812,Santiago,Laptop Pro,2,3500,7000
+FAC-1813,Baní,Laptop Pro,4,8000,32000
+FAC-1814,Punta Cana,Webcam HD,4,45000,180000
+FAC-1815,Santo Domingo,Mouse Inalámbrico,5,3500,17500
+FAC-1816,Punta Cana,Teclado Mecánico,4,15000,60000
+FAC-1817,Punta Cana,Mouse Inalámbrico,2,8000,16000
+FAC-1818,Santiago,Teclado Mecánico,5,8000,40000
+FAC-1819,Baní,Laptop Pro,4,45000,180000
+FAC-1820,Santo Domingo,Mouse Inalámbrico,5,2500,12500
+FAC-1821,Punta Cana,Teclado Mecánico,2,3500,7000
+FAC-1822,La Romana,Webcam HD,1,8000,8000
+FAC-1823,Santiago,Teclado Mecánico,1,15000,15000
+FAC-1824,Santo Domingo,Laptop Pro,1,3500,3500
+FAC-1825,Santo Domingo,Monitor 4K,4,8000,32000
+FAC-1826,Santo Domingo,Laptop Pro,3,45000,135000
+FAC-1827,La Romana,Laptop Pro,4,2500,10000
+FAC-1828,La Romana,Webcam HD,5,8000,40000
+FAC-1829,Santiago,Webcam HD,1,2500,2500
+FAC-1830,Santiago,Monitor 4K,2,2500,5000
+FAC-1831,Santiago,Webcam HD,3,8000,24000
+FAC-1832,Baní,Webcam HD,3,15000,45000
+FAC-1833,La Romana,Webcam HD,5,3500,17500
+FAC-1834,Santo Domingo,Webcam HD,5,15000,75000
+FAC-1835,Santo Domingo,Laptop Pro,1,3500,3500
+FAC-1836,Santo Domingo,Laptop Pro,5,15000,75000
+FAC-1837,La Romana,Webcam HD,2,15000,30000
+FAC-1838,Santiago,Laptop Pro,2,15000,30000
+FAC-1839,Santo Domingo,Webcam HD,5,8000,40000
+FAC-1840,Santiago,Webcam HD,5,2500,12500
+FAC-1841,La Romana,Monitor 4K,1,2500,2500
+FAC-1842,Punta Cana,Teclado Mecánico,1,2500,2500
+FAC-1843,Santo Domingo,Mouse Inalámbrico,1,45000,45000
+FAC-1844,Santo Domingo,Webcam HD,5,3500,17500
+FAC-1845,Santo Domingo,Teclado Mecánico,1,3500,3500
+FAC-1846,Santiago,Monitor 4K,3,45000,135000
+FAC-1847,Baní,Monitor 4K,3,3500,10500
+FAC-1848,Santiago,Webcam HD,4,8000,32000
+FAC-1849,La Romana,Laptop Pro,3,8000,24000
+FAC-1850,La Romana,Monitor 4K,5,45000,225000
+FAC-1851,Punta Cana,Teclado Mecánico,1,2500,2500
+FAC-1852,Santiago,Laptop Pro,3,45000,135000
+FAC-1853,Santiago,Mouse Inalámbrico,4,8000,32000
+FAC-1854,Santiago,Monitor 4K,2,2500,5000
+FAC-1855,La Romana,Monitor 4K,1,8000,8000
+FAC-1856,Punta Cana,Laptop Pro,4,45000,180000
+FAC-1857,Santo Domingo,Monitor 4K,4,2500,10000
+FAC-1858,Punta Cana,Laptop Pro,4,8000,32000
+FAC-1859,Santo Domingo,Monitor 4K,2,8000,16000
+FAC-1860,Punta Cana,Laptop Pro,2,8000,16000
+FAC-1861,Santiago,Monitor 4K,1,3500,3500
+FAC-1862,Santo Domingo,Mouse Inalámbrico,4,8000,32000
+FAC-1863,Santo Domingo,Monitor 4K,2,8000,16000
+FAC-1864,La Romana,Webcam HD,3,8000,24000
+FAC-1865,Santiago,Monitor 4K,3,3500,10500
+FAC-1866,Santiago,Teclado Mecánico,1,15000,15000
+FAC-1867,Punta Cana,Webcam HD,5,8000,40000
+FAC-1868,Santo Domingo,Mouse Inalámbrico,5,45000,225000
+FAC-1869,Santiago,Mouse Inalámbrico,5,2500,12500
+FAC-1870,La Romana,Teclado Mecánico,1,8000,8000
+FAC-1871,Punta Cana,Webcam HD,4,3500,14000
+FAC-1872,Santo Domingo,Mouse Inalámbrico,3,15000,45000
+FAC-1873,Santiago,Teclado Mecánico,4,3500,14000
+FAC-1874,La Romana,Mouse Inalámbrico,4,2500,10000
+FAC-1875,La Romana,Webcam HD,2,15000,30000
+FAC-1876,Santo Domingo,Webcam HD,1,3500,3500
+FAC-1877,Santo Domingo,Laptop Pro,2,45000,90000
+FAC-1878,Santo Domingo,Laptop Pro,4,2500,10000
+FAC-1879,La Romana,Laptop Pro,1,15000,15000
+FAC-1880,Santiago,Teclado Mecánico,1,45000,45000
+FAC-1881,Santiago,Monitor 4K,4,15000,60000
+FAC-1882,Santo Domingo,Teclado Mecánico,1,15000,15000
+FAC-1883,Baní,Teclado Mecánico,3,2500,7500
+FAC-1884,Baní,Webcam HD,4,3500,14000
+FAC-1885,La Romana,Laptop Pro,2,8000,16000
+FAC-1886,Baní,Laptop Pro,1,3500,3500
+FAC-1887,La Romana,Webcam HD,1,2500,2500
+FAC-1888,La Romana,Monitor 4K,1,3500,3500
+FAC-1889,Baní,Mouse Inalámbrico,2,3500,7000
+FAC-1890,Baní,Monitor 4K,4,45000,180000
+FAC-1891,Punta Cana,Mouse Inalámbrico,5,2500,12500
+FAC-1892,Santo Domingo,Monitor 4K,5,3500,17500
+FAC-1893,Santo Domingo,Mouse Inalámbrico,4,15000,60000
+FAC-1894,La Romana,Teclado Mecánico,5,3500,17500
+FAC-1895,Punta Cana,Webcam HD,3,45000,135000
+FAC-1896,Punta Cana,Teclado Mecánico,4,2500,10000
+FAC-1897,Punta Cana,Webcam HD,2,45000,90000
+FAC-1898,Santiago,Mouse Inalámbrico,3,3500,10500
+FAC-1899,La Romana,Laptop Pro,3,45000,135000
+FAC-1900,Baní,Laptop Pro,4,8000,32000
+FAC-1901,La Romana,Mouse Inalámbrico,4,45000,180000
+FAC-1902,Santo Domingo,Webcam HD,5,2500,12500
+FAC-1903,Punta Cana,Webcam HD,3,3500,10500
+FAC-1904,Punta Cana,Monitor 4K,4,45000,180000
+FAC-1905,Santo Domingo,Teclado Mecánico,5,2500,12500
+FAC-1906,Santo Domingo,Laptop Pro,2,45000,90000
+FAC-1907,Santo Domingo,Webcam HD,4,3500,14000
+FAC-1908,Baní,Webcam HD,1,2500,2500
+FAC-1909,Baní,Monitor 4K,2,45000,90000
+FAC-1910,Santo Domingo,Monitor 4K,5,8000,40000
+FAC-1911,Punta Cana,Monitor 4K,4,15000,60000
+FAC-1912,Baní,Webcam HD,2,8000,16000
+FAC-1913,Santiago,Monitor 4K,1,3500,3500
+FAC-1914,Santo Domingo,Mouse Inalámbrico,1,2500,2500
+FAC-1915,La Romana,Monitor 4K,3,45000,135000
+FAC-1916,Santo Domingo,Webcam HD,5,45000,225000
+FAC-1917,La Romana,Laptop Pro,5,3500,17500
+FAC-1918,Santiago,Webcam HD,3,15000,45000
+FAC-1919,Santo Domingo,Teclado Mecánico,2,8000,16000
+FAC-1920,La Romana,Mouse Inalámbrico,2,3500,7000
+FAC-1921,Santo Domingo,Laptop Pro,3,45000,135000
+FAC-1922,Baní,Teclado Mecánico,5,15000,75000
+FAC-1923,Santo Domingo,Mouse Inalámbrico,2,3500,7000
+FAC-1924,La Romana,Teclado Mecánico,3,3500,10500
+FAC-1925,Baní,Monitor 4K,2,2500,5000
+FAC-1926,La Romana,Monitor 4K,2,8000,16000
+FAC-1927,Santo Domingo,Laptop Pro,1,8000,8000
+FAC-1928,La Romana,Mouse Inalámbrico,4,45000,180000
+FAC-1929,Santiago,Mouse Inalámbrico,1,3500,3500
+FAC-1930,Baní,Laptop Pro,1,3500,3500
+FAC-1931,Santo Domingo,Webcam HD,1,2500,2500
+FAC-1932,Santiago,Monitor 4K,3,3500,10500
+FAC-1933,Punta Cana,Teclado Mecánico,5,45000,225000
+FAC-1934,Santo Domingo,Teclado Mecánico,3,8000,24000
+FAC-1935,Santiago,Monitor 4K,5,2500,12500
+FAC-1936,Santiago,Laptop Pro,5,3500,17500
+FAC-1937,La Romana,Mouse Inalámbrico,1,3500,3500
+FAC-1938,La Romana,Monitor 4K,2,2500,5000
+FAC-1939,La Romana,Webcam HD,5,15000,75000
+FAC-1940,La Romana,Monitor 4K,5,3500,17500
+FAC-1941,Santo Domingo,Laptop Pro,5,45000,225000
+FAC-1942,Santo Domingo,Monitor 4K,3,8000,24000
+FAC-1943,Punta Cana,Laptop Pro,2,15000,30000
+FAC-1944,La Romana,Monitor 4K,4,3500,14000
+FAC-1945,Santiago,Laptop Pro,5,8000,40000
+FAC-1946,Punta Cana,Webcam HD,2,8000,16000
+FAC-1947,Baní,Laptop Pro,2,2500,5000
+FAC-1948,La Romana,Teclado Mecánico,1,8000,8000
+FAC-1949,Santiago,Mouse Inalámbrico,3,2500,7500
+FAC-1950,Santiago,Mouse Inalámbrico,1,3500,3500
+FAC-1951,La Romana,Webcam HD,1,2500,2500
+FAC-1952,La Romana,Mouse Inalámbrico,3,3500,10500
+FAC-1953,Santo Domingo,Monitor 4K,5,3500,17500
+FAC-1954,Santiago,Webcam HD,4,2500,10000
+FAC-1955,La Romana,Mouse Inalámbrico,2,3500,7000
+FAC-1956,Baní,Monitor 4K,2,3500,7000
+FAC-1957,La Romana,Webcam HD,1,3500,3500
+FAC-1958,La Romana,Webcam HD,3,8000,24000
+FAC-1959,La Romana,Webcam HD,4,45000,180000
+FAC-1960,Baní,Mouse Inalámbrico,4,8000,32000
+FAC-1961,Santo Domingo,Mouse Inalámbrico,3,15000,45000
+FAC-1962,La Romana,Laptop Pro,5,3500,17500
+FAC-1963,Punta Cana,Monitor 4K,5,2500,12500
+FAC-1964,Santo Domingo,Monitor 4K,1,8000,8000
+FAC-1965,Baní,Teclado Mecánico,2,15000,30000
+FAC-1966,La Romana,Monitor 4K,5,8000,40000
+FAC-1967,Santo Domingo,Monitor 4K,3,3500,10500
+FAC-1968,La Romana,Laptop Pro,1,3500,3500
+FAC-1969,Punta Cana,Monitor 4K,5,2500,12500
+FAC-1970,Santiago,Monitor 4K,1,3500,3500
+FAC-1971,Punta Cana,Laptop Pro,4,45000,180000
+FAC-1972,La Romana,Laptop Pro,3,15000,45000
+FAC-1973,La Romana,Monitor 4K,5,2500,12500
+FAC-1974,Punta Cana,Laptop Pro,5,45000,225000
+FAC-1975,Punta Cana,Monitor 4K,3,45000,135000
+FAC-1976,La Romana,Webcam HD,4,45000,180000
+FAC-1977,Santiago,Laptop Pro,4,15000,60000
+FAC-1978,La Romana,Laptop Pro,2,2500,5000
+FAC-1979,Santiago,Mouse Inalámbrico,5,8000,40000
+FAC-1980,Santo Domingo,Monitor 4K,2,2500,5000
+FAC-1981,Baní,Webcam HD,1,15000,15000
+FAC-1982,Santo Domingo,Laptop Pro,5,15000,75000
+FAC-1983,Baní,Mouse Inalámbrico,2,8000,16000
+FAC-1984,Baní,Monitor 4K,1,45000,45000
+FAC-1985,La Romana,Laptop Pro,5,45000,225000
+FAC-1986,Santiago,Monitor 4K,2,15000,30000
+FAC-1987,Punta Cana,Teclado Mecánico,2,15000,30000
+FAC-1988,La Romana,Laptop Pro,2,15000,30000
+FAC-1989,Baní,Monitor 4K,4,15000,60000
+FAC-1990,Baní,Laptop Pro,5,45000,225000
+FAC-1991,Santiago,Teclado Mecánico,1,15000,15000
+FAC-1992,Santiago,Laptop Pro,4,45000,180000
+FAC-1993,Baní,Mouse Inalámbrico,3,3500,10500
+FAC-1994,Punta Cana,Laptop Pro,1,8000,8000
+FAC-1995,Punta Cana,Teclado Mecánico,4,15000,60000
+FAC-1996,Santiago,Webcam HD,4,2500,10000
+FAC-1997,Santo Domingo,Teclado Mecánico,1,3500,3500
+FAC-1998,Santiago,Monitor 4K,2,8000,16000
+FAC-1999,La Romana,Laptop Pro,1,45000,45000
+FAC-2000,Santiago,Laptop Pro,1,8000,8000

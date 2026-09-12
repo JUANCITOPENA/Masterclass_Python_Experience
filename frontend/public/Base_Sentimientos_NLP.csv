@@ -1,0 +1,101 @@
+cliente,score,tema,comentario,Sentimiento
+Laura,1,Envío,Caja rota,Detractor 🔴
+Elena,8,Producto,Batería dura poco,Neutro 🟡
+Luis,5,Servicio,Poco capacitados,Detractor 🔴
+Carlos,8,Servicio,Duda resuelta,Neutro 🟡
+Laura,1,Precio,Es un robo,Detractor 🔴
+Laura,5,Precio,Un poco caro,Detractor 🔴
+Marta,1,Envío,Caja rota,Detractor 🔴
+Luis,9,Precio,Valió cada centavo,Promotor 🟢
+Pedro,10,Precio,Ganga total,Promotor 🟢
+Laura,3,Producto,Se sobrecalienta,Detractor 🔴
+Ana,9,Precio,Valió cada centavo,Promotor 🟢
+Diego,6,Envío,Tardó 3 días más,Detractor 🔴
+Ana,5,Servicio,Poco capacitados,Detractor 🔴
+Jorge,8,Servicio,Duda resuelta,Neutro 🟡
+Diego,2,Servicio,Pésimo soporte,Detractor 🔴
+Elena,9,Precio,Valió cada centavo,Promotor 🟢
+Marta,10,Producto,Cámara brutal,Promotor 🟢
+Diego,10,Envío,Llegó antes,Promotor 🟢
+Marta,10,Servicio,Muy amables,Promotor 🟢
+Elena,3,Producto,Se sobrecalienta,Detractor 🔴
+Sofía,10,Precio,Ganga total,Promotor 🟢
+Elena,6,Envío,Tardó 3 días más,Detractor 🔴
+Carlos,5,Precio,Un poco caro,Detractor 🔴
+Sofía,1,Precio,Es un robo,Detractor 🔴
+Elena,10,Envío,Llegó antes,Promotor 🟢
+Sofía,8,Producto,Batería dura poco,Neutro 🟡
+Jorge,10,Producto,Cámara brutal,Promotor 🟢
+Laura,5,Servicio,Poco capacitados,Detractor 🔴
+Elena,10,Precio,Ganga total,Promotor 🟢
+Pedro,8,Producto,Batería dura poco,Neutro 🟡
+Ana,10,Producto,Cámara brutal,Promotor 🟢
+Laura,8,Servicio,Duda resuelta,Neutro 🟡
+Ana,3,Producto,Se sobrecalienta,Detractor 🔴
+Marta,10,Servicio,Muy amables,Promotor 🟢
+Carlos,8,Servicio,Duda resuelta,Neutro 🟡
+Diego,10,Producto,Cámara brutal,Promotor 🟢
+Luis,1,Envío,Caja rota,Detractor 🔴
+Sofía,5,Servicio,Poco capacitados,Detractor 🔴
+Sofía,10,Precio,Ganga total,Promotor 🟢
+Luis,10,Producto,Cámara brutal,Promotor 🟢
+Pedro,6,Envío,Tardó 3 días más,Detractor 🔴
+Ana,8,Servicio,Duda resuelta,Neutro 🟡
+Sofía,6,Envío,Tardó 3 días más,Detractor 🔴
+Luis,10,Servicio,Muy amables,Promotor 🟢
+Jorge,9,Precio,Valió cada centavo,Promotor 🟢
+Luis,10,Envío,Llegó antes,Promotor 🟢
+Diego,1,Precio,Es un robo,Detractor 🔴
+Marta,5,Servicio,Poco capacitados,Detractor 🔴
+Luis,2,Servicio,Pésimo soporte,Detractor 🔴
+Elena,6,Envío,Tardó 3 días más,Detractor 🔴
+Carlos,6,Envío,Tardó 3 días más,Detractor 🔴
+Jorge,8,Producto,Batería dura poco,Neutro 🟡
+Diego,6,Producto,Cumple su función,Detractor 🔴
+Sofía,5,Servicio,Poco capacitados,Detractor 🔴
+Laura,6,Envío,Tardó 3 días más,Detractor 🔴
+Laura,8,Producto,Batería dura poco,Neutro 🟡
+Diego,6,Envío,Tardó 3 días más,Detractor 🔴
+Carlos,8,Servicio,Duda resuelta,Neutro 🟡
+Diego,3,Producto,Se sobrecalienta,Detractor 🔴
+Sofía,10,Producto,Cámara brutal,Promotor 🟢
+Ana,9,Precio,Valió cada centavo,Promotor 🟢
+Ana,6,Envío,Tardó 3 días más,Detractor 🔴
+Laura,10,Envío,Llegó antes,Promotor 🟢
+Jorge,10,Producto,Cámara brutal,Promotor 🟢
+Ana,5,Precio,Un poco caro,Detractor 🔴
+Diego,10,Servicio,Muy amables,Promotor 🟢
+Jorge,9,Precio,Valió cada centavo,Promotor 🟢
+Ana,8,Producto,Batería dura poco,Neutro 🟡
+Pedro,8,Producto,Batería dura poco,Neutro 🟡
+Carlos,9,Envío,Todo en orden,Promotor 🟢
+Ana,10,Precio,Ganga total,Promotor 🟢
+Marta,2,Servicio,Pésimo soporte,Detractor 🔴
+Jorge,5,Precio,Un poco caro,Detractor 🔴
+Marta,6,Producto,Cumple su función,Detractor 🔴
+Jorge,3,Producto,Se sobrecalienta,Detractor 🔴
+Sofía,2,Servicio,Pésimo soporte,Detractor 🔴
+Ana,8,Servicio,Duda resuelta,Neutro 🟡
+Sofía,8,Producto,Batería dura poco,Neutro 🟡
+Marta,1,Precio,Es un robo,Detractor 🔴
+Ana,5,Precio,Un poco caro,Detractor 🔴
+Jorge,5,Servicio,Poco capacitados,Detractor 🔴
+Jorge,1,Precio,Es un robo,Detractor 🔴
+Elena,1,Precio,Es un robo,Detractor 🔴
+Sofía,8,Servicio,Duda resuelta,Neutro 🟡
+Jorge,5,Servicio,Poco capacitados,Detractor 🔴
+Carlos,10,Precio,Ganga total,Promotor 🟢
+Pedro,8,Servicio,Duda resuelta,Neutro 🟡
+Pedro,3,Producto,Se sobrecalienta,Detractor 🔴
+Carlos,3,Producto,Se sobrecalienta,Detractor 🔴
+Diego,10,Servicio,Muy amables,Promotor 🟢
+Carlos,9,Envío,Todo en orden,Promotor 🟢
+Laura,8,Producto,Batería dura poco,Neutro 🟡
+Jorge,10,Servicio,Muy amables,Promotor 🟢
+Elena,6,Producto,Cumple su función,Detractor 🔴
+Marta,9,Envío,Todo en orden,Promotor 🟢
+Sofía,10,Servicio,Muy amables,Promotor 🟢
+Laura,10,Producto,Cámara brutal,Promotor 🟢
+Luis,8,Producto,Batería dura poco,Neutro 🟡
+Pedro,10,Envío,Llegó antes,Promotor 🟢
+Luis,9,Precio,Valió cada centavo,Promotor 🟢

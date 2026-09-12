@@ -1,0 +1,8 @@
+Cliente,Score,Nivel DTI,Monto (RD$),Estado Final,Nivel de Riesgo
+Juan P.,720,38.0%,"200,000",✅ APROBADO,🟢 Bajo Riesgo
+María G.,610,65.7%,"150,000",❌ RECHAZADO,⚫ Crítico (Mal Score)
+Carlos L.,850,35.0%,"900,000",✅ APROBADO,🟢 Bajo Riesgo
+Ana D.,580,24.0%,"50,000",❌ RECHAZADO,⚫ Crítico (Mal Score)
+Luis M.,700,70.0%,"100,000",⚠️ RECHAZADO,🔴 Alto (Excede DTI)
+Sofía R.,800,37.5%,"1,500,000",✅ APROBADO,🟢 Bajo Riesgo
+Pedro T.,660,9.0%,"80,000",✅ APROBADO,🟢 Bajo Riesgo

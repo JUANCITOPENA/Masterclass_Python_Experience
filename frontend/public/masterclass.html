@@ -1,0 +1,4183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🐍 Masterclass Python Experience PRO | CAES Academy</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Prism.js Tema Tomorrow Night (MODO OSCURO PARA EL CÓDIGO) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+  
+  <!-- Viewer.js para visor de imágenes interactivo -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js"></script>
+
+  <!-- Pyodide para ejecución en navegador -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
+  <style>
+    :root {
+      --bg: #F6F8FC;
+      --bg-card: #FFFFFF;
+      --line: #E2E8F1;
+      --ink: #16202B;
+      --ink-soft: #334155; /* Oscurecido para mejor usabilidad visual */
+      --py-blue: #2F6D9C;
+      --py-blue-deep: #1E4C72;
+      --py-blue-pale: #EAF3FB;
+      --py-yellow: #F5C518;
+      --py-yellow-deep: #D9A700;
+      --accent-green: #10B981;
+      --accent-rose: #EF4444;
+      --code-bg: #1E2530; /* Fondo oscuro original para código */
+      --code-ink: #E7ECF3;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1.15rem; /* Aumento global de accesibilidad */
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, h5, .display-font {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    
+    h1 { font-size: 3rem !important; }
+    h2 { font-size: 2.4rem !important; }
+
+    code, pre, .mono { font-family: 'JetBrains Mono', monospace; }
+    a { color: var(--py-blue-deep); text-decoration: none; }
+    a:hover { color: var(--py-blue); }
+
+    /* Palabras Clave y Énfasis Semántico */
+    .kw-blue { color: var(--py-blue); font-weight: 800; }
+    .kw-yellow { color: var(--py-yellow-deep); font-weight: 800; }
+    .kw-green { color: var(--accent-green); font-weight: 800; }
+    .kw-rose { color: var(--accent-rose); font-weight: 800; }
+
+    /* Borde Animado Estilo Río Tecnológico (Cyber River) */
+    .cyber-river-card {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      z-index: 1;
+      overflow: hidden;
+      box-shadow: 0 10px 28px -10px rgba(30, 76, 114, 0.12);
+    }
+    .cyber-river-card::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: conic-gradient(
+        transparent, var(--py-blue), transparent 35%,
+        transparent, var(--py-yellow), transparent 70%,
+        var(--accent-green), transparent 95%
+      );
+      animation: riverFlow 9s linear infinite;
+      z-index: -2;
+    }
+    .cyber-river-card::after {
+      content: '';
+      position: absolute;
+      inset: 2.5px;
+      background: var(--bg-card);
+      border-radius: calc(var(--radius) - 2px);
+      z-index: -1;
+    }
+    @keyframes riverFlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Secciones y Kicker */
+    .section-pad { padding: 4.5rem 0; }
+    .section-divider { border: 0; height: 1px; background: var(--line); margin: 0; }
+    .section-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--py-blue-deep); font-weight: 800; font-size: 1rem; letter-spacing: .05em;
+    }
+    .section-title { font-weight: 800; margin-top: .35rem; }
+    .lead-soft { color: var(--ink-soft); font-size: 1.25rem; }
+
+    /* Tarjetas Manual (Copias exactas del original) */
+    .card-manual {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2rem;
+      height: 100%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-manual:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -8px rgba(30, 76, 114, 0.12);
+    }
+    .icon-chip {
+      width: 55px; height: 55px; border-radius: 12px;
+      background: var(--py-blue-pale); color: var(--py-blue-deep);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; flex-shrink: 0;
+    }
+    .icon-chip.yellow { background: #FFF7DD; color: var(--py-yellow-deep); }
+    .icon-chip.green { background: #DCFCE7; color: var(--accent-green); }
+
+    /* Imágenes */
+    .env-img-wrapper {
+      margin-top: 1.2rem; text-align: center; overflow: hidden;
+      border-radius: var(--radius-sm); border: 1px solid var(--line);
+      background: #fff;
+    }
+    .env-img { max-height: 220px; width: 100%; object-fit: cover; object-position: top; }
+    .env-img-contain { object-fit: contain; padding: 12px; }
+
+    /* Bloques de Código (Estilo Oscuro Prism-Tomorrow) */
+    pre[class*="language-"] {
+      border-radius: 10px;
+      background: var(--code-bg) !important;
+      border: 1px solid #2b3444;
+      font-size: 0.95rem;
+      padding: 1.5rem !important;
+      margin-top: 1rem;
+      position: relative;
+    }
+    code[class*="language-"] {
+      color: var(--code-ink) !important;
+    }
+    
+    /* Botones dentro del código */
+    .code-toolbar {
+      position: absolute;
+      top: 15px; 
+      right: 15px;
+      display: flex; 
+      gap: 8px;
+      z-index: 20; /* Garantiza que los botones estén por encima del fondo del código */
+    }
+    .btn-action {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff; 
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px; 
+      padding: 6px 12px; 
+      font-size: 0.9rem;
+      font-weight: 700; 
+      cursor: pointer; 
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .btn-action:hover { 
+      background: rgba(255, 255, 255, 0.25); 
+      transform: translateY(-2px);
+    }
+    .btn-run { 
+      background: var(--py-yellow); 
+      color: #111; 
+      border: none; 
+      box-shadow: 0 4px 10px rgba(245, 197, 24, 0.3);
+    }
+    .btn-run:hover { 
+      background: var(--py-yellow-deep); 
+      color: #000;
+    }
+
+    /* Navbar */
+    .navbar-manual {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      z-index: 1020;
+    }
+    .navbar-brand-manual {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      color: var(--py-blue-deep) !important;
+    }
+
+    /* Modal Pyodide */
+    #pyodide-console {
+      background: #111827; color: #4ade80;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 15px; border-radius: 8px;
+      height: 350px; overflow-y: auto; white-space: pre-wrap;
+    }
+    /* ====== RESPONSIVE MOBILE TWEAKS ====== */
+    @media (max-width: 768px) {
+      /* === OPTIMIZACIONES DE RENDIMIENTO (EVITAR LAG/TRABAS) === */
+      .navbar-manual {
+        backdrop-filter: none !important; /* El blur satura la GPU en móviles al hacer scroll */
+        background: rgba(255, 255, 255, 0.98) !important;
+      }
+      .cyber-river-card::before {
+        animation: none !important; /* La animación del borde consume mucha batería y RAM en celular */
+        background: var(--py-blue) !important; /* Borde estático elegante */
+      }
+      .card-manual:hover {
+        transform: none !important; /* Evita que las tarjetas salten accidentalmente al hacer scroll */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.02) !important;
+      }
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+      
+      /* === AJUSTES DE DISEÑO === */
+      body {
+        font-size: 1rem;
+      }
+      h1 { font-size: 2.2rem !important; }
+      h2 { font-size: 1.8rem !important; }
+      
+      .section-pad { padding: 3rem 0; }
+      
+      .cyber-river-card {
+        padding: 1.25rem;
+        border-radius: 12px;
+      }
+      
+      .card-manual {
+        padding: 1.25rem;
+      }
+
+      /* Imagen de Perfil */
+      img[alt="Ing. Juancito Peña"] {
+        width: 150px !important;
+        height: 150px !important;
+        border-width: 3px !important;
+      }
+
+      /* Stack Tecnológico Badges */
+      .badge {
+        font-size: 0.85rem !important;
+        padding: 0.4rem 0.6rem !important;
+      }
+      .badge i {
+        font-size: 1.2rem !important;
+      }
+
+      /* Código y Botones */
+      pre[class*="language-"] {
+        padding: 3.5rem 1rem 1rem 1rem !important;
+        font-size: 0.85rem;
+      }
+      
+      .code-toolbar {
+        top: 8px;
+        right: 8px;
+        left: 8px; /* Opcional: para que tome ancho */
+        justify-content: flex-end;
+        flex-wrap: wrap;
+      }
+      
+      .btn-action {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+      }
+      
+      /* Ajustar márgenes en listas numeradas de consola */
+      .list-group-item {
+        font-size: 1rem !important;
+        padding: 0.75rem;
+      }
+      
+      /* Ajuste Navbar */
+      .navbar-brand-manual span {
+        font-size: 1.2rem;
+      }
+      .navbar-brand-manual img {
+        height: 28px !important;
+      }
+    }
+
+    
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-manual sticky-top py-3">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand navbar-brand-manual m-0 fs-3 d-flex align-items-center gap-3" href="#">
+      <span>🐍 Masterclass Python</span>
+      <img src="https://caesacademy.com/wp-content/uploads/2021/10/logo_02b-300x133.png" alt="CAES Academy Logo" style="height: 38px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navManual">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navManual">
+      <ul class="navbar-nav ms-auto gap-lg-1 fw-bold text-dark" style="font-size: 0.95rem;">
+        <li class="nav-item"><a class="nav-link text-dark px-2" href="#roles">1. Roles</a></li>
+        <li class="nav-item"><a class="nav-link text-dark px-2" href="#python">2. Python</a></li>
+        <li class="nav-item"><a class="nav-link text-dark px-2" href="#entorno">3. Entorno</a></li>
+        <li class="nav-item"><a class="nav-link text-dark px-2" href="#fundamentos">4. Lógica</a></li>
+        <li class="nav-item"><a class="nav-link text-dark px-2" href="#librerias">5. Librerías y Gráficos</a></li>
+        <li class="nav-item"><a class="nav-link text-dark px-2" href="#datos">6. Casos Prácticos</a></li>
+        <li class="nav-item"><a class="nav-link text-dark px-2" href="#apis-ia">7. APIs e IA</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- SECCIÓN DE PERFIL Y EXPERIENCIA PROFESIONAL -->
+<section id="experiencia" class="container mt-5 mb-5 pt-3">
+  <!-- Foto y Título Ampliado -->
+  <div class="text-center mb-5">
+    <img src="JUANCITO.png" alt="Ing. Juancito Peña" class="img-fluid rounded-circle shadow-lg mb-3" style="width: 220px; height: 220px; object-fit: cover; border: 5px solid var(--py-blue-deep);">
+    <h1 class="fw-bold" style="color: var(--py-blue-deep);">Ing. Juancito Peña, MIS, M.Sc.</h1>
+    <h5 class="text-muted fw-bold mb-3" style="font-size: 1.1rem;">Líder de TI | Desarrollador Full-Stack | Analista de Datos | Ingeniero de IA</h5>
+    <p class="text-muted mx-auto" style="max-width: 800px; font-size: 1.1rem;">
+      Apasionado de la Tecnología, el Análisis de Datos y el Desarrollo de Software. Experto en <strong>Integraciones con IA, APIs y Automatizaciones</strong>. Especialista en <strong>Optimización de Procesos Empresariales</strong> y <strong>Transformación Digital</strong>.<br>
+      <span style="color: var(--accent-purple); font-weight: 600;">Educador | Empoderando a la próxima generación de líderes tecnológicos.</span>
+    </p>
+  </div>
+
+  <h2 class="text-center mb-4 fw-bold" style="color: var(--py-blue-deep);">
+    <i class="bi bi-briefcase-fill text-primary"></i> Experiencia Profesional
+  </h2>
+  
+  <div class="row g-4 justify-content-center">
+    <!-- Card 1 -->
+    <div class="col-sm-6 col-md-4 col-lg">
+      <div class="card h-100 shadow-sm border-0" style="border-radius: 12px; background: #fafafa; border-top: 4px solid #10b981 !important;">
+        <div class="card-body text-center p-4">
+          <h4 class="card-title mb-3">
+            <i class="bi bi-phone-fill text-success fs-1"></i>
+          </h4>
+          <h5 class="fw-bold text-dark">Enc. Aplicaciones Móviles</h5>
+          <p class="text-muted fs-6 mb-0">Cervecería Vegana S.R.L.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="col-sm-6 col-md-4 col-lg">
+      <div class="card h-100 shadow-sm border-0" style="border-radius: 12px; background: #fafafa; border-top: 4px solid #f59e0b !important;">
+        <div class="card-body text-center p-4">
+          <h4 class="card-title mb-3">
+            <i class="bi bi-gear-fill text-warning fs-1"></i>
+          </h4>
+          <h5 class="fw-bold text-dark">Technical Development Coord.</h5>
+          <p class="text-muted fs-6 mb-0">CNSWARE</p>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="col-sm-6 col-md-4 col-lg">
+      <div class="card h-100 shadow-sm border-0" style="border-radius: 12px; background: #fafafa; border-top: 4px solid #3b82f6 !important;">
+        <div class="card-body text-center p-4">
+          <h4 class="card-title mb-3">
+            <i class="bi bi-person-video3 text-primary fs-1"></i>
+          </h4>
+          <h5 class="fw-bold text-dark">Docente de Tecnología</h5>
+          <p class="text-muted fs-6 mb-0">Universidad Dom. O&M</p>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="col-sm-6 col-md-4 col-lg">
+      <div class="card h-100 shadow-sm border-0" style="border-radius: 12px; background: #fafafa; border-top: 4px solid #8e44ad !important;">
+        <div class="card-body text-center p-4">
+          <h4 class="card-title mb-3">
+            <i class="bi bi-mortarboard-fill fs-1" style="color: #8e44ad;"></i>
+          </h4>
+          <h5 class="fw-bold text-dark">Instructor de Diplomados</h5>
+          <p class="text-muted fs-6 mb-0">CAES Academy</p>
+        </div>
+      </div>
+    </div>
+    <!-- Card 5 (NUEVA) -->
+    <div class="col-sm-6 col-md-4 col-lg">
+      <div class="card h-100 shadow-sm border-0" style="border-radius: 12px; background: #fafafa; border-top: 4px solid #ef4444 !important;">
+        <div class="card-body text-center p-4">
+          <h4 class="card-title mb-3">
+            <i class="bi bi-building text-danger fs-1"></i>
+          </h4>
+          <h5 class="fw-bold text-dark">Consultor Independiente</h5>
+          <p class="text-muted fs-6 mb-0">Soluciones de Software & IA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Librerías necesarias en tu <head> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+
+<!-- STACK TECNOLÓGICO -->
+<div class="mt-5 pt-4 text-center">
+  <h3 class="fw-bold mb-4 text-primary">
+    <i class="bi bi-cpu-fill text-secondary fs-2"></i> Stack Tecnológico
+  </h3>
+  <div class="d-flex flex-wrap justify-content-center gap-3" style="max-width: 900px; margin: 0 auto;">
+    <span class="badge text-bg-primary fs-6 px-3 py-2 shadow-sm"><i class="bi bi-filetype-html fs-3"></i> HTML5</span>
+    <span class="badge text-bg-info fs-6 px-3 py-2 shadow-sm text-white"><i class="bi bi-filetype-css fs-3"></i> CSS3</span>
+    <span class="badge text-bg-warning fs-6 px-3 py-2 shadow-sm text-dark"><i class="bi bi-filetype-js fs-3"></i> JavaScript</span>
+    <span class="badge fs-6 px-3 py-2 shadow-sm text-dark" style="background-color: #61DAFB;">
+      <i class="devicon-react-original fs-3"></i> React
+    </span>
+    <span class="badge fs-6 px-3 py-2 shadow-sm text-white" style="background-color: #777BB4;">
+      <i class="devicon-php-plain fs-3"></i> PHP
+    </span>
+    <span class="badge text-bg-danger fs-6 px-3 py-2 shadow-sm">
+      <i class="fa-brands fa-laravel fa-2x"></i> Laravel
+    </span>
+    <span class="badge fs-6 px-3 py-2 shadow-sm text-white" style="background-color: #3776AB;">
+      <i class="devicon-python-plain fs-3"></i> Python
+    </span>
+    <span class="badge fs-6 px-3 py-2 shadow-sm text-dark" style="background-color: #F2C811;">
+      <i class="bi bi-bar-chart-line-fill fs-3"></i> Power BI
+    </span>
+    <span class="badge text-bg-success fs-6 px-3 py-2 shadow-sm">
+      <i class="bi bi-file-earmark-excel-fill fs-3"></i> Excel
+    </span>
+    <span class="badge text-bg-secondary fs-6 px-3 py-2 shadow-sm">
+      <i class="bi bi-database-fill fs-3"></i> SQL
+    </span>
+    <span class="badge fs-6 px-3 py-2 shadow-sm text-white" style="background-color: #239120;">
+      <i class="devicon-csharp-plain fs-3"></i> C#
+    </span>
+    <span class="badge fs-6 px-3 py-2 shadow-sm text-white" style="background-color: #512BD4;">
+      <i class="devicon-dotnetcore-plain fs-3"></i> .NET
+    </span>
+  </div>
+</div>
+
+  
+</section>
+
+
+
+
+
+<!-- ============================================================
+     1. ROLES Y FUNDAMENTOS DE PROGRAMACIÓN
+============================================================ -->
+
+<section id="roles" class="section-pad">
+
+  <div class="container">
+
+    <div class="cyber-river-card">
+
+      <!-- ENCABEZADO -->
+      <span class="section-kicker">
+        // 00 · Fundamentos Iniciales
+      </span>
+
+      <h2 class="section-title">
+        💻 ¿Qué es la Programación y qué controla en el mundo digital?
+      </h2>
+
+      <p class="lead-soft mt-2">
+        La <strong class="text-primary">programación</strong> es una disciplina de la
+        <strong>informática</strong> que permite diseñar instrucciones, algoritmos y
+        estructuras lógicas capaces de controlar el comportamiento de un sistema.
+      </p>
+
+      <p class="lead-soft">
+        Programar no consiste solamente en escribir código. Es el proceso de
+        <strong class="text-success">analizar problemas</strong>,
+        <strong class="text-warning">diseñar soluciones</strong>,
+        <strong class="text-danger">procesar información</strong> y construir
+        <strong class="text-primary">sistemas capaces de ejecutar tareas de forma
+        automática, precisa y repetible.</strong>
+      </p>
+
+
+      <!-- ======================================================
+           ¿QUÉ CONTROLA LA PROGRAMACIÓN?
+      ======================================================= -->
+
+      <div class="mt-5">
+
+        <h3 class="fw-bold mb-3">
+          🧠 ¿Qué puede controlar la programación?
+        </h3>
+
+        <p class="text-muted">
+          Prácticamente todo sistema digital que interactúa con nosotros contiene
+          software ejecutando instrucciones. La programación permite definir
+          <strong>qué debe hacer un sistema, cuándo debe hacerlo, cómo debe
+          responder y qué información debe procesar.</strong>
+        </p>
+
+        <div class="row g-3 mt-3">
+
+          <!-- SISTEMAS -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-manual h-100">
+              <div class="icon-chip mb-3">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+
+              <h5 class="fw-bold">
+                ⚙️ Sistemas y Hardware
+              </h5>
+
+              <p class="text-muted">
+                Controla dispositivos, sensores, procesadores, memoria,
+                periféricos y sistemas embebidos mediante instrucciones de
+                bajo y alto nivel.
+              </p>
+            </div>
+          </div>
+
+          <!-- SOFTWARE -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-manual h-100">
+              <div class="icon-chip yellow mb-3">
+                <i class="fa-solid fa-code"></i>
+              </div>
+
+              <h5 class="fw-bold">
+                💻 Software y Aplicaciones
+              </h5>
+
+              <p class="text-muted">
+                Permite construir aplicaciones
+                <strong>Web, Desktop, Mobile, APIs, servicios y sistemas
+                empresariales.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- DATOS -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-manual h-100">
+              <div class="icon-chip green mb-3">
+                <i class="fa-solid fa-database"></i>
+              </div>
+
+              <h5 class="fw-bold">
+                🗄️ Datos y Bases de Datos
+              </h5>
+
+              <p class="text-muted">
+                Permite almacenar, consultar, transformar, validar y analizar
+                grandes cantidades de información mediante
+                <strong>SQL, Python y otros lenguajes.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- REDES -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-manual h-100">
+              <div class="icon-chip mb-3">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+
+              <h5 class="fw-bold">
+                🌐 Redes y Comunicación
+              </h5>
+
+              <p class="text-muted">
+                Define cómo las aplicaciones intercambian información mediante
+                <strong>HTTP, APIs, TCP/IP, WebSockets, servicios y protocolos
+                de comunicación.</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- AUTOMATIZACIÓN -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-manual h-100">
+              <div class="icon-chip yellow mb-3">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+
+              <h5 class="fw-bold">
+                🤖 Automatización
+              </h5>
+
+              <p class="text-muted">
+                Convierte procesos manuales en flujos automáticos capaces de
+                ejecutar tareas, validar información, generar reportes y
+                responder ante eventos.
+              </p>
+            </div>
+          </div>
+
+          <!-- IA -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card-manual h-100">
+              <div class="icon-chip green mb-3">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+
+              <h5 class="fw-bold">
+                🧠 Inteligencia Artificial
+              </h5>
+
+              <p class="text-muted">
+                Permite crear sistemas que procesan datos, reconocen patrones,
+                generan contenido, realizan predicciones y apoyan la toma de
+                decisiones.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ======================================================
+           PROGRAMAR ES MUCHO MÁS QUE ESCRIBIR CÓDIGO
+      ======================================================= -->
+
+      <div class="mt-5">
+
+        <h3 class="fw-bold mb-3">
+          🔬 Programar es resolver problemas mediante lógica
+        </h3>
+
+        <div class="row align-items-center">
+
+          <div class="col-lg-7">
+
+            <p class="text-muted">
+              Un programador transforma una necesidad del mundo real en una
+              solución computacional mediante diferentes niveles de abstracción:
+            </p>
+
+            <ul class="text-muted">
+
+              <li class="mb-2">
+                🔎 <strong>Análisis:</strong>
+                comprender el problema y sus restricciones.
+              </li>
+
+              <li class="mb-2">
+                🧩 <strong>Algoritmos:</strong>
+                definir paso a paso cómo resolverlo.
+              </li>
+
+              <li class="mb-2">
+                🏗️ <strong>Arquitectura:</strong>
+                decidir cómo se organizarán los componentes.
+              </li>
+
+              <li class="mb-2">
+                💻 <strong>Código:</strong>
+                convertir la solución lógica en instrucciones.
+              </li>
+
+              <li class="mb-2">
+                🧪 <strong>Pruebas:</strong>
+                detectar errores y validar resultados.
+              </li>
+
+              <li class="mb-2">
+                🚀 <strong>Despliegue:</strong>
+                llevar la solución a producción.
+              </li>
+
+              <li class="mb-2">
+                🔧 <strong>Mantenimiento:</strong>
+                corregir, optimizar y evolucionar el sistema.
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="col-lg-5">
+
+            <div class="card-manual text-center">
+
+              <div class="display-4 mb-3">
+                🧠 ➜ 📐 ➜ 💻 ➜ ⚙️ ➜ 📊 ➜ 🤖
+              </div>
+
+              <h5 class="fw-bold">
+                Idea → Algoritmo → Código → Sistema → Datos → Inteligencia
+              </h5>
+
+              <p class="text-muted mb-0">
+                Esa es una de las grandes cadenas de transformación de la
+                informática moderna.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+     <!-- ======================================================
+     ROLES PROFESIONALES
+======================================================= -->
+
+<div class="mt-5">
+
+  <!-- ENCABEZADO DE LA SECCIÓN -->
+
+  <div class="text-center">
+
+    <span class="section-kicker">
+      // 01 · Perfiles Profesionales
+    </span>
+
+    <h3 class="fw-bold mt-2">
+      👨‍💻 Los grandes perfiles que construyen el ecosistema digital
+    </h3>
+
+    <p class="text-muted mx-auto" style="max-width: 900px;">
+      La programación, los datos y la inteligencia artificial convergen en
+      diferentes especialidades. Un profesional puede especializarse en una
+      de ellas o desarrollar un perfil híbrido.
+    </p>
+
+  </div>
+
+
+  <div class="row g-4 mt-3">
+
+
+    <!-- ==================================================
+         DESARROLLADOR DE SOFTWARE
+    =================================================== -->
+
+    <div class="col-lg-6 col-xl-3">
+
+      <div class="card-manual h-100 d-flex flex-column">
+
+        <!-- LOGO / ICONO -->
+
+        <div class="text-center">
+
+          <div class="icon-chip mb-3 mx-auto">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+
+        </div>
+
+
+        <!-- TITULO -->
+
+        <h4 class="fw-bold text-center">
+          👨‍💻 Desarrollador de Software
+        </h4>
+
+
+        <!-- DESCRIPCIÓN -->
+
+        <p class="text-muted text-justify">
+          Diseña, desarrolla, prueba y mantiene aplicaciones y sistemas
+          informáticos que permiten resolver problemas mediante software.
+        </p>
+
+
+        <!-- ESPECIALIZACIÓN -->
+
+        <p class="text-muted text-justify">
+
+          Trabaja con
+          <strong class="text-primary">Frontend</strong>,
+          <strong class="text-success">Backend</strong>,
+          APIs, bases de datos, aplicaciones móviles, servicios,
+          arquitectura y sistemas empresariales.
+
+        </p>
+
+
+        <!-- ÁREAS -->
+
+        <div class="small mt-auto text-justify">
+
+          <strong>🚀 Construye:</strong>
+
+          <div class="mt-2">
+
+            🌐 Aplicaciones Web<br>
+            📱 Aplicaciones Mobile<br>
+            🖥️ Aplicaciones Desktop<br>
+            🔌 APIs y Servicios<br>
+            ⚙️ Sistemas Empresariales
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         ANALISTA DE DATOS
+    =================================================== -->
+
+    <div class="col-lg-6 col-xl-3">
+
+      <div class="card-manual h-100 d-flex flex-column">
+
+        <!-- LOGO / ICONO -->
+
+        <div class="text-center">
+
+          <div class="icon-chip yellow mb-3 mx-auto">
+            <i class="fa-solid fa-chart-column"></i>
+          </div>
+
+        </div>
+
+
+        <!-- TITULO -->
+
+        <h4 class="fw-bold text-center">
+          📊 Analista de Datos
+        </h4>
+
+
+        <!-- DESCRIPCIÓN -->
+
+        <p class="text-muted text-justify">
+          Convierte datos operacionales en información útil para comprender
+          problemas, encontrar oportunidades y responder preguntas de negocio.
+        </p>
+
+
+        <!-- ESPECIALIZACIÓN -->
+
+        <p class="text-muted text-justify">
+
+          Utiliza
+          <strong class="text-success">Excel</strong>,
+          <strong class="text-primary">SQL</strong>,
+          Power BI, Power Query, Python y herramientas estadísticas
+          para analizar información.
+
+        </p>
+
+
+        <!-- ÁREAS -->
+
+        <div class="small mt-auto text-justify">
+
+          <strong>📈 Analiza:</strong>
+
+          <div class="mt-2">
+
+            🧹 Limpieza de Datos<br>
+            🔎 Exploración de Información<br>
+            📊 Visualización<br>
+            🎯 KPI y Métricas<br>
+            💡 Insights de Negocio
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         INGENIERO DE DATOS
+    =================================================== -->
+
+    <div class="col-lg-6 col-xl-3">
+
+      <div class="card-manual h-100 d-flex flex-column">
+
+        <!-- LOGO / ICONO -->
+
+        <div class="text-center">
+
+          <div class="icon-chip mb-3 mx-auto">
+            <i class="fa-solid fa-database"></i>
+          </div>
+
+        </div>
+
+
+        <!-- TITULO -->
+
+        <h4 class="fw-bold text-center">
+          🏗️ Ingeniero de Datos
+        </h4>
+
+
+        <!-- DESCRIPCIÓN -->
+
+        <p class="text-muted text-justify">
+          Diseña y construye la infraestructura necesaria para recopilar,
+          transformar, almacenar y distribuir datos de forma confiable.
+        </p>
+
+
+        <!-- ESPECIALIZACIÓN -->
+
+        <p class="text-muted text-justify">
+
+          Trabaja con
+          <strong class="text-primary">ETL/ELT</strong>,
+          Data Warehouses, Data Lakes, pipelines, APIs, bases de datos,
+          cloud y procesamiento de datos.
+
+        </p>
+
+
+        <!-- ÁREAS -->
+
+        <div class="small mt-auto text-justify">
+
+          <strong>🔧 Construye:</strong>
+
+          <div class="mt-2">
+
+            🔄 Data Pipelines<br>
+            🗄️ Data Warehouse<br>
+            🌊 Data Lake<br>
+            🔌 Integraciones y APIs<br>
+            ☁️ Plataformas de Datos
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         CIENTÍFICO DE DATOS
+    =================================================== -->
+
+    <div class="col-lg-6 col-xl-3">
+
+      <div class="card-manual h-100 d-flex flex-column">
+
+        <!-- LOGO / ICONO -->
+
+        <div class="text-center">
+
+          <div class="icon-chip green mb-3 mx-auto">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+
+        </div>
+
+
+        <!-- TITULO -->
+
+        <h4 class="fw-bold text-center">
+          🧠 Científico de Datos
+        </h4>
+
+
+        <!-- DESCRIPCIÓN -->
+
+        <p class="text-muted text-justify">
+          Utiliza estadística, matemáticas y programación para descubrir
+          patrones, construir modelos y realizar predicciones.
+        </p>
+
+
+        <!-- ESPECIALIZACIÓN -->
+
+        <p class="text-muted text-justify">
+
+          Trabaja con
+          <strong class="text-success">Python</strong>,
+          estadística, Machine Learning, Deep Learning,
+          modelos predictivos e inteligencia artificial.
+
+        </p>
+
+
+        <!-- ÁREAS -->
+
+        <div class="small mt-auto text-justify">
+
+          <strong>🤖 Desarrolla:</strong>
+
+          <div class="mt-2">
+
+            📈 Modelos Predictivos<br>
+            🤖 Machine Learning<br>
+            🧠 Redes Neuronales<br>
+            🔮 Predicciones<br>
+            ⚡ Soluciones de IA
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+      <!-- ======================================================
+           RELACIÓN ENTRE LOS 4 ROLES
+      ======================================================= -->
+
+      <div class="mt-5">
+
+        <div class="card-manual">
+
+          <h4 class="fw-bold">
+            🔗 ¿Cómo se conectan estos cuatro perfiles?
+          </h4>
+
+          <p class="text-muted">
+            Estos profesionales no trabajan necesariamente de forma aislada.
+            En un ecosistema de datos moderno pueden formar una cadena de valor
+            donde cada especialidad aporta una pieza diferente.
+          </p>
+
+          <div class="text-center fs-5 mt-4">
+
+            👨‍💻
+            <strong class="text-primary">Software</strong>
+
+            ➜
+
+            🏗️
+            <strong class="text-success">Datos</strong>
+
+            ➜
+
+            📊
+            <strong class="text-warning">Análisis</strong>
+
+            ➜
+
+            🧠
+            <strong class="text-danger">IA</strong>
+
+            ➜
+
+            💡
+            <strong>Decisiones</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================================
+     TOP 10 LENGUAJES + HERRAMIENTAS DE DATOS
+======================================================= -->
+
+<div class="mt-5">
+
+  <span class="section-kicker">
+    // 02 · Lenguajes y Herramientas Tecnológicas
+  </span>
+
+  <h3 class="fw-bold mt-2">
+    🔥 Top 10 Lenguajes de Programación + 2 Herramientas Clave
+  </h3>
+
+  <p class="text-muted">
+    No existe un único lenguaje "mejor". Cada lenguaje está diseñado o
+    especializado para determinados problemas, plataformas y ecosistemas.
+    Además, existen herramientas especializadas que complementan la
+    programación y son fundamentales para el análisis y la gestión de datos.
+    La verdadera habilidad profesional consiste en
+    <strong>elegir la herramienta adecuada para cada problema.</strong>
+  </p>
+
+
+  <div class="row g-3 mt-3">
+
+
+    <!-- ==================================================
+         01 PYTHON
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-brands fa-python fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">01</span>
+            <h5 class="fw-bold mb-0">Python</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          🧠 IA · 📊 Datos · 🤖 Automatización · 🌐 Backend · 🔬 Ciencia
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         02 JAVASCRIPT
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-brands fa-js fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">02</span>
+            <h5 class="fw-bold mb-0">JavaScript</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          🌐 Web · ⚡ Frontend · 🖥️ Backend · 📱 Apps · 🔌 APIs
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         03 JAVA
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-brands fa-java fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">03</span>
+            <h5 class="fw-bold mb-0">Java</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          🏢 Enterprise · 📱 Android · ☁️ Backend · 🔐 Sistemas críticos
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         04 C#
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-solid fa-hashtag fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">04</span>
+            <h5 class="fw-bold mb-0">C#</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          🪟 .NET · 🌐 Web · 📱 Mobile · 🎮 Games · 🏢 Enterprise
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         05 C / C++
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-solid fa-code fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">05</span>
+            <h5 class="fw-bold mb-0">C / C++</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          ⚙️ Sistemas · 🎮 Games · 🔌 Embebidos · 🚀 Alto rendimiento
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         06 SQL
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-solid fa-database fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">06</span>
+            <h5 class="fw-bold mb-0">SQL</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          🗄️ Bases de Datos · 📊 Analytics · 🔎 Consultas · 🏢 Business
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         07 PHP
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-brands fa-php fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">07</span>
+            <h5 class="fw-bold mb-0">PHP</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          🌐 Web · 🧩 Backend · 🛒 E-commerce · ⚡ Laravel
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         08 TYPESCRIPT
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-solid fa-code fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">08</span>
+            <h5 class="fw-bold mb-0">TypeScript</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          ⚡ Web · ⚛️ React · 🟢 Node.js · 🏢 Aplicaciones grandes
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         09 RUST
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-solid fa-code fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">09</span>
+            <h5 class="fw-bold mb-0">Rust</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          🦀 Sistemas · 🔐 Seguridad · 🚀 Rendimiento · ⚙️ Infraestructura
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         10 SWIFT
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-brands fa-swift fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">10</span>
+            <h5 class="fw-bold mb-0">Swift</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          🍎 iOS · 📱 iPhone · 💻 macOS · 🧩 Aplicaciones Apple
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         11 POWER BI
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-solid fa-chart-pie fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">11 · BI</span>
+            <h5 class="fw-bold mb-0">Power BI</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          📊 Dashboards · 📈 KPI · 🧮 DAX · 🔄 Power Query · 💡 Insights
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         12 EXCEL
+    =================================================== -->
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+
+      <div class="card-manual h-100">
+
+        <div class="d-flex align-items-center gap-3 mb-3">
+
+          <i class="fa-solid fa-table-cells fa-2x"></i>
+
+          <div>
+            <span class="small text-muted">12 · DATA</span>
+            <h5 class="fw-bold mb-0">Excel</h5>
+          </div>
+
+        </div>
+
+        <p class="text-muted small mb-0">
+          📋 Datos · 🧮 Fórmulas · 🔄 Power Query · 📊 Análisis · 📈 Reportes
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- ======================================================
+       ACLARACIÓN
+  ======================================================= -->
+
+  <div class="mt-4">
+
+    <div class="card-manual">
+
+      <div class="d-flex align-items-center gap-3">
+
+        <i class="fa-solid fa-circle-info fa-lg"></i>
+
+        <p class="text-muted small mb-0">
+
+          💡 <strong>Importante:</strong>
+          <strong class="text-primary">Python, JavaScript, Java, C#, C/C++,
+          PHP, TypeScript, Rust y Swift</strong> son lenguajes de programación.
+          <strong class="text-success">SQL</strong> es un lenguaje especializado
+          en trabajar con datos y bases de datos. Por otro lado,
+          <strong class="text-warning">Power BI y Excel</strong> son herramientas
+          fundamentales para el análisis, transformación y visualización de datos.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+      <!-- ======================================================
+           IDEA FINAL
+      ======================================================= -->
+
+      <div class="mt-5">
+
+        <div class="card-manual text-center">
+
+          <div class="display-5 mb-3">
+            💡 💻 🗄️ 📊 🏗️ 🤖 🧠
+          </div>
+
+          <h3 class="fw-bold">
+            La programación es el lenguaje de la transformación digital.
+          </h3>
+
+          <p class="text-muted lead-soft mb-0">
+
+            Hoy no basta con saber escribir código.
+            El profesional moderno necesita comprender
+            <strong class="text-primary">software</strong>,
+            <strong class="text-success">datos</strong>,
+            <strong class="text-warning">arquitectura</strong>,
+            <strong class="text-danger">automatización</strong> e
+            <strong class="text-primary">inteligencia artificial</strong>.
+
+            <br><br>
+
+            🚀 <strong>
+              El código construye el sistema.
+              Los datos explican lo que ocurre.
+              La IA ayuda a descubrir lo que puede ocurrir.
+              Y el profesional decide qué hacer con esa información.
+            </strong>
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<hr class="section-divider">
+
+<!-- 2. PYTHON -->
+<section id="python" class="section-pad bg-white">
+  <div class="container">
+    <div class="cyber-river-card">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <span class="section-kicker">// 01 · El Lenguaje Universal</span>
+          <h2 class="section-title">¿Qué es Python y su impacto mundial?</h2>
+          <p class="lead-soft mt-3">Python es un lenguaje de <strong class="kw-blue">alto nivel</strong>, <strong class="kw-yellow">multiparadigma</strong> y de <strong class="kw-green">tipado dinámico</strong>. Creado en 1991 por Guido van Rossum bajo la filosofía: <em>"La legibilidad cuenta"</em>.</p>
+          
+          <ul class="list-unstyled mt-4 fs-5 text-muted">
+            <li class="mb-3">🏆 <strong>#1 del Mundo:</strong> Ranking global TIOBE y PYPL (2025/2026).</li>
+            <li class="mb-3">🌍 <strong>Usado por Gigantes:</strong> Google, Netflix, Spotify y NASA.</li>
+            <li class="mb-3">🧠 <strong>Dominio Total:</strong> Se aplica en Web, Seguridad, Electrónica, Robótica y es el motor central de la Inteligencia Artificial.</li>
+          </ul>
+        </div>
+        <div class="col-lg-5 text-center">
+          <div class="card-manual shadow-none bg-transparent border-0">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Guido-portrait-2014-drc.jpg" alt="Guido van Rossum" class="img-fluid rounded-circle border border-4 border-primary mb-3" style="width: 180px; height: 180px; object-fit: cover;">
+            <h4 class="fw-bold">Guido van Rossum</h4>
+            <p class="text-muted">Creador de Python</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo" width="60">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- 02 · INSTALACIÓN Y ENTORNO VIRTUAL (.VENV) (Exactamente como se pidió) -->
+<section id="entorno" class="section-pad">
+  <div class="container">
+    <div class="cyber-river-card">
+      <span class="section-kicker">// 02 · Preparación del Entorno Aislado</span>
+      <h2 class="section-title">Instalación y Configuración del Entorno Seguro (.venv)</h2>
+      <p class="lead-soft mt-2">
+        La regla de oro del ingeniero profesional es la <strong>segregación de dependencias</strong>. Nunca instales paquetes de terceros directamente en el Python del sistema operativo; utiliza siempre un <strong class="kw-blue">Virtual Environment (.venv)</strong>.
+      </p>
+
+      <div class="row g-4 mt-2">
+        <div class="col-lg-6">
+          <div class="card-manual d-flex flex-column h-100">
+            <div class="d-flex gap-3 mb-3">
+              <div class="icon-chip yellow"><i class="bi bi-filetype-py"></i></div>
+              <div><h4 class="h5 mb-1 fw-bold">1. Descargar e Instalar Python</h4></div>
+            </div>
+            <p class="text-muted">Descarga la versión estable oficial desde <a href="https://www.python.org/downloads/" target="_blank" class="fw-bold">python.org/downloads</a>.</p>
+            <div class="alert alert-warning py-3 small fs-6">
+              <i class="bi bi-exclamation-triangle-fill"></i> <strong>¡CRÍTICO EN WINDOWS!</strong> Marca la casilla <code>"Add python.exe to PATH"</code> al inicio de la instalación.
+            </div>
+            <div class="env-img-wrapper mt-auto">
+              <img src="https://tutorial.recursospython.com/img/instalar-python.png" alt="Asegúrate de marcar Add Python to PATH" class="env-img env-img-contain">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-manual d-flex flex-column h-100">
+            <div class="d-flex gap-3 mb-3">
+              <div class="icon-chip"><i class="bi bi-code-square"></i></div>
+              <div><h4 class="h5 mb-1 fw-bold">2. Visual Studio Code & Extensión</h4></div>
+            </div>
+            <p class="text-muted">Descarga el editor desde <a href="https://code.visualstudio.com/" target="_blank" class="fw-bold">code.visualstudio.com</a> e instala la extensión oficial de <strong>Microsoft Python</strong> presionando <code>Ctrl+Shift+X</code>.</p>
+            <div class="env-img-wrapper mt-auto">
+              <img src="https://code.visualstudio.com/assets/docs/editing/userinterface/hero.png" alt="Interfaz de VS Code" class="env-img">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card-manual">
+            <div class="mb-4 text-center">
+              <img id="img-python-instalar" src="python_instalar.png" alt="Instalación de Python" class="img-fluid w-100 rounded shadow-sm" style="border: 1px solid var(--line); object-fit: cover; cursor: pointer;">
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  new Viewer(document.getElementById('img-python-instalar'), {
+                    navbar: false,
+                    toolbar: {
+                      zoomIn: 1,
+                      zoomOut: 1,
+                      oneToOne: 1,
+                      reset: 1,
+                      close: 1
+                    }
+                  });
+                });
+              </script>
+            </div>
+            <h4 class="h5 mb-3 fw-bold"><i class="bi bi-terminal text-primary"></i> 3. Protocolo de Consola: Creación y Activación de Entornos en VS Code</h4>
+            <p class="text-muted mb-4 fs-5">Imagina que ya abriste la carpeta de tu proyecto vacío en Visual Studio Code. Para empezar a trabajar como un profesional, necesitamos crear una cápsula protectora (el entorno virtual) usando la terminal integrada del editor. Sigue estos pasos exactos:</p>
+            
+            <ol class="list-group list-group-numbered mb-4 shadow-sm border-0">
+              <li class="list-group-item text-muted fs-5" style="background: var(--bg);"><strong>Abre la Terminal en VS Code:</strong> Ve al menú superior y haz clic en <code>Terminal &gt; New Terminal</code> (o presiona <kbd>Ctrl</kbd> + <kbd>ñ</kbd>). Verás que se abre un panel negro en la parte inferior.</li>
+              <li class="list-group-item text-muted fs-5" style="background: var(--bg);"><strong>Crea la cápsula:</strong> Copia el comando <em>PASO 1</em> de abajo, pégalo en esa terminal inferior y presiona Enter. Notarás que a la izquierda aparece una nueva carpeta llamada <code>.venv</code>.</li>
+              <li class="list-group-item text-muted fs-5" style="background: var(--bg);"><strong>Enciende la cápsula (Activar):</strong> En Windows, la terminal por defecto de VS Code es PowerShell. Copia y pega el comando del <em>PASO 2</em>. Sabrás que funcionó porque aparecerá un texto verde <code>(.venv)</code> al inicio de tu línea de comandos.</li>
+              <li class="list-group-item text-muted fs-5" style="background: var(--bg);"><strong>Instala las herramientas:</strong> Ahora que el escudo está arriba, usa <code>pip install</code> (<em>PASO 3</em>) para descargar de Internet las librerías necesarias.</li>
+            </ol>
+
+            <div class="position-relative">
+              <div class="code-toolbar">
+                <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar Comandos</button>
+              </div>
+              <pre><code class="language-bash"># PASO 1: Crear el entorno virtual en la carpeta actual de VS Code
+python -m venv .venv
+
+# PASO 2: Activar el entorno (Selecciona el de tu sistema operativo):
+# 👉 Para Windows (Terminal PowerShell en VS Code):
+.venv\Scripts\Activate.ps1
+# 👉 Para Windows (Si usas CMD tradicional en VS Code):
+.venv\Scripts\activate.bat
+# 👉 Para macOS / Linux (Macbook o Ubuntu):
+source .venv/bin/activate
+
+# PASO 3: Instalar las dependencias del proyecto de golpe
+pip install pandas matplotlib streamlit openpyxl requests pyodbc</code></pre>
+            </div>
+            
+            <div class="alert alert-success py-3 mt-4 mb-0 fs-6 border-0" style="background-color: var(--py-blue-pale); color: var(--py-blue-deep);">
+              <i class="bi bi-check-circle-fill"></i> <strong>Tip Experto:</strong> Si VS Code te pregunta en una notificación emergente abajo a la derecha: <em>"We noticed a new environment has been created. Do you want to select it for the workspace folder?"</em> haz clic en <strong>Yes</strong> inmediatamente.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN COMPILADOR WEB BÁSICO -->
+<section class="section-pad bg-light" style="padding-bottom: 2rem;">
+  <div class="container">
+    <div class="alert shadow-sm d-flex align-items-center justify-content-between flex-wrap gap-3 mb-0" style="background-color: #fff8e1; border: 1px solid #ffe082; border-radius: var(--radius);">
+      <div>
+        <h4 class="fw-bold mb-1" style="color: #b08d00;"><i class="bi bi-terminal-fill"></i> Compilador Web de Python</h4>
+        <p class="mb-0 text-muted" style="font-size: 1.05rem;">Puedes usar este compilador web básico para ejecutar algunos códigos de prueba durante la clase.</p>
+      </div>
+      <a href="https://juancitopena.github.io/JPV_PyStudio/" target="_blank" class="btn fw-bold px-4 py-2" style="background: var(--py-yellow); color: #111; border-radius: 8px; box-shadow: 0 4px 10px rgba(245, 197, 24, 0.3);">
+        <i class="bi bi-box-arrow-up-right"></i> Abrir JPV PyStudio
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- 4. FUNDAMENTOS Y ALGORITMOS -->
+<section id="fundamentos" class="section-pad bg-white">
+  <div class="container">
+    <div class="cyber-river-card">
+      <span class="section-kicker">// 03 · Fundamentos Lógicos (Con Ejecución en Navegador)</span>
+      <h2 class="section-title">Haz que Python Piense: Definición y Sintaxis Viva</h2>
+      <p class="lead-soft mt-3">Aprenderemos <strong>Variables, Tipado Dinámico, Estructuras de Control y Bucles</strong>. Cada concepto está definido al detalle y acompañado de ejemplos que puedes ejecutar en esta misma pantalla.</p>
+
+      <!-- TEMA 1: Variables y Tipos -->
+      <div class="card-manual mt-5">
+        <h4 class="fw-bold"><i class="bi bi-box text-primary"></i> 1. Variables y Tipado Dinámico en Python</h4>
+        <p class="text-muted fs-5">
+          <strong>Definición:</strong> Una variable es un espacio de memoria RAM reservado para almacenar información. 
+          En Python, el tipado es <strong>Dinámico</strong>. Esto significa que no necesitas decirle a la computadora qué tipo de dato es (como en C# <code>int edad = 30;</code>). Python lo adivina instantáneamente.
+          <br><br><strong>Tipos Comunes:</strong>
+          <ul>
+            <li><code>String (str)</code>: Cadena de texto. Va entre comillas ("").</li>
+            <li><code>Integer (int)</code>: Número entero (positivo o negativo sin decimales).</li>
+            <li><code>Float (float)</code>: Número decimal (flotante).</li>
+            <li><code>Boolean (bool)</code>: Valor lógico de Verdadero (<code>True</code>) o Falso (<code>False</code>).</li>
+          </ul>
+          <div class="alert alert-info py-2 small border-0"><i class="bi bi-info-circle-fill"></i> <strong>¿Cómo ejecutar?</strong> Haz clic en el botón amarillo <strong>Probar</strong> en el bloque de código abajo. Se abrirá la Terminal Web donde podrás ver, editar y ejecutar el código usando el botón verde.</div>
+        </p>
+        
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="openCompiler('code-vars')"><i class="bi bi-play-fill"></i> Probar</button>
+          </div>
+          <pre><code id="code-vars" class="language-python"># Problema: Guardar y auditar los datos de un paciente
+nombre_paciente = "Juan Pérez"       # str
+edad_paciente = 45                   # int
+peso_kg = 80.5                       # float
+tiene_seguro = True                  # bool
+
+# Imprimir los valores y validar sus tipos internamente
+print("--- DATOS DEL PACIENTE ---")
+print(f"Nombre: {nombre_paciente} | Tipo: {type(nombre_paciente)}")
+print(f"Edad: {edad_paciente} | Tipo: {type(edad_paciente)}")
+print(f"Peso (Kg): {peso_kg} | Tipo: {type(peso_kg)}")
+print(f"Seguro Activo: {tiene_seguro} | Tipo: {type(tiene_seguro)}")
+</code></pre>
+        </div>
+      </div>
+
+      <!-- TEMA 2: Operadores Matemáticos -->
+      <div class="card-manual mt-5">
+        <h4 class="fw-bold"><i class="bi bi-calculator text-success"></i> 2. Operadores Matemáticos Todos los Niveles</h4>
+        <p class="text-muted fs-5">
+          <strong>Definición:</strong> Símbolos que instruyen a Python a realizar cálculos matemáticos.
+          <br><strong>Operadores:</strong> Suma <code>+</code>, Resta <code>-</code>, División <code>/</code>, Multiplicación <code>*</code>, Promedio (Suma / cantidad), Potencia <code>**</code>, y Módulo <code>%</code> (El residuo de una división, súper útil para saber si un número es par o impar).
+        </p>
+        <!-- Contexto Ejemplo 1 -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #10B981;">
+          <h5 class="text-dark fw-bold"><i class="bi bi-1-circle-fill" style="color: #10B981;"></i> Caso Práctico: Calculadora Estática</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Se requiere un script que realice las 4 operaciones básicas inmediatamente al ejecutarse.<br>
+            <strong>Conceptos Clave:</strong> Asignación dura (hardcoding) de variables numéricas y uso de f-strings format para interpolar variables.<br>
+            <strong>Valor del Ejercicio:</strong> Fundamentar la sintaxis matemática pura de Python libre de distracciones.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-calc-static')"><i class="bi bi-play-fill"></i> Probar Estático</button>
+          </div>
+          <pre><code id="code-calc-static" class="language-python"># Ejemplo 1: Operaciones Básicas (Valores fijos)
+valor1 = 150
+valor2 = 25
+
+print("--- CALCULADORA BÁSICA (Fija) ---")
+print(f"Valores base: A = {valor1}, B = {valor2}\n")
+print(f"Suma (+): {valor1} + {valor2} = {valor1 + valor2}")
+print(f"Resta (-): {valor1} - {valor2} = {valor1 - valor2}")
+print(f"Multiplicación (*): {valor1} * {valor2} = {valor1 * valor2}")
+print(f"División (/): {valor1} / {valor2} = {valor1 / valor2}")
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 2 -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid var(--py-yellow);">
+          <h5 class="text-dark fw-bold"><i class="bi bi-2-circle-fill" style="color: var(--py-yellow);"></i> Caso Práctico: Calculadora Interactiva</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> El sistema debe adaptarse a cualquier usuario, preguntándole dinámicamente qué números desea calcular.<br>
+            <strong>Conceptos Clave:</strong> Función <code>input()</code> para entrada de datos (I/O) y casting <code>float()</code> para convertir texto a decimal.<br>
+            <strong>Valor del Ejercicio:</strong> Enseñar la interactividad real del software. Un programa sin datos del usuario es un programa ciego.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-calc-interactive')"><i class="bi bi-play-fill"></i> Probar Interactivo</button>
+          </div>
+          <pre><code id="code-calc-interactive" class="language-python"># Ejemplo 2: Calculadora Interactiva (Pidiendo datos)
+print("--- CALCULADORA INTERACTIVA ---")
+
+# input() pedirá los números en pantalla al ejecutar.
+num1 = float(input("Ingresa el primer número: "))
+num2 = float(input("Ingresa el segundo número: "))
+
+print(f"\n✅ Valores ingresados: A = {num1}, B = {num2}\n")
+print(f"Suma: {num1 + num2}")
+print(f"Resta: {num1 - num2}")
+print(f"Multiplicación: {num1 * num2}")
+print(f"División: {num1 / num2}")
+</code></pre>
+        </div>
+        
+        <!-- Contexto Ejemplo 3 -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid var(--py-blue);">
+          <h5 class="text-dark fw-bold"><i class="bi bi-3-circle-fill" style="color: var(--py-blue);"></i> Caso Práctico: Finanzas y Promedios</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Un analista necesita calcular las ventas totales y el promedio de ventas trimestrales (Q1, Q2, Q3) de una sucursal.<br>
+            <strong>Conceptos Clave:</strong> Asignación múltiple en una sola línea y control de decimales en strings <code>:.2f</code>.<br>
+            <strong>Valor del Ejercicio:</strong> Preparación directa para el análisis de datos (Data Science) aplicados a negocios reales.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-math-finanzas')"><i class="bi bi-play-fill"></i> Probar Finanzas</button>
+          </div>
+          <pre><code id="code-math-finanzas" class="language-python"># Ejemplo 3: Cálculos Financieros y Promedios
+ventas_q1, ventas_q2, ventas_q3 = 1000, 1500, 1200
+total_ventas = ventas_q1 + ventas_q2 + ventas_q3
+promedio = total_ventas / 3
+
+print(f"Total Ventas: ${total_ventas}")
+print(f"Promedio de Ventas: ${promedio:.2f}")
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 4 -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #F43F5E;">
+          <h5 class="text-dark fw-bold"><i class="bi bi-4-circle-fill" style="color: #F43F5E;"></i> Caso Práctico: Operadores Especiales (Potencia y Módulo)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Un criptógrafo necesita elevar números grandes a la potencia, y un sistema bancario necesita saber si el ID de un cajero es par o impar.<br>
+            <strong>Conceptos Clave:</strong> Operador de Potencia <code>**</code> y Operador de Módulo <code>%</code> (Residuo).<br>
+            <strong>Valor del Ejercicio:</strong> Dominar operadores esenciales para algoritmos matemáticos complejos y bucles iterativos.
+          </p>
+        </div>
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-math-especial')"><i class="bi bi-play-fill"></i> Probar Módulo</button>
+          </div>
+          <pre><code id="code-math-especial" class="language-python"># Ejemplo 4: Potencias y Módulo (Saber si es Par o Impar)
+base, exponente = 2, 8
+potencia = base ** exponente  # 2 elevado a 8 = 256
+print(f"2 elevado a la 8 es: {potencia}\n")
+
+numero = 15
+print(f"El módulo de {numero} / 2 es {numero % 2}.")
+print("👉 Regla de oro: Si el residuo es 1 es IMPAR, si es 0 es PAR.")
+</code></pre>
+        </div>
+      </div>
+
+      <!-- TEMA 3: Condicionales y Comparaciones -->
+      <div class="card-manual mt-5">
+        <h4 class="fw-bold"><i class="bi bi-sign-turn-right text-danger"></i> 3. Comparadores y Estructuras de Control (If / Elif / Else)</h4>
+        <p class="text-muted fs-5">
+          <strong>Definición Comparadores:</strong> Comparan valores y devuelven True/False. Igual <code>==</code>, Diferente <code>!=</code>, Mayor <code>></code>, Menor <code><</code>, Mayor o igual <code>>=</code>, Menor o igual <code><=</code>.
+          <br><strong>Control (if/elif/else):</strong> Le da inteligencia a tu programa. Si la condición se cumple, entra a ese bloque de código.
+        </p>
+        <!-- Contexto Ejemplo 1: Comparadores -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #10B981;">
+          <h5 class="text-dark fw-bold"><i class="bi bi-1-circle-fill" style="color: #10B981;"></i> Caso Práctico: El Motor de la Verdad (Comparadores)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Antes de tomar decisiones, la computadora necesita evaluar si algo es cierto o falso con respecto al mundo real.<br>
+            <strong>Conceptos Clave:</strong> Operadores de Relación (<code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>) y el retorno de valores Booleanos.<br>
+            <strong>Valor del Ejercicio:</strong> Todo sistema de control de acceso e Inteligencia Artificial se basa en estas decisiones lógicas en su capa más baja.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-cond-comp')"><i class="bi bi-play-fill"></i> Probar Comparadores</button>
+          </div>
+          <pre><code id="code-cond-comp" class="language-python"># Ejemplo 1: Operadores de Comparación en Acción
+limite_velocidad = 80
+velocidad_actual = 95
+
+print("--- EVALUACIÓN DE RADARES DE TRÁNSITO ---")
+print(f"Velocidad Registrada: {velocidad_actual} km/h")
+print(f"Límite Establecido: {limite_velocidad} km/h\n")
+
+print(f"¿Excedió el límite? ({velocidad_actual} > {limite_velocidad}):", velocidad_actual > limite_velocidad)
+print(f"¿Iba a una velocidad menor? ({velocidad_actual} < {limite_velocidad}):", velocidad_actual < limite_velocidad)
+print(f"¿Iba exactamente al límite? ({velocidad_actual} == {limite_velocidad}):", velocidad_actual == limite_velocidad)
+print(f"¿Velocidad era diferente al límite? ({velocidad_actual} != {limite_velocidad}):", velocidad_actual != limite_velocidad)
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 2: Login -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid var(--py-yellow);">
+          <h5 class="text-dark fw-bold"><i class="bi bi-2-circle-fill" style="color: var(--py-yellow);"></i> Caso Práctico: Simulación de Login Bancario (if / else)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Un sistema bancario debe permitir el acceso SOLO a usuarios con las credenciales correctas.<br>
+            <strong>Conceptos Clave:</strong> Estructura de Control Bifurcada (<code>if</code> y <code>else</code>), Operador de Igualdad <code>==</code> y Operador Lógico <code>and</code>.<br>
+            <strong>Valor del Ejercicio:</strong> Es el pilar absoluto de la Ciberseguridad Básica y Validación de Usuarios en el desarrollo de software.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-cond-login')"><i class="bi bi-play-fill"></i> Probar Login</button>
+          </div>
+          <pre><code id="code-cond-login" class="language-python"># Ejemplo 2: Sistema de Login Seguro
+print("--- ACCESO BANCARIO ---")
+
+usuario = input("Ingresa tu usuario (pista: admin): ")
+clave = input("Ingresa tu contraseña (pista: 1234): ")
+
+# Base de datos simulada
+usuario_db = "admin"
+clave_db = "1234"
+
+# Condicional Múltiple (Ambas cosas deben ser ciertas)
+if usuario == usuario_db and clave == clave_db:
+    print("\n✅ ACCESO CONCEDIDO: Bienvenido a tu cuenta bancaria.")
+else:
+    print("\n❌ ACCESO DENEGADO: Credenciales incorrectas, contacte soporte.")
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 3: Múltiples condiciones -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid var(--py-blue);">
+          <h5 class="text-dark fw-bold"><i class="bi bi-3-circle-fill" style="color: var(--py-blue);"></i> Caso Práctico: Lógica Multi-Ruta de RRHH (elif)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> El departamento de Recursos Humanos necesita clasificar automáticamente el nivel salarial de los empleados según su puntaje de desempeño.<br>
+            <strong>Conceptos Clave:</strong> Estructura <code>elif</code> para enlazar múltiples evaluaciones jerárquicas.<br>
+            <strong>Valor del Ejercicio:</strong> Enseña cómo ramificar la lógica de negocio en más de 2 caminos sin tener que anidar código innecesaria y complejamente.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-cond-hr')"><i class="bi bi-play-fill"></i> Probar Desempeño</button>
+          </div>
+          <pre><code id="code-cond-hr" class="language-python"># Ejemplo 3: Evaluación de Rendimiento Laboral
+puntaje = float(input("Ingresa el puntaje del empleado (0 a 100): "))
+
+print("\n--- RESULTADO DE LA EVALUACIÓN ---")
+
+if puntaje >= 90:
+    print("🌟 Nivel: EXCELENTE (Aplica para aumento del 20%)")
+elif puntaje >= 75:
+    print("✅ Nivel: BUENO (Aplica para bono estándar)")
+elif puntaje >= 60:
+    print("⚠️ Nivel: REGULAR (Requiere plan de mejora)")
+else:
+    print("❌ Nivel: DEFICIENTE (En riesgo de despido)")
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 4: Match-Case Básico -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #8B5CF6;">
+          <h5 class="text-dark fw-bold"><i class="bi bi-4-circle-fill" style="color: #8B5CF6;"></i> Caso Práctico: Introducción al 'Switch' (match-case básico)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Se necesita traducir el número del día de la semana (1 al 7) a su nombre en texto de manera rápida y directa.<br>
+            <strong>Conceptos Clave:</strong> Uso simple de <code>match - case</code> para mapeos exactos y agrupación con <code>|</code> (OR).<br>
+            <strong>Valor del Ejercicio:</strong> Entender la sintaxis básica de esta nueva estructura antes de aplicarla en menús o lógica más compleja.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-cond-match-basic')"><i class="bi bi-play-fill"></i> Probar Días</button>
+          </div>
+          <pre><code id="code-cond-match-basic" class="language-python"># Ejemplo 4: Días de la semana con Match-Case (Switch Básico)
+numero_dia = input("Ingresa un número del 1 al 7: ")
+
+match numero_dia:
+    case "1":
+        print("📅 Es Lunes (Inicio de semana laboral)")
+    case "2":
+        print("📅 Es Martes")
+    case "3":
+        print("📅 Es Miércoles (Mitad de semana)")
+    case "4":
+        print("📅 Es Jueves")
+    case "5":
+        print("🎉 Es Viernes (¡Por fin!)")
+    case "6" | "7":
+        # Podemos agrupar múltiples casos en una sola línea usando la barra vertical (|)
+        print("🛌 ¡Es Fin de Semana! Tiempo de descansar.")
+    case _:
+        print("❌ Número inválido. La semana solo tiene 7 días.")
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 5: Match-Case Avanzado (Cajero) -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #F43F5E;">
+          <h5 class="text-dark fw-bold"><i class="bi bi-5-circle-fill" style="color: #F43F5E;"></i> Caso Práctico: 'Switch' Avanzado (Menú Interactivo)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Un cajero automático debe ejecutar diferentes acciones exactas según la opción del menú elegida, sin hacer una cadena repetitiva y fea de if/elifs.<br>
+            <strong>Conceptos Clave:</strong> La estructura <code>match - case</code> (Implementada en Python 3.10+ como el equivalente al Switch de Java/C#).<br>
+            <strong>Valor del Ejercicio:</strong> Te pone a la vanguardia de las características modernas de Python, creando código extremadamente legible en interfaces y menús de consola.
+          </p>
+        </div>
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-cond-match-atm')"><i class="bi bi-play-fill"></i> Probar Menú</button>
+          </div>
+          <pre><code id="code-cond-match-atm" class="language-python"># Ejemplo 5: Menú de Cajero Automático usando Match-Case
+print("--- MENÚ DEL CAJERO ---")
+print("1. Consultar Balance")
+print("2. Retirar Efectivo")
+print("3. Cambiar Pin")
+print("4. Hablar con Asesor")
+
+opcion = input("Selecciona una opción del menú (1 al 4): ")
+
+# match evalúa la opción exacta, y case ejecuta el bloque correspondiente
+match opcion:
+    case "1":
+        print("\n💰 Tu balance actual es: $1,500.00")
+    case "2":
+        print("\n💵 Entregando efectivo... Por favor, retíralo.")
+    case "3":
+        print("\n🔒 Ingresa tu pin actual para cambiarlo.")
+    case "4":
+        print("\n🎧 Transfiriendo a un Asesor, por favor espera...")
+    case _:
+        # El case _ funciona como 'default' o 'else' para cualquier otra cosa
+        print("\n⚠️ OPCIÓN INVÁLIDA. Intenta de nuevo seleccionando del 1 al 4.")
+</code></pre>
+        </div>
+      </div>
+
+      <!-- TEMA 4: Bucles (For / While) -->
+      <div class="card-manual mt-5">
+        <h4 class="fw-bold"><i class="bi bi-arrow-repeat text-warning"></i> 4. Bucles y Automatización Continua (Ciclos)</h4>
+        <p class="text-muted fs-5">
+          <strong>Bucle For (y Foreach):</strong> Se usa cuando <strong>sabes</strong> exactamente cuántas veces se repetirá algo o quieres recorrer una colección (ej. un rango de 1 al 100, o una lista de elementos). En Python, el <code>for</code> actúa de forma nativa como un <code>foreach</code>.<br>
+          <strong>Bucle While:</strong> Se usa cuando <strong>NO sabes</strong> cuántas veces se repetirá, ya que se seguirá repitiendo MIENTRAS una condición sea verdadera.<br>
+          <strong>Bucle Do-While:</strong> Python no tiene la palabra <code>do-while</code>, pero se emula de forma elegante usando <code>while True:</code> y rompiendo el ciclo con la orden <code>break</code>.
+        </p>
+        
+        <!-- Contexto Ejemplo 1: Naturales (While) -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #10B981;">
+          <h5 class="text-dark fw-bold"><i class="bi bi-1-circle-fill" style="color: #10B981;"></i> Caso Práctico: Bucle While (Números Naturales hasta el 100)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Contar e imprimir los números naturales del 1 al 100 de forma ascendente.<br>
+            <strong>Lógica del Algoritmo:</strong> Iniciamos una variable en 1 y usamos un bucle para imprimirla y sumarle +1 en cada paso, deteniéndonos justo cuando sobrepase el 100.<br>
+            <strong>Conceptos Clave:</strong> Estructura <code>while</code>, contador, y el parámetro <code>end=" "</code> en el print para imprimir en la misma línea.<br>
+            <strong>Valor del Ejercicio:</strong> Es el ciclo de control más fundamental. Enseña a inicializar variables y evitar bucles infinitos.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-loop-naturales')"><i class="bi bi-play-fill"></i> Probar Naturales</button>
+          </div>
+          <pre><code id="code-loop-naturales" class="language-python"># Ejemplo 1: Imprimir números del 1 al 100 usando While
+print("--- NÚMEROS NATURALES HASTA EL 100 ---")
+
+numero = 1
+# Mientras el número sea menor o igual a 100, repite:
+while numero <= 100:
+    # Usamos end=", " para que no haga un salto de línea por cada número
+    print(numero, end=", ")
+    numero += 1  # MUY IMPORTANTE: Aumentar el contador para no crear un bucle infinito
+    
+print("\n✅ Conteo finalizado.")
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 2: Pares e Impares (Simulación Do-While) -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid var(--py-yellow);">
+          <h5 class="text-dark fw-bold"><i class="bi bi-2-circle-fill" style="color: var(--py-yellow);"></i> Caso Práctico: Simulación de Do-While (Pares e Impares al 100)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Clasificar números del 1 al 100 en pares e impares de forma visual, asegurando que el código se ejecute AL MENOS una vez (simulando un Do-While).<br>
+            <strong>Lógica Matemática:</strong> ¿Cómo sabe la computadora si un número es par? Usando el operador Módulo (<code>%</code>) que calcula el residuo. Si divides un número entre 2 y sobra 0, es PAR (<code>n % 2 == 0</code>). Si sobra 1, es IMPAR.<br>
+            <strong>Conceptos Clave:</strong> Bucle infinito <code>while True:</code>, listas <code>[]</code>, operador de módulo <code>%</code> y la instrucción <code>break</code> para escapar.<br>
+            <strong>Valor del Ejercicio:</strong> Enseña a traducir lógica matemática pura al lenguaje de programación y dominar el patrón Do-While que Python no trae por defecto.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-loop-dowhile')"><i class="bi bi-play-fill"></i> Probar Do-While</button>
+          </div>
+          <pre><code id="code-loop-dowhile" class="language-python"># Ejemplo 2: Separar Pares e Impares hasta 100 (Estilo Do-While)
+print("--- PARES E IMPARES AL 100 ---")
+
+n = 1
+pares_encontrados = []
+impares_encontrados = []
+
+# while True simula el 'do'. Ejecuta el bloque infinitamente hasta encontrar el 'break'
+while True:
+    if n % 2 == 0:
+        pares_encontrados.append(str(n))
+    else:
+        impares_encontrados.append(str(n))
+        
+    n += 1
+    
+    # Esta es nuestra condición 'while' al final del ciclo
+    if n > 100:
+        break # ¡Rompe el bucle!
+
+print("🔵 NÚMEROS PARES:")
+print(", ".join(pares_encontrados))
+
+print("\n🔴 NÚMEROS IMPARES:")
+print(", ".join(impares_encontrados))
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 3: Primos (For) -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid var(--py-blue);">
+          <h5 class="text-dark fw-bold"><i class="bi bi-3-circle-fill" style="color: var(--py-blue);"></i> Caso Práctico: Bucle For (Números Primos hasta el 100)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Encontrar e imprimir todos los números primos (solo divisibles por 1 y por sí mismos) del 1 al 100.<br>
+            <strong>Lógica Matemática:</strong> Para comprobar si un número es primo, intentamos dividirlo por todos los números menores a él. Si alguna división da residuo exacto (0), significa que tiene otro divisor y por ende NO es primo.<br>
+            <strong>Conceptos Clave:</strong> <code>for</code> con <code>range()</code>, bucles anidados, y banderas Booleanas (flags).<br>
+            <strong>Valor del Ejercicio:</strong> Es una prueba clásica de lógica matemática que evalúa el dominio de bucles unos dentro de otros.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-loop-primos')"><i class="bi bi-play-fill"></i> Probar Primos</button>
+          </div>
+          <pre><code id="code-loop-primos" class="language-python"># Ejemplo 3: Números Primos del 1 al 100
+print("--- NÚMEROS PRIMOS DEL 1 AL 100 ---")
+
+# Recorremos del 2 al 100 (El 1 no se considera primo)
+for numero in range(2, 101):
+    es_primo = True
+    
+    # Comprobamos si tiene algún divisor aparte de 1 y él mismo
+    for divisor in range(2, int(numero ** 0.5) + 1):
+        if numero % divisor == 0:
+            es_primo = False
+            break # Si encontramos un divisor, ya no es primo, dejamos de buscar
+            
+    if es_primo:
+        print(numero, end=", ")
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 4: Bucle Foreach -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #F43F5E;">
+          <h5 class="text-dark fw-bold"><i class="bi bi-4-circle-fill" style="color: #F43F5E;"></i> Caso Práctico: Foreach Iterativo (Recorriendo Colecciones)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Extraer e imprimir los nombres de una lista de empleados uno por uno.<br>
+            <strong>Lógica del Algoritmo:</strong> Python se encarga de saber cuántos elementos tiene la lista. En cada repetición, extrae el siguiente elemento y lo guarda en la variable automáticamente, hasta que no queden más.<br>
+            <strong>Conceptos Clave:</strong> El bucle <code>for in</code> que itera directamente sobre los elementos sin usar índices numéricos.<br>
+            <strong>Valor del Ejercicio:</strong> Es el bucle más utilizado en Data Science para recorrer filas, archivos y bases de datos.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-loop-foreach')"><i class="bi bi-play-fill"></i> Probar Foreach</button>
+          </div>
+          <pre><code id="code-loop-foreach" class="language-python"># Ejemplo 4: Bucle Foreach iterando una lista
+empleados = ["Juancito Peña", "Elon Musk", "Ada Lovelace", "Bill Gates"]
+
+print("--- REPORTE DE EMPLEADOS ---")
+# Literalmente: 'Por cada persona en la lista empleados, haz esto'
+for persona in empleados:
+    print(f"👤 Procesando pago para: {persona}")
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 5: Tabla de Multiplicar Dinámica -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #8B5CF6;">
+          <h5 class="text-dark fw-bold"><i class="bi bi-5-circle-fill" style="color: #8B5CF6;"></i> Caso Práctico: Generador de Tablas (For + Input)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Pedirle al usuario un número y generar automáticamente toda su tabla de multiplicar.<br>
+            <strong>Lógica del Algoritmo:</strong> Multiplicamos el número elegido por el usuario por una variable que va aumentando de 1 en 1 (del 1 al 12) generada automáticamente por la función <code>range(1, 13)</code>.<br>
+            <strong>Conceptos Clave:</strong> Inyección de entradas (<code>input</code>) directamente en un bucle <code>for range()</code>.<br>
+            <strong>Valor del Ejercicio:</strong> Enseña la interactividad dinámica y la generación de reportes basados en la petición del cliente.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-loop-tabla-dinamica')"><i class="bi bi-play-fill"></i> Probar Tabla</button>
+          </div>
+          <pre><code id="code-loop-tabla-dinamica" class="language-python"># Ejemplo 5: Tabla de Multiplicar interactiva
+tabla = int(input("¿Qué tabla de multiplicar deseas generar?: "))
+
+print(f"\n--- TABLA DEL {tabla} ---")
+# Genera del 1 al 12 (el 13 no se incluye)
+for multiplicador in range(1, 13):
+    res = tabla * multiplicador
+    print(f"{tabla} x {multiplicador} = {res}")
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 6: Todas las Tablas (1 al 12) -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #10B981;">
+          <h5 class="text-dark fw-bold"><i class="bi bi-6-circle-fill" style="color: #10B981;"></i> Caso Práctico: Mega Reporte (Todas las Tablas Anidadas)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Generar e imprimir un reporte masivo con TODAS las tablas de multiplicar (del 1 al 12) de un solo golpe.<br>
+            <strong>Lógica del Algoritmo:</strong> El primer bucle (externo) elige la tabla en la que estamos (del 1 al 12). Por CADA repetición de ese bucle, el segundo bucle (interno) arranca y cuenta del 1 al 12 para hacer las multiplicaciones.<br>
+            <strong>Conceptos Clave:</strong> Bucles For Anidados (Un bucle dentro de otro bucle).<br>
+            <strong>Valor del Ejercicio:</strong> Crucial para entender cómo funcionan las matrices bidimensionales, las tablas de bases de datos y los píxeles de una pantalla.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-loop-todas-tablas')"><i class="bi bi-play-fill"></i> Probar Mega Tabla</button>
+          </div>
+          <pre><code id="code-loop-todas-tablas" class="language-python"># Ejemplo 6: Todas las Tablas (Bucles Anidados)
+print("Generando el Mega Reporte Matemático...\n")
+
+# Bucle externo: Controla qué tabla estamos haciendo
+for tabla_actual in range(1, 13):
+    print(f"--- TABLA DEL {tabla_actual} ---")
+    
+    # Bucle interno: Hace las 12 multiplicaciones de esa tabla
+    for multiplicador in range(1, 13):
+        res = tabla_actual * multiplicador
+        print(f"{tabla_actual} x {multiplicador} = {res}")
+        
+    print("") # Salto de línea para separar las tablas
+</code></pre>
+        </div>
+
+        <!-- Contexto Ejemplo 7: Fibonacci -->
+        <div class="mt-4 mb-2 p-3 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid var(--py-yellow);">
+          <h5 class="text-dark fw-bold"><i class="bi bi-7-circle-fill" style="color: var(--py-yellow);"></i> Caso Práctico: Algoritmo de Fibonacci (While)</h5>
+          <p class="text-muted small mb-0">
+            <strong>Problema:</strong> Recrear la famosa sucesión matemática que describe los patrones de la naturaleza (como las ramas de los árboles o galaxias).<br>
+            <strong>Lógica Matemática:</strong> Empezamos con 0 y 1. El siguiente número SIEMPRE es la suma de los dos anteriores (<code>0+1=1</code>, luego <code>1+1=2</code>, luego <code>1+2=3</code>, luego <code>2+3=5</code>...).<br>
+            <strong>Conceptos Clave:</strong> Asignación múltiple simultánea (<code>a, b = b, a+b</code>).<br>
+            <strong>Valor del Ejercicio:</strong> Es el examen técnico por excelencia en las entrevistas de programación.
+          </p>
+        </div>
+        <div class="position-relative mb-5">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-loop-fibo')"><i class="bi bi-play-fill"></i> Probar Fibonacci</button>
+          </div>
+          <pre><code id="code-loop-fibo" class="language-python"># Ejemplo 7: Sucesión de Fibonacci
+# La regla: Cada número es la suma de los 2 anteriores
+a, b = 0, 1
+contador = 0
+limite = 15 # Extraeremos 15 números
+
+print("--- SUCESIÓN DE FIBONACCI ---")
+while contador < limite:
+    print(a, end=" ➡️ ")
+    a, b = b, a + b  # MAGIA DE PYTHON: a toma el valor de b, y b toma el de a+b
+    contador += 1
+    
+print("Fin de la sucesión.")
+</code></pre>
+        </div>
+      </div>
+
+      <!-- TEMA 5: Estructuras de Datos Complejas -->
+      <div class="card-manual mt-5">
+        <h4 class="fw-bold"><i class="bi bi-collection text-info"></i> 5. Listas, Arreglos y Diccionarios</h4>
+        <p class="text-muted fs-5">
+          <strong>Listas (Arrays):</strong> Guardan múltiples valores en orden usando índices <code>[0, 1, 2...]</code>. Ideales para colecciones mutables (lista de libros).
+          <br><strong>Diccionarios:</strong> Guardan información agrupada por pares <code>Clave: Valor</code>. Perfectos para bases de datos JSON (diccionario de frutas y precios).
+        </p>
+        
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-dict-list')"><i class="bi bi-play-fill"></i> Probar</button>
+          </div>
+          <pre><code id="code-dict-list" class="language-python"># 1. LISTA DE LIBROS
+libros = ["Hábitos Atómicos", "El Arte de la Guerra", "Clean Code"]
+libros.append("1984") # Añadir nuevo elemento
+print("Mis libros:", libros)
+print("El segundo libro es:", libros[1]) # Índice 1
+
+# 2. DICCIONARIO DE FRUTAS
+precios_frutas = {
+    "Manzana": 1.25,
+    "Fresa": 3.50,
+    "Banana": 0.80
+}
+print("\nEl precio de la Fresa es: $", precios_frutas["Fresa"])
+print("Todas las frutas disponibles:", list(precios_frutas.keys()))
+</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- LIBRERÍAS DE DATA SCIENCE -->
+<section id="librerias" class="section-pad">
+  <div class="container">
+    <div class="cyber-river-card" style="background: #ffffff;">
+      <span class="section-kicker">// 04 · Ecosistema Analítico</span>
+      <h2 class="section-title">Librerías Estrella: Pandas, Matplotlib y Streamlit</h2>
+      <p class="lead-soft mt-3">Antes de pasar a los casos de uso empresariales, conoce a la "Santísima Trinidad" de los Datos en Python. Tres herramientas fundamentales que transforman simples números en aplicaciones web y dashboards interactivos.</p>
+      
+      <div class="row g-4 mt-3 mb-5">
+        <div class="col-lg-4">
+          <div class="card-manual h-100">
+            <h4 class="fw-bold" style="color: #10B981;">🐼 Pandas (Datos)</h4>
+            <p class="text-muted">El "Excel con esteroides". Permite procesar millones de filas en segundos, limpiar información sucia y calcular KPIs con una sola línea de código.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-manual h-100">
+            <h4 class="fw-bold" style="color: #F5C518;">📊 Matplotlib (Gráficos)</h4>
+            <p class="text-muted">El motor de renderizado. Transforma los números de Pandas en Dashboards visuales, mapas de calor y las 5 gráficas universales de negocios.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-manual h-100">
+            <h4 class="fw-bold" style="color: #EF4444;">👑 Streamlit (Web)</h4>
+            <p class="text-muted">La revolución del Frontend. Convierte tus análisis de Python en páginas web interactivas reales sin necesidad de saber HTML, CSS o JavaScript.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejemplo 1: Pandas -->
+      <div class="card-manual mt-4" style="border-left: 4px solid #10B981;">
+        <h5 class="fw-bold">Ejemplo 1: Uso de Datos con Pandas</h5>
+        <p class="text-muted fs-6">Crear un DataFrame (una tabla estilo Excel) a partir de un diccionario estructurado es extremadamente fácil.</p>
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-intro-pandas')"><i class="bi bi-play-fill"></i> Probar Pandas</button>
+          </div>
+          <pre><code id="code-intro-pandas" class="language-python">import pandas as pd
+
+# 1. Creamos la data cruda (Diccionario)
+datos = {
+    "Producto": ["Zapatos", "Camisas", "Pantalones", "Relojes"],
+    "Stock": [50, 120, 85, 30],
+    "Precio": [2500, 1200, 1800, 5000]
+}
+
+# 2. Pandas lo transforma en una Tabla Inteligente (DataFrame)
+df = pd.DataFrame(datos)
+
+print("--- INVENTARIO CON PANDAS ---")
+print(df)
+print("\nKPI -> Promedio de Precios: RD$", df["Precio"].mean())
+</code></pre>
+        </div>
+      </div>
+
+      <!-- Ejemplo 2: Matplotlib -->
+      <div class="card-manual mt-4" style="border-left: 4px solid #F5C518;">
+        <h5 class="fw-bold">Ejemplo 2: Los 5 Gráficos Más Usados (Matplotlib)</h5>
+        <p class="text-muted fs-6">Una demostración de cómo generar visualmente las 5 herramientas gráficas más solicitadas en la Analítica de Negocios. Elegir el gráfico incorrecto puede arruinar una presentación directiva; aquí tienes la guía definitiva:</p>
+        <ul class="text-muted fs-6 mb-4">
+          <li>📊 <strong>1. Barras (Bar Chart):</strong> Úsalo para <strong>comparar categorías</strong> distintas (ej. Ventas por Sucursal). <em style="color:#EF4444;">Evítalo:</em> Si tienes más de 10-15 categorías (se verá amontonado, usa barras horizontales en su lugar).</li>
+          <li>📈 <strong>2. Líneas (Line Chart):</strong> Úsalo para ver la <strong>tendencia en el tiempo</strong> (ej. Evolución de ingresos de Ene a Dic). <em style="color:#EF4444;">Evítalo:</em> Para datos que no tienen un orden cronológico o secuencial.</li>
+          <li>🍕 <strong>3. Pastel (Pie Chart):</strong> Úsalo para ver la <strong>proporción de un todo al 100%</strong> (ej. Cuota de mercado). <em style="color:#EF4444;">Evítalo:</em> Si tienes más de 5 rebanadas o si los porcentajes son muy similares (el ojo humano es pésimo comparando ángulos sutiles).</li>
+          <li>📍 <strong>4. Dispersión (Scatter Plot):</strong> Úsalo para encontrar <strong>correlación</strong> entre dos variables distintas (ej. Gasto en Marketing vs Ventas obtenidas). <em style="color:#EF4444;">Evítalo:</em> Si solo tienes una métrica o muy pocos puntos de datos.</li>
+          <li>📉 <strong>5. Histograma (Histogram):</strong> Úsalo para ver la <strong>distribución y campana poblacional</strong> (ej. Rango de edades de todos tus clientes). <em style="color:#EF4444;">Evítalo:</em> Si intentas comparar nombres de productos (para eso son las Barras).</li>
+        </ul>
+        <div class="mb-4 text-center">
+          <img src="GRAFICOS.png" loading="lazy" alt="Resumen de Gráficos de Python" class="w-100 rounded" style="object-fit: cover; border: 1px solid var(--line);">
+        </div>
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-intro-plot')"><i class="bi bi-play-fill"></i> Renderizar Gráficos</button>
+          </div>
+          <pre><code id="code-intro-plot" class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+
+# Creamos un lienzo de 2 filas y 3 columnas
+fig, axs = plt.subplots(2, 3, figsize=(14, 8))
+meses = ["Ene", "Feb", "Mar", "Abr"]
+ventas = [10, 25, 15, 30]
+
+# 1. BARRAS (Comparar categorías)
+axs[0,0].bar(meses, ventas, color="#3498db")
+axs[0,0].set_title("1. Barras")
+
+# 2. LÍNEAS (Tendencia temporal)
+axs[0,1].plot(meses, ventas, color="#e74c3c", marker="o", linewidth=2)
+axs[0,1].set_title("2. Líneas")
+
+# 3. PASTEL (Proporción del Todo)
+axs[0,2].pie(ventas, labels=meses, autopct="%1.1f%%", colors=["#2ecc71", "#f1c40f", "#e67e22", "#9b59b6"])
+axs[0,2].set_title("3. Pastel")
+
+# 4. DISPERSIÓN / SCATTER (Correlación)
+visitas = [100, 250, 140, 310]
+axs[1,0].scatter(visitas, ventas, color="#16a085", s=100)
+axs[1,0].set_title("4. Dispersión")
+
+# 5. HISTOGRAMA (Distribución de densidad poblacional)
+edades = np.random.normal(35, 10, 100) # 100 edades aleatorias para la campana
+axs[1,1].hist(edades, bins=10, color="#8e44ad", edgecolor="black")
+axs[1,1].set_title("5. Histograma")
+
+axs[1,2].axis('off') # Escondemos el sexto cuadrante porque solo hay 5 gráficos
+plt.tight_layout()
+plt.savefig("demo_5_graficos.png", bbox_inches='tight')
+plt.show() 
+print("✅ Los 5 Gráficos de Negocios renderizados exitosamente.")
+</code></pre>
+        </div>
+      </div>
+
+      <!-- Ejemplo 3: Streamlit -->
+      <div class="card-manual mt-4" style="border-left: 4px solid #EF4444;">
+        <h5 class="fw-bold">Ejemplo 3: Aplicaciones Web (Streamlit)</h5>
+        <p class="text-muted fs-6">Streamlit opera en servidores reales, por lo que no se ejecuta en la web. Para correrlo en tu <strong>Visual Studio Code</strong> sigue estos dos pasos clave:</p>
+        <ul class="text-muted fs-6">
+          <li><strong>1. Instalar:</strong> Abre la terminal de VS Code y escribe <code>pip install streamlit pandas</code></li>
+          <li><strong>2. Levantar el Servidor:</strong> Escribe exactamente <code>python -m streamlit run app.py</code> (usar <code>-m</code> previene errores de comandos no reconocidos en Windows).</li>
+        </ul>
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar Código</button>
+          </div>
+          <pre><code id="code-intro-st" class="language-python"># Recuerda guardar este archivo como "app.py"
+# Ejecuta en tu terminal: python -m streamlit run app.py
+
+import streamlit as st
+import pandas as pd
+
+# Titulo principal de la Página Web
+st.title("📊 Mi Primer Dashboard Web Interactivo")
+
+# 1. Cargar Datos a un DataFrame
+df = pd.DataFrame({
+    "Producto": ["Laptop", "Monitor", "Mouse"],
+    "Ventas": [150000, 45000, 8000]
+})
+
+# 2. Widget Interactivo: Un menú desplegable
+opcion = st.selectbox("Selecciona un Producto para filtrar:", df["Producto"])
+
+# 3. Lógica de Filtrado automático
+filtro = df[df["Producto"] == opcion]
+st.write(f"### Ventas detalladas para {opcion}:")
+st.dataframe(filtro)
+
+# 4. Gráfico web automático
+st.write("### Comparativa de Ventas Generales")
+st.bar_chart(df.set_index("Producto"))
+</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- 5. ANALÍTICA DE DATOS Y APIS -->
+<section id="datos" class="section-pad bg-light">
+  <div class="container">
+    <div class="cyber-river-card">
+      <span class="section-kicker">// 05 · Casos de Estudio Reales</span>
+      <h2 class="section-title">Análisis de Datos, Excel, KPIs y APIs</h2>
+      <p class="lead-soft mt-3">Planteamiento de 3 ejemplos reales utilizando Datos, Pandas (simulando Excel) y consumo simulado de APIs web (Clima, Finanzas, Sentiment).</p>
+
+      <!-- Pandas / Excel -->
+      <div class="card-manual mt-5" style="border-left: 5px solid var(--accent-green);">
+        <h4 class="fw-bold"><i class="bi bi-file-earmark-excel-fill text-success"></i> Caso 1: Análisis de Excel con Pandas</h4>
+        <p class="text-muted fs-5"><strong>Planteamiento:</strong> Tienes un archivo Excel con las ventas y los gastos mensuales. Necesitas calcular el beneficio, mostrar una tabla limpia y extraer el KPI del mejor mes, para finalmente graficarlo.</p>
+        
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-pandas')"><i class="bi bi-play-fill"></i> Compilar Gráfico</button>
+          </div>
+          <pre><code id="code-pandas" class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+import os
+
+archivo_csv = "Reporte_Financiero_Anual.csv"
+
+# =====================================================================
+# 1. SETUP DE CONTINGENCIA (Para que funcione en la Web y en VS Code)
+# Si no has descargado el archivo a tu carpeta, Python lo genera solo.
+# =====================================================================
+if not os.path.exists(archivo_csv):
+    datos_simulados = {
+        "Mes": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+        "Ingresos": [15000, 18000, 12000, 25000, 22000, 28000, 31000, 29000, 24000, 26000, 35000, 42000],
+        "Gastos": [9000, 9500, 10000, 11000, 10500, 12000, 13500, 13000, 11500, 12500, 15000, 18000],
+        "Meta_Ventas": [14000, 15000, 15000, 20000, 20000, 25000, 25000, 25000, 25000, 25000, 30000, 35000]
+    }
+    pd.DataFrame(datos_simulados).to_csv(archivo_csv, index=False)
+
+# =====================================================================
+# 2. LECTURA REAL DEL ARCHIVO (Como lo haría un Analista de Datos)
+# =====================================================================
+df = pd.read_csv(archivo_csv)
+
+# 2. TRANSFORMACIÓN Y LÓGICA DE NEGOCIOS (Sin usar bucles for)
+df["Beneficio_Neto"] = df["Ingresos"] - df["Gastos"]
+# Variable booleana (Verdadero/Falso) para saber si pasamos la meta
+df["Cumplio_Meta"] = df["Ingresos"] >= df["Meta_Ventas"] 
+
+# 3. ANÁLISIS E IMPRESIÓN DE DATOS
+print("--- REPORTE FINANCIERO ANUAL (12 MESES) ---")
+print(df.to_string(index=False))
+
+# KPIs AVANZADOS
+ingreso_total = df['Ingresos'].sum()
+beneficio_total = df['Beneficio_Neto'].sum()
+meses_exito = df['Cumplio_Meta'].sum() # Suma cuántos son True
+mejor_mes = df.loc[df['Beneficio_Neto'].idxmax()]['Mes']
+
+print("\n📊 INSIGHTS EJECUTIVOS (KPIs):")
+print(f"💰 Ingresos Totales (Año): ${ingreso_total:,.2f}")
+print(f"📈 Beneficio Neto Total: ${beneficio_total:,.2f} (Margen: {(beneficio_total/ingreso_total)*100:.1f}%)")
+print(f"🏆 Mes Estrella: {mejor_mes} (Lideró con ${df['Beneficio_Neto'].max():,.2f})")
+print(f"🎯 Cumplimiento Estratégico: Se superó la meta en {meses_exito} de 12 meses.")
+
+# 4. DASHBOARD VISUAL (2 Gráficos en 1 Lienzo)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# Gráfico 1: Ingresos vs Beneficios (Barras Agrupadas)
+x = range(len(df["Mes"]))
+ax1.bar([i - 0.2 for i in x], df["Ingresos"], width=0.4, color="#3498db", label="Ingresos")
+ax1.bar([i + 0.2 for i in x], df["Beneficio_Neto"], width=0.4, color="#2ecc71", label="Beneficio")
+ax1.set_xticks(x)
+ax1.set_xticklabels(df["Mes"])
+ax1.set_title("Ingresos vs Beneficios (Anual)", fontweight='bold')
+ax1.legend()
+ax1.grid(axis='y', linestyle='--', alpha=0.3)
+
+# Gráfico 2: Ingresos vs Meta Proyectada (Líneas de Tendencia)
+ax2.plot(df["Mes"], df["Ingresos"], color="#f39c12", marker="o", linewidth=2.5, label="Ventas Reales")
+ax2.plot(df["Mes"], df["Meta_Ventas"], color="#e74c3c", linestyle="--", linewidth=2, label="Meta Proyectada")
+ax2.set_title("Rendimiento vs Meta Estratégica", fontweight='bold')
+ax2.fill_between(df["Mes"], df["Ingresos"], df["Meta_Ventas"], where=(df["Ingresos"] >= df["Meta_Ventas"]), interpolate=True, color='green', alpha=0.1)
+ax2.legend()
+ax2.grid(axis='y', linestyle='--', alpha=0.3)
+
+# 5. EXPORTACIÓN AUTOMÁTICA
+plt.tight_layout()
+plt.savefig("dashboard_financiero.png", bbox_inches='tight')
+plt.show() # 🖥️ Abre la ventana emergente con el gráfico (VS Code)
+df.to_csv("Reporte_Financiero_Anual.csv", index=False)
+
+print("\n✅ ¡Dashboard de 2 Gráficos y Dataset Excel (CSV) inyectados con éxito!")
+</code></pre>
+        </div>
+        <button class="btn btn-outline-success mt-3 fw-bold w-100 py-2" onclick="downloadCSV_Finanzas()">
+          <i class="bi bi-download"></i> Descargar Data (Reporte_Financiero_Anual.csv) para VS Code
+        </button>
+      </div>
+
+      <!-- Caso 2: Consumo de APIs Externas (Bitcoin) -->
+      <div class="card-manual mt-5" style="border-left: 5px solid var(--py-yellow);">
+        <h4 class="fw-bold"><i class="bi bi-currency-bitcoin text-warning"></i> Caso 2: API de Mercado (Top 10 Criptomonedas)</h4>
+        <p class="text-muted fs-5"><strong>Planteamiento:</strong> Conectarnos a los servidores reales de Binance, descargar el precio de <b>todas</b> las criptomonedas (miles de registros), y usar un bucle y un filtro para imprimir únicamente las 10 más importantes formateadas como una tabla financiera.</p>
+        
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-api-bitcoin')"><i class="bi bi-play-fill"></i> Ver Top 20 y Gráfico</button>
+          </div>
+          <pre><code id="code-api-bitcoin" class="language-python">import pyodide.http
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# 1. CONEXIÓN A APIS EXTERNAS EN TIEMPO REAL (Binance)
+url = "https://api.binance.com/api/v3/ticker/price"
+respuesta = await pyodide.http.pyfetch(url)
+api_binance = await respuesta.json()
+
+# 2. PROCESAMIENTO MATEMÁTICO (Top 20 del mundo)
+# Filtramos de los miles de registros, solo aquellos que compiten contra el Dólar (USDT)
+mercado = [c for c in api_binance if c["symbol"].endswith("USDT")]
+# Ordenamos de mayor a menor precio
+mercado.sort(key=lambda x: float(x["price"]), reverse=True)
+top_20 = mercado[:20]
+
+# 3. ANÁLISIS ESTRUCTURADO CON PANDAS
+df = pd.DataFrame(top_20)
+# Limpiamos los nombres (ej: BTCUSDT -> BTC)
+df["symbol"] = df["symbol"].str.replace("USDT", "")
+df["price"] = df["price"].astype(float)
+df.rename(columns={"symbol": "Criptomoneda", "price": "Precio_USD"}, inplace=True)
+
+# Imprimimos tabla
+print("--- MERCADO CRIPTO EN VIVO (BINANCE) ---")
+print(df.to_string(index=False))
+
+# KPIs Ejecutivos
+precio_promedio = df["Precio_USD"].mean()
+mas_cara = df.iloc[0]["Criptomoneda"]
+print("\n📊 INSIGHTS DEL MERCADO (Top 20):")
+print(f"💎 Criptomoneda más valiosa: {mas_cara}")
+print(f"📉 Precio Promedio del Top 20: ${precio_promedio:,.2f} USD")
+
+# 4. DASHBOARD VISUAL (Gráfico de Barras con Escala Logarítmica)
+plt.figure(figsize=(10, 5))
+# Invertimos para que la más cara quede arriba en el gráfico
+df_graf = df.sort_values(by="Precio_USD", ascending=True)
+
+plt.barh(df_graf["Criptomoneda"], df_graf["Precio_USD"], color="#f1c40f", edgecolor="#000")
+# Usamos escala Logarítmica porque BTC es inmensamente más grande que las demás
+plt.xscale('log') 
+plt.title("Top 20 Criptomonedas por Precio (Escala Logarítmica)", fontweight='bold')
+plt.xlabel("Precio en USD (Log)")
+plt.grid(axis='x', linestyle='--', alpha=0.5)
+
+# 5. EXPORTACIÓN Y RENDERIZADO
+plt.tight_layout()
+plt.savefig("dashboard_cripto.png", bbox_inches='tight')
+plt.show() # 🖥️ Abre la ventana emergente con el gráfico (VS Code)
+
+# Descargamos el reporte de precios a Excel
+df.to_csv("Top20_Criptomonedas_Binance.csv", index=False)
+
+print("\n✅ ¡Dashboard Logarítmico y Archivo CSV inyectados y listos!")
+</code></pre>
+        </div>
+      </div>
+
+      <!-- Caso 3: Procesamiento de Lenguaje Natural (NLP) -->
+      <div class="card-manual mt-5" style="border-left: 5px solid #F43F5E;">
+        <h4 class="fw-bold"><i class="bi bi-chat-square-heart-fill" style="color: #F43F5E;"></i> Caso 3: Inteligencia de Negocios (NLP y Dashboards)</h4>
+        <p class="text-muted fs-5"><strong>Planteamiento:</strong> Analizar una base de datos de reseñas de clientes utilizando <strong>Pandas</strong> para categorizar automáticamente los sentimientos, cruzar los datos por temáticas (Producto, Envío, Precio) y generar un Dashboard visual con 2 gráficos estadísticos.</p>
+        
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-nlp')"><i class="bi bi-play-fill"></i> Analizar Textos</button>
+          </div>
+          <pre><code id="code-nlp" class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+import os
+
+archivo_csv = "Base_Sentimientos_NLP.csv"
+
+# =====================================================================
+# 1. SETUP DE CONTINGENCIA (Para Web y VS Code)
+# =====================================================================
+if not os.path.exists(archivo_csv):
+    import random
+    nombres = ["Carlos", "Ana", "Luis", "Marta", "Pedro", "Sofía", "Diego", "Laura", "Jorge", "Elena"]
+    temas = ["Producto", "Servicio", "Envío", "Precio"]
+    pool_comentarios = {
+        "Producto": [("Cámara brutal", 10), ("Batería dura poco", 8), ("Cumple su función", 6), ("Se sobrecalienta", 3)],
+        "Servicio": [("Muy amables", 10), ("Duda resuelta", 8), ("Poco capacitados", 5), ("Pésimo soporte", 2)],
+        "Envío": [("Llegó antes", 10), ("Todo en orden", 9), ("Tardó 3 días más", 6), ("Caja rota", 1)],
+        "Precio": [("Ganga total", 10), ("Valió cada centavo", 9), ("Un poco caro", 5), ("Es un robo", 1)]
+    }
+    
+    opiniones = []
+    for _ in range(100):
+        tema = random.choice(temas)
+        comentario, score = random.choice(pool_comentarios[tema])
+        opiniones.append({"cliente": random.choice(nombres), "score": score, "tema": tema, "comentario": comentario})
+    pd.DataFrame(opiniones).to_csv(archivo_csv, index=False)
+
+# =====================================================================
+# 2. LECTURA REAL DEL ARCHIVO (Analítica NLP)
+# =====================================================================
+df = pd.read_csv(archivo_csv)
+
+print("--- ANÁLISIS DE SENTIMIENTOS MASIVO (NLP) ---")
+
+# 2. INTELIGENCIA ARTIFICIAL BÁSICA (Clasificación)
+# Creamos una función que clasifica la lealtad según el estándar mundial NPS
+def clasificar_nps(score):
+    if score >= 9: return "Promotor 🟢"
+    elif score >= 7: return "Neutro 🟡"
+    else: return "Detractor 🔴"
+
+# Aplicamos la función masivamente a toda la base de datos sin usar bucles
+df["Sentimiento"] = df["score"].apply(clasificar_nps)
+
+# Imprimimos la tabla formateada para que el usuario la vea (Resumida por Pandas)
+print(df[["cliente", "Sentimiento", "tema"]])
+
+# 3. FÓRMULA MATEMÁTICA DEL NPS (Net Promoter Score)
+promotores = len(df[df["Sentimiento"] == "Promotor 🟢"])
+detractores = len(df[df["Sentimiento"] == "Detractor 🔴"])
+nps_score = ((promotores - detractores) / len(df)) * 100
+
+print(f"\n📊 MÉTRICA DE LEALTAD EMPRESARIAL (NPS): {nps_score:.1f}%")
+
+# 4. GENERACIÓN DE REPORTES VISUALES (DASHBOARD DOBLE)
+# Creamos un lienzo con 2 espacios (1 fila, 2 columnas)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+
+# -- Gráfico 1: Distribución del Sentimiento (Pastel) --
+conteo = df["Sentimiento"].value_counts()
+# Asignamos colores y EXTRAEMOS LOS EMOJIS de las etiquetas para evitar errores de tipografía (Glyph missing) en matplotlib
+colores_nps = ['#2ecc71' if '🟢' in x else '#f1c40f' if '🟡' in x else '#e74c3c' for x in conteo.index]
+etiquetas_limpias = [x.split()[0] for x in conteo.index] # Convierte "Promotor 🟢" a "Promotor"
+
+ax1.pie(conteo, labels=etiquetas_limpias, autopct='%1.1f%%', colors=colores_nps, startangle=140)
+ax1.set_title("NPS Global", fontweight="bold")
+
+# -- Gráfico 2: Satisfacción por Temática (Barras) --
+# Agrupamos los datos por Tema y calculamos el promedio
+satisfaccion_tema = df.groupby("tema")["score"].mean().sort_values()
+# Pintamos de rojo las áreas reprobadas (<7) y verde las aprobadas
+colores_barras = ['#e74c3c' if s < 7 else '#2ecc71' for s in satisfaccion_tema]
+
+satisfaccion_tema.plot(kind='bar', ax=ax2, color=colores_barras, edgecolor='black')
+ax2.set_title("Satisfacción por Área", fontweight="bold")
+ax2.set_ylabel("Puntuación Media")
+plt.xticks(rotation=45)
+
+# Ajustamos espacios y le pedimos al motor web que renderice los gráficos
+plt.tight_layout()
+plt.savefig("dashboard_nlp.png", bbox_inches='tight')
+plt.show() # 🖥️ Abre la ventana emergente con el gráfico (VS Code)
+
+# Exportamos la base de datos de sentimientos a Excel (CSV)
+df.to_csv("Base_Sentimientos_NLP.csv", index=False)
+print("\n✅ ¡Dashboard Analítico y Dataset Excel (CSV) generados!")
+</code></pre>
+        </div>
+        <button class="btn btn-outline-success mt-3 fw-bold w-100 py-2" onclick="downloadCSV_NLP()">
+          <i class="bi bi-download"></i> Descargar Data (Base_Sentimientos_NLP.csv) para VS Code
+        </button>
+      </div>
+
+      <!-- Caso 4: Buscador Interactivo de Clima (API) -->
+      <div class="card-manual mt-5" style="border-left: 5px solid var(--accent-purple);">
+        <h4 class="fw-bold"><i class="bi bi-cloud-sun-fill text-purple"></i> Caso 4: Buscador Global de Clima (API + Interactividad)</h4>
+        <p class="text-muted fs-5"><strong>Planteamiento:</strong> Pedirle al usuario que escriba cualquier ciudad del mundo (mediante un <code>input()</code>) e inyectar ese dato en una petición web hacia la API de OpenWeatherMap para traer el clima exacto en tiempo real.</p>
+        
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-api-clima')"><i class="bi bi-play-fill"></i> Buscar Clima</button>
+          </div>
+          <pre><code id="code-api-clima" class="language-python">import pyodide.http # Librería de conexión web
+
+# 1. ENTRADA DEL USUARIO
+# Le pedimos al usuario que escriba la ciudad que desea investigar
+ciudad_buscada = input("¿De qué ciudad deseas conocer el clima?: ")
+
+# Formateamos el texto para que sea válido en internet (cambiando los espacios por %20)
+# Ejemplo: "Nueva York" se convierte en "Nueva%20York"
+ciudad_url = ciudad_buscada.replace(" ", "%20")
+
+# 2. CONEXIÓN A LOS SERVIDORES DE OPENWEATHERMAP
+# Inyectamos la ciudad formateada directamente dentro de la URL de la API (usando f-strings)
+# Nota: Agregamos &lang=es para que la descripción venga en español
+url = f"https://api.openweathermap.org/data/2.5/weather?q={ciudad_url}&appid=9888f832f7d541314e8da94136d55eb4&units=metric&lang=es"
+
+# Ejecutamos la petición web hacia internet
+respuesta = await pyodide.http.pyfetch(url)
+api_clima = await respuesta.json() # Lo convertimos a diccionario Python
+
+# 3. EXTRACCIÓN Y REPORTING
+print(f"--- REPORTE METEOROLÓGICO EN VIVO ---")
+
+# Validamos que la API haya encontrado la ciudad (El código 200 significa Éxito)
+if api_clima.get("cod") == 200:
+    ciudad_real = api_clima["name"]
+    temp = api_clima["main"]["temp"]
+    sensacion = api_clima["main"]["feels_like"]
+    estado = api_clima["weather"][0]["description"]
+    
+    print(f"📍 Ubicación: {ciudad_real}")
+    print(f"🌡️ Temperatura: {temp}°C (Sensación térmica: {sensacion}°C)")
+    print(f"☁️ Condiciones: {estado.capitalize()}")
+else:
+    print(f"❌ Error: La API no pudo encontrar la ciudad '{ciudad_buscada}'.")
+</code></pre>
+        </div>
+      </div>
+
+      <!-- Caso 5: Conversor de Divisas Global -->
+      <div class="card-manual mt-5" style="border-left: 5px solid #10B981;">
+        <h4 class="fw-bold"><i class="bi bi-cash-coin" style="color: #10B981;"></i> Caso 5: Conversor Global de Divisas (API a Pesos DOP)</h4>
+        <p class="text-muted fs-5"><strong>Planteamiento:</strong> Conectarnos al Banco Central Global (vía Exchangerate API) para obtener las tasas de cambio mundiales y calcular automáticamente el valor equivalente en Pesos Dominicanos (DOP) de las principales monedas, adornado con sus banderas.</p>
+        
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-api-divisas')"><i class="bi bi-play-fill"></i> Ver Tasas de Cambio</button>
+          </div>
+          <pre><code id="code-api-divisas" class="language-python">import pyodide.http # Librería para conectarnos a internet
+
+# 1. CONEXIÓN A LA API FINANCIERA (Banco Central Global)
+# Descargamos las tasas de cambio usando el Dólar (USD) como moneda base
+url = "https://api.exchangerate-api.com/v4/latest/USD"
+
+# Ejecutamos la petición asíncrona hacia los servidores
+respuesta = await pyodide.http.pyfetch(url)
+datos_divisas = await respuesta.json() # Lo transformamos a Diccionario Python
+
+# Las tasas vienen en este formato: 1 USD = X Moneda
+tasas = datos_divisas["rates"]
+
+# Guardamos cuánto vale 1 Dólar en Pesos Dominicanos (DOP)
+tasa_dop = tasas["DOP"]
+
+# 2. DICCIONARIO DE MONEDAS VIP Y BANDERAS
+monedas_vip = {
+    "USD": {"nombre": "Dólar EE.UU.", "bandera": "🇺🇸"},
+    "EUR": {"nombre": "Euro Europeo", "bandera": "🇪🇺"},
+    "GBP": {"nombre": "Libra Esterlina", "bandera": "🇬🇧"},
+    "CAD": {"nombre": "Dólar Canadiense", "bandera": "🇨🇦"},
+    "CHF": {"nombre": "Franco Suizo", "bandera": "🇨🇭"},
+    "JPY": {"nombre": "Yen Japonés", "bandera": "🇯🇵"}
+}
+
+print("--- TABLA DE DIVISAS VS PESO DOMINICANO (DOP) ---")
+print(f"📅 Última actualización del Banco: {datos_divisas['date']}\n")
+
+# 3. BUCLE Y MATEMÁTICAS FINANCIERAS
+# Iteramos sobre nuestro diccionario VIP sacando el código (ej. "EUR") y su info
+for codigo, info in monedas_vip.items():
+    bandera = info["bandera"]
+    nombre = info["nombre"]
+    
+    # LÓGICA DE CONVERSIÓN CRUZADA:
+    # Si 1 USD = 59 DOP, y 1 USD = 0.92 EUR.
+    # Entonces 1 EUR = 59 DOP / 0.92 EUR.
+    tasa_extranjera = tasas[codigo]
+    valor_en_pesos = tasa_dop / tasa_extranjera
+    
+    # Formateamos el resultado (alineamos el código a la izquierda y 2 decimales con .2f)
+    print(f"{bandera} 1 {codigo:<4} ({nombre:<20}) = RD$ {valor_en_pesos:>6.2f}")
+
+print("\n✅ Tasas de cambio generadas en tiempo real con conversión cruzada.")
+</code></pre>
+        </div>
+      </div>
+
+      <!-- Caso 6: Algoritmo Bancario -->
+      <div class="card-manual mt-5" style="border-left: 5px solid #0EA5E9;">
+        <h4 class="fw-bold"><i class="bi bi-bank" style="color: #0EA5E9;"></i> Caso 6: Algoritmo Bancario (Aprobación de Préstamos)</h4>
+        <p class="text-muted fs-5"><strong>Planteamiento:</strong> Crear el motor de decisiones (Credit Scoring) de un banco. Se evaluarán múltiples solicitudes de crédito aplicando reglas de negocio estrictas: Historial Crediticio, Capacidad de Pago y Nivel de Endeudamiento, devolviendo un veredicto de Aprobado o Rechazado.</p>
+        
+        <div class="position-relative">
+          <div class="code-toolbar">
+            <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+            <button class="btn-action btn-run" onclick="runPythonCode('code-prestamos')"><i class="bi bi-play-fill"></i> Evaluar Préstamos</button>
+          </div>
+          <pre><code id="code-prestamos" class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+import os
+
+archivo_csv = "Base_Solicitudes_Banco.csv"
+
+# =====================================================================
+# 1. SETUP DE CONTINGENCIA (Para Web y VS Code)
+# Si no has descargado la data, Python la genera automáticamente.
+# =====================================================================
+if not os.path.exists(archivo_csv):
+    import random
+    nombres = ["Juan", "María", "Carlos", "Ana", "Luis", "Sofía", "Pedro", "Elena", "Diego", "Marta"]
+    apellidos = ["P.", "G.", "L.", "D.", "M.", "R.", "T.", "S.", "V.", "C."]
+    
+    data = []
+    for _ in range(100):
+        data.append({
+            "cliente": f"{random.choice(nombres)} {random.choice(apellidos)}",
+            "salario": random.randint(25000, 150000),
+            "deudas": random.randint(0, 50000),
+            "score": random.randint(400, 850),
+            "monto": random.randint(50000, 2000000)
+        })
+    pd.DataFrame(data).to_csv(archivo_csv, index=False)
+
+# =====================================================================
+# 2. LECTURA REAL DEL ARCHIVO Y PREPARACIÓN
+# =====================================================================
+df_banco = pd.read_csv(archivo_csv)
+solicitudes = df_banco.to_dict('records')
+
+print(f"--- SISTEMA DE APROBACIÓN DE PRÉSTAMOS BANCARIOS ({len(solicitudes)} Solicitudes) ---")
+
+# 2. MOTOR DE DECISIONES (Lógica de Negocios)
+resultados = [] # Aquí guardaremos la tabla final
+
+for req in solicitudes:
+    cliente = req["cliente"]
+    salario = req["salario"]
+    deudas = req["deudas"]
+    score = req["score"]
+    monto = req["monto"]
+    
+    # REGLA 1: Capacidad de Pago (DTI - Debt to Income)
+    # La nueva cuota estimada (2% del préstamo) + deudas actuales no debe pasar el 40% del salario
+    cuota_estimada = monto * 0.02
+    endeudamiento_total = deudas + cuota_estimada
+    porcentaje_dti = (endeudamiento_total / salario) * 100
+    capacidad_pago = porcentaje_dti <= 40
+    
+    # REGLA 2: Historial Crediticio
+    buen_historial = score >= 650
+    
+    # VEREDICTO (Reglas de Riesgo)
+    if buen_historial and capacidad_pago:
+        estado = "✅ APROBADO"
+        riesgo = "🟢 Bajo Riesgo"
+    elif buen_historial and not capacidad_pago:
+        estado = "⚠️ RECHAZADO"
+        riesgo = "🔴 Alto (Excede DTI)"
+    elif not buen_historial:
+        estado = "❌ RECHAZADO"
+        riesgo = "⚫ Crítico (Mal Score)"
+        
+    # Guardamos los datos estructurados para que formen una tabla perfecta
+    resultados.append({
+        "Cliente": cliente,
+        "Score": score,
+        "Nivel DTI": f"{porcentaje_dti:.1f}%",
+        "Monto (RD$)": f"{monto:,}",
+        "Estado Final": estado,
+        "Nivel de Riesgo": riesgo
+    })
+
+# 3. REPORTING Y AUDITORÍA EN TABLA
+# Pandas alinea todo perfectamente. Como son 100, Pandas resumirá la tabla automáticamente.
+df_resultados = pd.DataFrame(resultados)
+print(df_resultados)
+
+# 4. DASHBOARD DE RIESGOS BANCARIOS (2 Gráficos Analíticos)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+
+# Gráfico 1: Tasa de Aprobación (Gráfico de Pastel)
+conteo_estado = df_resultados["Estado Final"].apply(lambda x: "APROBADO" if "APROBADO" in x else "RECHAZADO").value_counts()
+colores_estado = ['#2ecc71' if x == 'APROBADO' else '#e74c3c' for x in conteo_estado.index]
+ax1.pie(conteo_estado, labels=conteo_estado.index, autopct='%1.1f%%', colors=colores_estado, startangle=90)
+ax1.set_title("Tasa de Aprobación de Cartera", fontweight="bold")
+
+# Gráfico 2: Distribución de Scores de Crédito (Histograma)
+# Un histograma es ideal para Big Data porque agrupa a los clientes en rangos
+ax2.hist(df_resultados["Score"], bins=15, color='#3498db', edgecolor='black')
+# Dibujamos una línea roja que indica el límite mínimo para aprobar
+ax2.axvline(x=650, color='red', linestyle='--', linewidth=2, label="Límite Mínimo (650)")
+ax2.set_title("Distribución de Scores de Crédito", fontweight="bold")
+ax2.set_xlabel("Puntos en Buró")
+ax2.set_ylabel("Cantidad de Clientes")
+ax2.legend()
+
+# Guardamos y renderizamos visualmente
+plt.tight_layout()
+plt.savefig("dashboard_banco.png", bbox_inches='tight')
+plt.show() # 🖥️ Abre la ventana emergente con el gráfico (VS Code)
+
+# Exportamos la tabla final de decisiones a Excel (CSV)
+df_resultados.to_csv("Decision_Prestamos_Banco.csv", index=False)
+print("\n✅ Dashboard Visual y Archivo Excel (CSV) de Riesgos generados.")
+</code></pre>
+        </div>
+        <button class="btn btn-outline-success mt-3 fw-bold w-100 py-2" onclick="downloadCSV_Banco()">
+          <i class="bi bi-download"></i> Descargar Data (Base_Solicitudes_Banco.csv) para VS Code
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: LECTURA Y ESCRITURA DE ARCHIVOS -->
+<section class="py-5" style="background: var(--bg-card); border-top: 1px solid var(--line);" id="excel-archivos">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="color: var(--py-blue-deep);">Sección 5: Archivos Excel y Carga de Datos 📊</h2>
+      <p class="text-muted fs-5">Aprende a generar, procesar y descargar bases de datos directamente desde Python.</p>
+    </div>
+
+    <div class="card-manual" style="border-left: 5px solid #10B981;">
+      <h4 class="fw-bold"><i class="bi bi-file-earmark-spreadsheet-fill" style="color: #10B981;"></i> Caso 7: Generador Masivo y Exportación a Excel (CSV)</h4>
+      <p class="text-muted fs-5"><strong>Planteamiento:</strong> Las empresas necesitan generar y analizar reportes masivos a partir de datos en bruto. Crearemos un algoritmo en Python que auto-genere una base de datos gigante de ventas, la procese con Pandas agrupando la información, y genere un archivo Excel (formato CSV) que se descargará automáticamente a tu computadora.</p>
+      
+      <div class="position-relative mt-4">
+        <div class="code-toolbar">
+          <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar</button>
+          <button class="btn-action btn-run" onclick="runPythonCode('code-excel')"><i class="bi bi-play-fill"></i> Crear y Descargar Excel</button>
+        </div>
+        <pre><code id="code-excel" class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+import random
+
+import os
+
+archivo_csv = "Reporte_Masivo_Ventas_1000.csv"
+
+# =====================================================================
+# 1. SETUP DE CONTINGENCIA (Para Web y VS Code)
+# Si no has descargado la data, Python genera 1000 registros automáticos.
+# =====================================================================
+if not os.path.exists(archivo_csv):
+    sucursales = ["Santo Domingo", "Santiago", "Punta Cana", "La Romana", "Baní"]
+    productos = ["Laptop Pro", "Monitor 4K", "Mouse Inalámbrico", "Teclado Mecánico", "Webcam HD"]
+
+    base_de_datos = []
+    for i in range(1, 1001): # Creamos 1000 ventas
+        venta = {
+            "ID_Factura": f"FAC-{1000+i}",
+            "Sucursal": random.choice(sucursales),
+            "Producto": random.choice(productos),
+            "Cantidad": random.randint(1, 5),
+            "Precio_Unitario": random.choice([2500, 15000, 45000, 8000, 3500]),
+        }
+        venta["Total_Factura"] = venta["Cantidad"] * venta["Precio_Unitario"]
+        base_de_datos.append(venta)
+        
+    pd.DataFrame(base_de_datos).to_csv(archivo_csv, index=False)
+
+# =====================================================================
+# 2. LECTURA REAL DEL ARCHIVO Y PROCESAMIENTO ANALÍTICO
+# =====================================================================
+df_ventas = pd.read_csv(archivo_csv)
+
+# Agrupaciones para tablas y gráficos
+ventas_por_sucursal = df_ventas.groupby("Sucursal")["Total_Factura"].sum().reset_index().sort_values(by="Total_Factura", ascending=False)
+ventas_por_producto = df_ventas.groupby("Producto")["Total_Factura"].sum().reset_index().sort_values(by="Total_Factura", ascending=False)
+
+print(f"--- REPORTE BIG DATA ({len(df_ventas)} VENTAS CARGADAS) ---")
+print("\n📈 TOP SUCURSALES:")
+print(ventas_por_sucursal.to_string(index=False))
+
+# KPIs Ejecutivos
+total_ingresos = df_ventas["Total_Factura"].sum()
+producto_estrella = ventas_por_producto.iloc[0]["Producto"]
+sucursal_lider = ventas_por_sucursal.iloc[0]["Sucursal"]
+
+print("\n📊 INSIGHTS GERENCIALES:")
+print(f"💰 Ingresos Totales de la Cadena: ${total_ingresos:,.2f} RD$")
+print(f"🥇 Sucursal Líder: {sucursal_lider}")
+print(f"🚀 Producto Más Vendido: {producto_estrella}")
+
+# 3. DASHBOARD VISUAL (2 Gráficos)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# Gráfico 1: Ventas por Sucursal (Pastel)
+ax1.pie(ventas_por_sucursal["Total_Factura"], labels=ventas_por_sucursal["Sucursal"], autopct='%1.1f%%', startangle=90, colors=['#3498db', '#2ecc71', '#f1c40f', '#e74c3c', '#9b59b6'])
+ax1.set_title("Distribución de Ventas por Sucursal", fontweight="bold")
+
+# Gráfico 2: Ventas por Producto (Barras Horizontales)
+ax2.barh(ventas_por_producto["Producto"], ventas_por_producto["Total_Factura"], color="#16a085", edgecolor="black")
+ax2.set_title("Ingresos por Línea de Producto", fontweight="bold")
+ax2.set_xlabel("Total Ingresado (RD$)")
+ax2.invert_yaxis() # Para que el producto más vendido quede arriba
+
+plt.tight_layout()
+plt.savefig("dashboard_ventas.png", bbox_inches='tight')
+plt.show() # 🖥️ Abre la ventana emergente con el gráfico (VS Code)
+
+# 4. EXPORTACIÓN A EXCEL (CSV)
+nombre_archivo = "Reporte_Masivo_Ventas_1000.csv"
+df_ventas.to_csv(nombre_archivo, index=False)
+
+print(f"\n📥 Dashboard generado y Archivo Maestro ({nombre_archivo}) inyectado para descarga.")
+</code></pre>
+      </div>
+      <button class="btn btn-outline-success mt-3 fw-bold w-100 py-2" onclick="downloadCSV_BigData()">
+        <i class="bi bi-download"></i> Descargar Data (Reporte_Masivo_Ventas_1000.csv) para VS Code
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL DEL COMPILADOR WEB -->
+<div class="modal fade" id="terminalModal" tabindex="-1" aria-labelledby="terminalModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background: var(--bg-card); border: 1px solid var(--line);">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h5 class="modal-title fw-bold" id="terminalModalLabel" style="color: var(--py-blue);">
+          <i class="bi bi-terminal"></i> Terminal de Pruebas Python
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <label class="form-label fw-bold text-secondary">Código Fuente (Editable)</label>
+            <textarea id="compilerCode" class="form-control font-monospace" style="height: 350px; background: #1e1e1e; color: #d4d4d4; font-size: 0.95rem; border: none; padding: 1rem;"></textarea>
+            <button id="btnExecuteCode" class="btn btn-success w-100 mt-2 fw-bold py-2" onclick="executePyodideCode()">
+              <i class="bi bi-play-circle-fill"></i> Ejecutar ahora
+            </button>
+          </div>
+          <div class="col-lg-6">
+            <label class="form-label fw-bold text-secondary">Resultado (Salida / Consola)</label>
+            <div style="height: 350px; display: flex; flex-direction: column; background: var(--code-bg); border-radius: 6px; overflow: hidden; border: 1px solid #2b3444;">
+              <div style="background: #2D3748; padding: 5px 15px; display: flex; gap: 6px; align-items: center;">
+                <span style="width: 12px; height: 12px; border-radius: 50%; background: #EF4444;"></span>
+                <span style="width: 12px; height: 12px; border-radius: 50%; background: #F5C518;"></span>
+                <span style="width: 12px; height: 12px; border-radius: 50%; background: #10B981;"></span>
+                <span style="color: #A0AEC0; font-family: monospace; font-size: 0.8rem; margin-left: 10px;">python run.py</span>
+              </div>
+              <div id="compilerOutput" style="flex: 1; overflow-y: auto; padding: 1rem; color: #a6e22e; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; white-space: pre-wrap;">
+                ... esperando ejecución ...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- 06. RETOS Y DIPLOMADO CAES -->
+<section id="retos" class="section-pad">
+  <div class="container">
+    
+    <!-- TARJETA PRINCIPAL DE DIPLOMADO -->
+    <div class="text-center mb-5 p-5 shadow-lg" style="background: linear-gradient(135deg, var(--py-blue-deep), #111827); border-radius: var(--radius); position: relative; overflow: hidden;">
+      <h2 class="fw-bold text-white mb-3" style="position: relative; z-index: 2;">🚀 ¿Estás listo para dar el salto profesional?</h2>
+      <p class="lead text-white-50 mx-auto" style="max-width: 800px; position: relative; z-index: 2;">
+        Esta Masterclass es solo la punta del iceberg. Te invitamos a inscribirte en nuestro <strong>Diplomado Integral de Python (Básico, Intermedio y Avanzado)</strong> en CAES Academy. Aprenderás a dominar el lenguaje líder del mundo, a integrar Inteligencia Artificial a tus procesos y a desarrollar Dashboards Empresariales desde cero a cien. ¡No pares de practicar!
+      </p>
+      <div class="mt-4" style="position: relative; z-index: 2;">
+        <a href="https://caesacademy.com/" target="_blank" class="btn btn-lg fw-bold px-5 py-3 shadow-lg" style="background: var(--py-yellow); color: #000; border-radius: 50px; font-size: 1.2rem;">
+          <i class="bi bi-mortarboard-fill"></i> Inscríbete en el Diplomado Hoy
+        </a>
+      </div>
+    </div>
+
+    <!-- EJEMPLO INTELIGENCIA ARTIFICIAL -->
+    <div id="apis-ia" class="card-manual mt-4 shadow-sm" style="border-left: 5px solid #8e44ad; background: #fafafa;">
+      <h4 class="fw-bold" style="color: var(--py-blue-deep);"><i class="bi bi-robot" style="color: #8e44ad;"></i> El Poder Absoluto: Python + Google Gemini AI (Agente Analista)</h4>
+      <p class="text-muted fs-5">
+        Los grandes cerebros mundiales de IA (ChatGPT, Gemini, Claude) están construidos y operados mediante Python. Si combinas Python con Inteligencia Artificial, pasas de ser un simple usuario a un desarrollador de soluciones.
+        <br><br>
+        En este ejemplo final, crearemos un <strong>Agente Analista de Datos Web</strong>. Una aplicación web profesional donde tú subes un archivo Excel o CSV, y Python junto a la IA de Google (Gemini) se encargan de limpiarlo, consolidarlo, extraer los KPIs, generar los gráficos y redactar un Resumen Ejecutivo en segundos.
+      </p>
+
+      <div class="p-4 mb-4" style="background: white; border: 1px solid var(--line); border-radius: 8px;">
+        <h5 class="fw-bold text-dark"><i class="bi bi-list-check text-success"></i> Guía Paso a Paso para usar este Agente:</h5>
+        <ul class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.8;">
+          <li><strong>Paso 1:</strong> Abre la terminal e instala las librerías necesarias:<br> <code style="color: #d63384; background: #f8f9fa; padding: 2px 6px; border-radius: 4px;">pip install -U streamlit pandas matplotlib google-genai</code></li>
+          <li><strong>Paso 2:</strong> Consigue tu llave gratuita de Google Gemini entrando a <a href="https://aistudio.google.com/" target="_blank" class="fw-bold" style="color: var(--py-blue);">Google AI Studio</a>.</li>
+          <li><strong>Paso 3:</strong> Crea un archivo llamado <code>app_agente.py</code>, pega todo el código que verás abajo y reemplaza <code>"TU_API_KEY_AQUI"</code> con tu llave secreta real.</li>
+          <li><strong>Paso 4:</strong> Ejecuta tu aplicación web escribiendo en la terminal:<br> <code style="color: #d63384; background: #f8f9fa; padding: 2px 6px; border-radius: 4px;">python -m streamlit run app_agente.py</code></li>
+        </ul>
+      </div>
+      <div class="position-relative">
+        <div class="code-toolbar">
+          <button class="btn-action" onclick="copyCode(this)"><i class="bi bi-clipboard"></i> Copiar Código del Agente IA</button>
+        </div>
+        <pre><code class="language-python">
+import io
+import re
+import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from google import genai
+from reportlab.lib.pagesizes import letter
+from reportlab.lib import colors
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image as RLImage, Table, TableStyle, HRFlowable
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+
+# ==========================================
+# 1. CONFIGURACIÓN DE PÁGINA Y API KEY
+# ==========================================
+st.set_page_config(page_title="Agente Analítico AI &amp; Reportes PDF", page_icon="⚡", layout="wide")
+
+API_KEY = "AQ.Ab8RN6JePMHzV5fnnmPDSd-6QmpJ7BnGkYLQgA90Eg-3Tj55Kg"
+client = genai.Client(api_key=API_KEY)
+
+# POOL BASADO EXACTAMENTE EN TUS CAPTURAS DE GOOGLE AI STUDIO
+MODELOS_POOL = [
+    "gemini-3.8-flash",
+    "gemini-3.7-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-pro-preview",
+    "gemini-2.5-flash"
+]
+
+st.markdown("""
+    &lt;style&gt;
+    .badge-val { background-color: #dbeafe; color: #1e40af; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    .badge-key { background-color: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    .metric-card {
+        background-color: #ffffff; border-left: 5px solid #2563eb;
+        border-radius: 8px; padding: 14px; margin-bottom: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    &lt;/style&gt;
+""", unsafe_allow_html=True)
+
+# ==========================================
+# 2. FUNCIONES DE APOYO (GRÁFICOS, PDF Y LLAMADAS RÁPIDAS)
+# ==========================================
+def crear_grafico_distribucion(df, columna):
+    fig, ax = plt.subplots(figsize=(7, 3))
+    serie = pd.to_numeric(df[columna], errors='coerce').dropna()
+    ax.hist(serie, bins=25, color="#2563eb", edgecolor="#ffffff", alpha=0.85)
+    ax.set_title(f"Distribución de {columna}", fontsize=11, fontweight="bold", pad=8)
+    ax.grid(axis='y', linestyle='--', alpha=0.4)
+    plt.tight_layout()
+    buf = io.BytesIO()
+    fig.savefig(buf, format="png", dpi=180)
+    buf.seek(0)
+    plt.close(fig)
+    return buf
+
+def crear_grafico_linea(df, col_y):
+    fig, ax = plt.subplots(figsize=(7, 3))
+    y_vals = pd.to_numeric(df[col_y], errors='coerce').dropna().reset_index(drop=True)
+    ax.plot(y_vals.values, color="#10b981", linewidth=1.6)
+    ax.set_title(f"Tendencia de {col_y}", fontsize=11, fontweight="bold", pad=8)
+    ax.grid(True, linestyle='--', alpha=0.4)
+    plt.tight_layout()
+    buf = io.BytesIO()
+    fig.savefig(buf, format="png", dpi=180)
+    buf.seek(0)
+    plt.close(fig)
+    return buf
+
+def limpiar_texto_para_pdf(texto):
+    if not texto:
+        return ""
+    texto = texto.replace("&amp;", "&amp;amp;").replace("&lt;", "&amp;lt;").replace("&gt;", "&amp;gt;")
+    return re.sub(r'\*\*(.*?)\*\*', r'&lt;b&gt;\1&lt;/b&gt;', texto)
+
+def formatear_texto_web(texto):
+    if not texto:
+        return ""
+    texto = re.sub(r'\$(\d)', r'$ \1', texto)
+    texto = re.sub(r'(\$\s?[\d,]+(?:\.\d+)?)', r'&lt;span class="badge-val"&gt;\1&lt;/span&gt;', texto)
+    texto = re.sub(r'([\d,]+(?:\.\d+)?%)', r'&lt;span class="badge-val"&gt;\1&lt;/span&gt;', texto)
+    texto = re.sub(r'\*\*(.*?)\*\*', r'&lt;span class="badge-key"&gt;\1&lt;/span&gt;', texto)
+    return texto
+
+def generar_pdf_informe(nombre_archivo, metricas, texto_ia, img_buf1, img_buf2):
+    pdf_buffer = io.BytesIO()
+    doc = SimpleDocTemplate(pdf_buffer, pagesize=letter, rightMargin=36, leftMargin=36, topMargin=36, bottomMargin=36)
+    styles = getSampleStyleSheet()
+
+    estilo_titulo = ParagraphStyle('TituloDoc', parent=styles['Heading1'], fontSize=16, textColor=colors.HexColor("#1E3A8A"), spaceAfter=3)
+    estilo_sub = ParagraphStyle('SubDoc', parent=styles['Normal'], fontSize=8.5, textColor=colors.HexColor("#64748B"), spaceAfter=10)
+    estilo_sec = ParagraphStyle('SecDoc', parent=styles['Heading2'], fontSize=11, textColor=colors.HexColor("#1D4ED8"), spaceBefore=8, spaceAfter=5)
+    estilo_body = ParagraphStyle('BodyDoc', parent=styles['Normal'], fontSize=8.5, leading=12, textColor=colors.HexColor("#1F2937"), spaceAfter=4)
+
+    story = [
+        Paragraph("INFORME EJECUTIVO Y ANÁLISIS DE DATOS", estilo_titulo),
+        Paragraph(f"Fuente: &lt;b&gt;{nombre_archivo}&lt;/b&gt; | Generado con Inteligencia Artificial", estilo_sub),
+        HRFlowable(width="100%", thickness=1.5, color=colors.HexColor("#1E3A8A"), spaceAfter=10),
+        Paragraph("1. Métricas Clave y Resumen Estadístico", estilo_sec)
+    ]
+
+    data_kpis = [
+        ["Métrica", "Valor", "Métrica", "Valor"],
+        ["Total Registros", f"{metricas['total']:,}", "Variable Evaluada", f"{metricas['columna']}"],
+        ["Suma Total", f"{metricas.get('suma', 'N/A')}", "Promedio", f"{metricas.get('promedio', 'N/A')}"],
+        ["Valor Máximo", f"{metricas.get('max', 'N/A')}", "Valor Mínimo", f"{metricas.get('min', 'N/A')}"]
+    ]
+    tabla = Table(data_kpis, colWidths=[135, 135, 135, 135])
+    tabla.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#F1F5F9")),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.HexColor("#1E3A8A")),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, -1), 8),
+        ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor("#CBD5E1")),
+        ('ALIGN', (1, 0), (1, -1), 'CENTER'),
+        ('ALIGN', (3, 0), (3, -1), 'CENTER'),
+        ('TOPPADDING', (0, 0), (-1, -1), 4),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+    ]))
+    story.append(tabla)
+    story.append(Spacer(1, 8))
+
+    story.append(Paragraph("2. Conclusiones y Resumen Estratégico", estilo_sec))
+    if texto_ia:
+        for p in texto_ia.split("\n"):
+            p_limpio = p.strip()
+            if p_limpio:
+                story.append(Paragraph(limpiar_texto_para_pdf(p_limpio), estilo_body))
+    else:
+        story.append(Paragraph("No se generó análisis narrativo previo al PDF.", estilo_body))
+    story.append(Spacer(1, 8))
+
+    story.append(Paragraph("3. Visualizaciones Analíticas", estilo_sec))
+    if img_buf1:
+        story.append(RLImage(img_buf1, width=490, height=180))
+        story.append(Spacer(1, 6))
+    if img_buf2:
+        story.append(RLImage(img_buf2, width=490, height=180))
+
+    doc.build(story)
+    pdf_buffer.seek(0)
+    return pdf_buffer
+
+def llamar_ia_pool(prompt_text):
+    for m in MODELOS_POOL:
+        try:
+            res = client.models.generate_content(model=m, contents=prompt_text)
+            if res and res.text:
+                return res.text, m
+        except Exception:
+            continue
+    return None, None
+
+def llamar_ia_stream(prompt_text):
+    """Streaming de alta velocidad: responde palabra por palabra sin congelar la app."""
+    for m in MODELOS_POOL:
+        try:
+            stream = client.models.generate_content_stream(model=m, contents=prompt_text)
+            for chunk in stream:
+                if chunk.text:
+                    yield chunk.text
+            return
+        except Exception:
+            continue
+    yield "Error al conectar con la IA. Intenta nuevamente."
+
+# ==========================================
+# 3. INTERFAZ STREAMLIT
+# ==========================================
+st.title("⚡ Agente Analítico Universal (Gemini 3.8 Flash)")
+st.markdown("Procesamiento instantáneo, métricas automáticas y asistente conversacional.")
+
+archivo_subido = st.file_uploader("📁 Sube tu archivo CSV o Excel", type=["csv", "xlsx"])
+
+if archivo_subido is not None:
+    @st.cache_data
+    def cargar_datos(file):
+        if file.name.endswith('.csv'):
+            return pd.read_csv(file)
+        return pd.read_excel(file)
+
+    df_raw = cargar_datos(archivo_subido)
+    df_limpio = df_raw.dropna(how='all')
+    total_registros = len(df_limpio)
+
+    columnas_numericas = df_limpio.select_dtypes(include=[np.number]).columns.tolist()
+    columnas_cat = df_limpio.select_dtypes(include=['object', 'category', 'string']).columns.tolist()
+
+    if not columnas_numericas:
+        st.warning("⚠️ El archivo no contiene columnas numéricas.")
+        st.stop()
+
+    col_analisis = st.selectbox("📌 Selecciona la columna a analizar:", columnas_numericas)
+
+    # Métricas universales
+    serie_analisis = pd.to_numeric(df_limpio[col_analisis], errors='coerce').dropna()
+    suma_total = float(serie_analisis.sum())
+    promedio = float(serie_analisis.mean())
+    valor_max = float(serie_analisis.max())
+    valor_min = float(serie_analisis.min())
+
+    metricas_dict = {
+        "columna": col_analisis, "total": total_registros,
+        "suma": f"${suma_total:,.2f}", "promedio": f"${promedio:,.2f}",
+        "max": f"${valor_max:,.2f}", "min": f"${valor_min:,.2f}"
+    }
+
+    # ==========================================================
+    # RESUMEN PRECALCULADO RÁPIDO (Cero demoras de procesamiento)
+    # ==========================================================
+    @st.cache_data
+    def precalcular_contexto(df_in, col_num, col_cat_list):
+        lineas = []
+        lineas.append(f"Dimensiones: {df_in.shape[0]} filas, {df_in.shape[1]} columnas.")
+        lineas.append(f"Columnas disponibles: {list(df_in.columns)}")
+
+        # Cruzar rápidamente categorías con números para que sepa quién es el más vendido/sucursal top
+        for cat in col_cat_list[:3]:
+            try:
+                top_group = df_in.groupby(cat)[col_num].sum().nlargest(5).to_dict()
+                low_group = df_in.groupby(cat)[col_num].sum().nsmallest(3).to_dict()
+                lineas.append(f"Ranking por '{cat}' sumando '{col_num}': Top 5={top_group} | Menores={low_group}")
+                lineas.append(f"Frecuencia más repetida en '{cat}': {df_in[cat].value_counts().head(5).to_dict()}")
+            except Exception:
+                pass
+
+        # Muestra muy ligera (solo las primeras 25 filas)
+        lineas.append("Muestra de filas reales:")
+        lineas.append(df_in.head(25).to_string(index=False))
+        return "\\n".join(lineas)
+
+    contexto_negocio = precalcular_contexto(df_limpio, col_analisis, columnas_cat)
+
+    tab_dashboard, tab_chat = st.tabs(["📈 Dashboard y Reporte PDF", "💬 Chatear con los Datos"])
+
+    with tab_dashboard:
+        # KPIs
+        st.subheader("📌 Indicadores Clave")
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Registros Válidos", f"{total_registros:,}")
+        c2.metric(f"Total ({col_analisis})", f"${suma_total:,.2f}")
+        c3.metric("Promedio", f"${promedio:,.2f}")
+        c4.metric("Rango (Mín / Máx)", f"${valor_min:,.1f} - ${valor_max:,.1f}")
+
+        # Gráficos
+        st.write("---")
+        st.subheader("📈 Visualización de Tendencias")
+        g1, g2 = st.columns(2)
+        with g1:
+            st.write(f"**Secuencia de {col_analisis}**")
+            fig_l, ax_l = plt.subplots(figsize=(6, 3.2))
+            ax_l.plot(serie_analisis.values, color="#10b981", linewidth=1.5)
+            ax_l.axhline(promedio, color="#ef4444", linestyle="--", label=f"Media: ${promedio:,.2f}")
+            ax_l.grid(True, linestyle="--", alpha=0.4)
+            ax_l.legend(loc="upper right")
+            st.pyplot(fig_l)
+            plt.close(fig_l)
+
+        with g2:
+            st.write(f"**Distribución (Histograma)**")
+            fig_h, ax_h = plt.subplots(figsize=(6, 3.2))
+            ax_h.hist(serie_analisis, bins=25, color="#2563eb", edgecolor="#ffffff")
+            ax_h.grid(axis='y', linestyle="--", alpha=0.4)
+            st.pyplot(fig_h)
+            plt.close(fig_h)
+
+        # Generador de Informe
+        st.write("---")
+        st.subheader("🧠 Análisis Ejecutivo Inteligente")
+        if "informe_ia" not in st.session_state:
+            st.session_state.informe_ia = ""
+
+        if st.button("✨ Generar Análisis Integral"):
+            with st.spinner("Procesando con Gemini 3.8 Flash..."):
+                prompt = f"""
+                Eres un Consultor Senior. Analiza estos datos concisamente:
+                Archivo: {archivo_subido.name}
+                Métrica '{col_analisis}': Suma=${suma_total:,.2f}, Media=${promedio:,.2f}, Min=${valor_min:,.2f}, Max=${valor_max:,.2f}
+                Resumen de datos:
+                {contexto_negocio}
+
+                Escribe un informe conciso con:
+                1. 🎯 DIAGNÓSTICO GENERAL
+                2. 🔍 HALLAZGOS Y ANOMALÍAS (Menciona nombres reales de categorías y cifras)
+                3. 🚀 RECOMENDACIONES TÁCTICAS:
+                   - 💡 Diversificación de Fuentes: Explorar la introducción de productos o servicios complementarios para amortiguar periodos de baja demanda.
+                   - 💡 Optimización Operativa basada en el promedio de ${promedio:,.2f}.
+                Pon palabras clave en **negrita** y separa el símbolo '$' con un espacio (ej: $ 100).
+                """
+                texto_ia, mod = llamar_ia_pool(prompt)
+                if texto_ia:
+                    st.session_state.informe_ia = texto_ia
+                    st.success(f"Generado con: **{mod}**")
+                else:
+                    st.error("Error al conectar con los modelos.")
+
+        if st.session_state.informe_ia:
+            st.markdown(f"""
+            &lt;div class="metric-card"&gt;
+                {formatear_texto_web(st.session_state.informe_ia)}
+            &lt;/div&gt;
+            """, unsafe_allow_html=True)
+
+        # Generador de PDF
+        st.write("---")
+        st.subheader("📄 Descarga de Reporte Master")
+        img_dist = crear_grafico_distribucion(df_limpio, col_analisis)
+        img_line = crear_grafico_linea(df_limpio, col_analisis)
+
+        pdf = generar_pdf_informe(archivo_subido.name, metricas_dict, st.session_state.informe_ia, img_dist, img_line)
+        st.download_button(
+            label="📥 Descargar Reporte Completo en PDF",
+            data=pdf,
+            file_name=f"Reporte_{archivo_subido.name}.pdf",
+            mime="application/pdf"
+        )
+
+    # ==========================================================
+    # TAB 2: CHAT INTELIGENTE ULTRA RÁPIDO CON STREAMING
+    # ==========================================================
+    with tab_chat:
+        st.subheader("💬 Chatea con tus Datos Reales")
+        st.caption("Pregunta por productos más vendidos, sucursal top, montos máximos, clientes o totales.")
+
+        if "mensajes" not in st.session_state:
+            st.session_state.mensajes = []
+
+        for m in st.session_state.mensajes:
+            with st.chat_message(m["rol"]):
+                st.write(m["contenido"])
+
+        if pregunta := st.chat_input("Ej: ¿Cuál es el producto más vendido, el menos vendido y la mejor sucursal?"):
+            st.session_state.mensajes.append({"rol": "user", "contenido": pregunta})
+            with st.chat_message("user"):
+                st.write(pregunta)
+
+            with st.chat_message("assistant"):
+                prompt_chat = f"""
+                Eres un analista de datos respondiendo en tiempo real.
+                Usa este contexto real del archivo subido:
+                {contexto_negocio}
+
+                Métrica principal '{col_analisis}':
+                - Suma total: ${suma_total:,.2f}
+                - Promedio: ${promedio:,.2f}
+                - Máximo: ${valor_max:,.2f} | Mínimo: ${valor_min:,.2f}
+
+                Pregunta del usuario: "{pregunta}"
+
+                Instrucciones:
+                - Responde EXACTO con nombres de productos, sucursales o valores reales.
+                - Sé conciso y directo (usa viñetas con emojis).
+                - Separa el signo de peso con un espacio (ejemplo: $ 1,500) para no romper fórmulas de texto.
+                """
+                # Streaming en vivo: empieza a escribir en milisegundos
+                respuesta_texto = st.write_stream(llamar_ia_stream(prompt_chat))
+                st.session_state.mensajes.append({"rol": "assistant", "contenido": respuesta_texto})
+
+</code></pre>
+      </div>
+    </div>
+    <div class="mt-5 pt-4">
+      <h3 class="fw-bold mb-4 text-center" style="color: var(--py-blue-deep);"><i class="bi bi-question-circle-fill"></i> Preguntas Frecuentes (FAQ)</h3>
+      <div class="accordion mx-auto" id="faqAccordion" style="max-width: 900px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 8px;">
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">¿Necesito ser bueno en matemáticas para aprender Python?</button></h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted"><strong>Definitivamente NO.</strong> A menos que te dediques a la creación puramente matemática de algoritmos de Machine Learning desde cero, el 90% del trabajo real (Desarrollo Web, Análisis de Datos, APIs, Automatización) requiere <strong>Lógica Analítica</strong> más que matemáticas avanzadas. Python es el que hará todos los cálculos por ti, tú solo necesitas saber qué pedirle.</div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">¿La IA va a reemplazar a los programadores en el futuro?</button></h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">La Inteligencia Artificial no va a reemplazar a los programadores; pero <strong>un profesional que usa IA sí reemplazará al que no la usa</strong>. Hoy en día, la IA funciona como un "Copiloto" (ej. GitHub Copilot o Gemini) que puede triplicar tu velocidad escribiendo código rutinario, pero el humano sigue siendo el Arquitecto indispensable que une todas las piezas.</div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">¿Cuánto tiempo tardaré en dominar Python?</button></h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">Depende de la práctica. Puedes entender y aplicar los fundamentos básicos (variables, bucles, listas) en <strong>pocas semanas</strong>. Para dominar librerías fuertes como Pandas o construir páginas completas, requerirá de <strong>4 a 6 meses</strong> de estudio constante, equivocarte mucho en la consola y construir pequeños proyectos reales.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">¿Por qué usar Python si ya existe Excel o Power BI?</button></h2>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body text-muted">Excel es maravilloso pero comienza a colapsar, congelarse o cerrarse cuando tienes más de 1 millón de filas (Big Data). Python puede procesar Gigabytes de datos en apenas segundos, consumir bases de datos en vivo de otras empresas, integrarse con la bolsa de valores y aplicar algoritmos predictivos automáticos. Todo de forma desatendida.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RETO Y EVALUACIÓN -->
+    <div class="mt-5 pt-5 mb-4">
+      <div class="card-manual shadow-lg mx-auto" style="background: var(--py-blue-pale); border: 1px solid rgba(47, 109, 156, 0.2); max-width: 900px;">
+        <h4 class="fw-bold mb-3 text-center" style="color: var(--py-blue-deep);"><i class="bi bi-trophy-fill text-warning"></i> Reto Final: Evalúa tu Conocimiento</h4>
+        <p class="text-muted text-center mb-4">Midamos qué tanto asimilaste de esta Masterclass de alto nivel. Intenta responder estas 5 preguntas vitales y luego haz clic en cada una para revelar la respuesta correcta:</p>
+        
+        <div class="accordion" id="retoAccordion">
+          
+          <div class="accordion-item mb-2" style="border: 1px solid var(--line); border-radius: 8px; overflow: hidden;">
+            <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" style="background: #fff; color: var(--ink);" type="button" data-bs-toggle="collapse" data-bs-target="#reto1">1. ¿Cuál es la estructura de datos en Python que agrupa información utilizando pares de "Clave: Valor"?</button></h2>
+            <div id="reto1" class="accordion-collapse collapse" data-bs-parent="#retoAccordion">
+              <div class="accordion-body" style="background: #f8f9fa;">
+                <strong class="text-success"><i class="bi bi-check-circle-fill"></i> Respuesta:</strong> El Diccionario (<code>dict</code>).
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-2" style="border: 1px solid var(--line); border-radius: 8px; overflow: hidden;">
+            <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" style="background: #fff; color: var(--ink);" type="button" data-bs-toggle="collapse" data-bs-target="#reto2">2. ¿Qué librería de Python es mundialmente considerada "El Excel con esteroides" para manejar Datos?</button></h2>
+            <div id="reto2" class="accordion-collapse collapse" data-bs-parent="#retoAccordion">
+              <div class="accordion-body" style="background: #f8f9fa;">
+                <strong class="text-success"><i class="bi bi-check-circle-fill"></i> Respuesta:</strong> Pandas.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-2" style="border: 1px solid var(--line); border-radius: 8px; overflow: hidden;">
+            <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" style="background: #fff; color: var(--ink);" type="button" data-bs-toggle="collapse" data-bs-target="#reto3">3. Si quieres visualizar la tendencia y caída de ventas a lo largo de 12 meses, ¿cuál de los 5 gráficos Matplotlib usas?</button></h2>
+            <div id="reto3" class="accordion-collapse collapse" data-bs-parent="#retoAccordion">
+              <div class="accordion-body" style="background: #f8f9fa;">
+                <strong class="text-success"><i class="bi bi-check-circle-fill"></i> Respuesta:</strong> Gráfico de Líneas (<code>Line Chart / plt.plot</code>).
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-2" style="border: 1px solid var(--line); border-radius: 8px; overflow: hidden;">
+            <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" style="background: #fff; color: var(--ink);" type="button" data-bs-toggle="collapse" data-bs-target="#reto4">4. ¿Para qué le sirve a un programador crear un Entorno Virtual (.venv) al iniciar un proyecto?</button></h2>
+            <div id="reto4" class="accordion-collapse collapse" data-bs-parent="#retoAccordion">
+              <div class="accordion-body" style="background: #f8f9fa;">
+                <strong class="text-success"><i class="bi bi-check-circle-fill"></i> Respuesta:</strong> Para aislar las librerías instaladas en ese proyecto y evitar que choquen con las de otros proyectos en la misma computadora.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" style="border: 1px solid var(--line); border-radius: 8px; overflow: hidden;">
+            <h2 class="accordion-header"><button class="accordion-button collapsed fw-bold" style="background: #fff; color: var(--ink);" type="button" data-bs-toggle="collapse" data-bs-target="#reto5">5. ¿Qué comando en la terminal necesitas escribir si quieres que el navegador renderice tu dashboard de Streamlit?</button></h2>
+            <div id="reto5" class="accordion-collapse collapse" data-bs-parent="#retoAccordion">
+              <div class="accordion-body" style="background: #f8f9fa;">
+                <strong class="text-success"><i class="bi bi-check-circle-fill"></i> Respuesta:</strong> <code>python -m streamlit run app.py</code>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="text-center py-5 mt-5" style="background: var(--py-blue-deep); color: #ffffff; border-top: 5px solid var(--py-yellow);">
+  <div class="container">
+    <h2 class="fw-bold mb-4" style="color: #ffffff; text-transform: uppercase;">⚡ Masterclass Python Experience PRO</h2>
+    <p class="fs-4 fw-bold mb-4" style="color: #ffffff;">Desarrollado con precisión quirúrgica. CAES Academy & Ing. Juancito Peña &copy; 2026</p>
+    
+    <div class="alert mt-4 mx-auto shadow-lg text-center" style="max-width: 950px; background-color: var(--py-yellow); color: #000; border: 4px solid #f59e0b; border-radius: 12px; padding: 25px;">
+      <div class="mb-4">
+        <img src="https://caesacademy.com/wp-content/uploads/2021/10/logo_02b-300x133.png" alt="CAES Academy" style="max-width: 250px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+      </div>
+      <h3 class="fw-bold mb-3" style="color: #b91c1c; text-transform: uppercase;"><i class="bi bi-clock-history"></i> Acceso Público Temporal</h3>
+      <h2 class="fw-bold mb-3" id="countdown-timer" style="color: #b91c1c; font-family: monospace; font-size: 2.5rem; background: #fff; padding: 10px; border-radius: 8px; border: 2px solid #b91c1c; display: inline-block;">Calculando tiempo...</h2>
+      
+      <p class="fs-5 fw-bold mb-3 text-dark">
+        ⚠️ ESTE MATERIAL ESTARÁ DISPONIBLE PÚBLICAMENTE SOLO DEL VIERNES 12 HASTA EL 18/09/2026.
+      </p>
+      
+      <hr style="border-color: #000; opacity: 0.3; margin: 20px 0;">
+      
+      <p class="fs-4 fw-bold mb-0 text-dark" style="line-height: 1.4;">
+        <a href="https://caesacademy.com/q/diplomado-en-python-para-analisis-de-datos-ia-26-septiembre-2026/" target="_blank" style="color: inherit; text-decoration: none;" class="hover-opacity">
+          🚀 EL PORTAL COMPLETO, EJERCICIOS, TEORÍAS Y MANUALES GUÍA PASO A PASO, LO TENDRÁN DE FORMA PERMANENTE Y PRIVADA AQUELLOS QUE SE SUSCRIBAN AL DIPLOMADO, CON SUS RESPECTIVOS ACCESOS.
+        </a>
+      </p>
+      <div class="mt-4 mb-2">
+        <a href="https://caesacademy.com/q/diplomado-en-python-para-analisis-de-datos-ia-26-septiembre-2026/" target="_blank" class="btn btn-dark btn-lg fw-bold px-4 py-3 shadow" style="border-radius: 8px; font-size: 1.2rem; text-transform: uppercase;">
+          <i class="bi bi-box-arrow-up-right text-warning"></i> Clic Aquí para Inscribirse al Diplomado
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Temporizador para el 18 de Septiembre de 2026
+  function iniciarTimer() {
+    const fechaCierre = new Date("Sep 18, 2026 23:59:59").getTime();
+    const intervalo = setInterval(function() {
+      const ahora = new Date().getTime();
+      const distancia = fechaCierre - ahora;
+      
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+      
+      const elementoTimer = document.getElementById("countdown-timer");
+      if (elementoTimer) {
+        if (distancia < 0) {
+          clearInterval(intervalo);
+          elementoTimer.innerHTML = "EL ACCESO HA EXPIRADO";
+          elementoTimer.style.backgroundColor = "#b91c1c";
+          elementoTimer.style.color = "#ffffff";
+        } else {
+          elementoTimer.innerHTML = dias + "D " + (horas < 10 ? "0"+horas : horas) + "H " + (minutos < 10 ? "0"+minutos : minutos) + "M " + (segundos < 10 ? "0"+segundos : segundos) + "S";
+        }
+      }
+    }, 1000);
+  }
+  document.addEventListener("DOMContentLoaded", iniciarTimer);
+</script>
+
+<!-- Scripts Core -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+<script>
+  // Copiar Portapapeles
+  function copyCode(btn) {
+    const codeBlock = btn.parentElement.parentElement.querySelector('code');
+    const text = codeBlock.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '✅ Copiado';
+      btn.classList.add('bg-success', 'border-success');
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.classList.remove('bg-success', 'border-success');
+      }, 2000);
+    });
+  }
+
+  // MOTOR PYODIDE AVANZADO (Python en RAM del Navegador)
+  let pyodideReady = false;
+  let pyodideInstance = null;
+  const outputDiv = document.getElementById('compilerOutput');
+  const codeArea = document.getElementById('compilerCode');
+  const btnExecute = document.getElementById('btnExecuteCode');
+  const modal = new bootstrap.Modal(document.getElementById('terminalModal'));
+
+  async function main() {
+    outputDiv.innerText = "⏳ Descargando e iniciando Python 3 en el navegador (WebAssembly)... esto tomará unos segundos.";
+    try {
+      pyodideInstance = await loadPyodide();
+      // Pre-cargar librerías pesadas en background
+      await pyodideInstance.loadPackage(['pandas', 'matplotlib']);
+      
+      // Parchear matplotlib silenciosamente e inyectar soporte para input()
+      await pyodideInstance.runPythonAsync(`
+import sys
+import builtins
+import js
+
+# Parchear input() para que use el pop-up nativo del navegador
+def browser_input(prompt_text=""):
+    res = js.prompt(prompt_text)
+    if res is None:
+        raise KeyboardInterrupt("Entrada cancelada por el usuario.")
+    return res
+
+builtins.input = browser_input
+
+try:
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    def show_grafico_en_wasm(*args, **kwargs):
+        plt.savefig("grafico_auto_generado.png", bbox_inches="tight")
+        plt.clf()
+    plt.show = show_grafico_en_wasm
+except ImportError:
+    pass
+      `);
+      
+      pyodideReady = true;
+      outputDiv.innerHTML = "<span class='text-success'>✅ Sistema Python WebAssembly Listo y Cargado.</span>\nYa puedes ejecutar código.";
+    } catch (err) {
+      outputDiv.innerText = "❌ Falla Crítica cargando Python: " + err;
+    }
+  }
+  main();
+
+  // Esta función es llamada por todos los botones "Probar" en las tarjetas
+  function runPythonCode(codeElementId) {
+    // 1. Extraer el código del bloque
+    let code = "";
+    if (codeElementId === 'code-vars') { // Si es el de variables (o lo usó openCompiler)
+      code = document.getElementById('code-vars').innerText;
+    } else {
+      code = document.getElementById(codeElementId).innerText;
+    }
+    
+    // 2. Colocarlo en el textarea
+    codeArea.value = code;
+    
+    // 3. Abrir modal
+    modal.show();
+  }
+
+  // Agregamos compatibilidad con 'openCompiler' que usaste en la tarjeta de variables
+  function openCompiler(codeElementId) {
+    runPythonCode(codeElementId);
+  }
+
+  // Interceptar la ejecución para buscar inputs
+  async function executePyodideCode() {
+    if (!pyodideReady) {
+      alert("Python aún se está cargando, por favor espera un momento.");
+      return;
+    }
+
+    const code = codeArea.value;
+    
+    // Escanear el código buscando funciones input("mensaje")
+    const inputRegex = /input\(\s*(["'])(.*?)\1\s*\)/g;
+    let match;
+    let prompts = [];
+    while ((match = inputRegex.exec(code)) !== null) {
+      prompts.push(match[2]);
+    }
+
+    if (prompts.length > 0) {
+      // Si hay inputs, mostrar un formulario HTML inyectado en la salida
+      outputDiv.innerHTML = "<h5 style='color: var(--py-yellow);'><i class='bi bi-keyboard'></i> Entrada de Datos Requerida</h5><p class='text-light small'>Python detectó comandos <code>input()</code>. Ingresa los valores:</p>";
+      
+      let formHtml = "<div id='inputForm' style='background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;'>";
+      prompts.forEach((p, index) => {
+        formHtml += `<label class='text-light mb-1'>${p}</label><input type='text' id='preInput_${index}' class='form-control mb-3' style='background: #2D3748; color: #fff; border: 1px solid #4A5568;' autocomplete='off'>`;
+      });
+      formHtml += `<button class='btn btn-success fw-bold w-100 mt-2' onclick='continueExecution(${prompts.length})'><i class='bi bi-play-fill'></i> Confirmar y Ejecutar</button></div>`;
+      
+      outputDiv.innerHTML += formHtml;
+      // Enfocar el primer input
+      document.getElementById('preInput_0').focus();
+    } else {
+      // Si no hay inputs, ejecutar directo
+      window.preloadedInputs = [];
+      runPythonCore(code);
+    }
+  }
+
+  // Continuar ejecución tras llenar el formulario HTML
+  window.continueExecution = function(count) {
+    window.preloadedInputs = [];
+    for(let i=0; i<count; i++){
+      let val = document.getElementById('preInput_' + i).value;
+      window.preloadedInputs.push(val);
+    }
+    const code = codeArea.value;
+    runPythonCore(code);
+  }
+
+  // Ejecución real del núcleo Python
+  async function runPythonCore(code) {
+    outputDiv.innerHTML = "<span style='color: #F5C518;'>⚙️ Compilando y Ejecutando...</span>\n";
+    btnExecute.disabled = true;
+    btnExecute.innerHTML = '<i class="bi bi-hourglass-split"></i> Procesando...';
+
+    // Parchear input para que tome los valores pre-cargados
+    await pyodideInstance.runPythonAsync(`
+import builtins
+import js
+
+def fake_input(prompt_text=""):
+    print(prompt_text, end="")
+    val = ""
+    if hasattr(js.window, 'preloadedInputs') and len(js.window.preloadedInputs) > 0:
+        val = js.window.preloadedInputs.pop(0)
+    print(val)
+    return val
+
+builtins.input = fake_input
+    `);
+
+    // Re-rutear la salida estándar (stdout)
+    pyodideInstance.runPython(`
+import sys
+import io
+sys.stdout = io.StringIO()
+    `);
+
+    try {
+      // Limpiar memoria de figuras
+      pyodideInstance.runPython(`
+try:
+    import matplotlib.pyplot as plt
+    plt.clf()
+except:
+    pass
+      `);
+      
+      // Ejecutar el bloque de código
+      await pyodideInstance.runPythonAsync(code);
+      
+      // Volcar la salida estándar
+      let stdout = pyodideInstance.runPython("sys.stdout.getvalue()");
+      outputDiv.innerText = stdout.trim() || "[Ejecución exitosa, sin comandos de impresión (print)].";
+
+      // Escanear si se generó alguna imagen o archivo de Excel/CSV
+      const files = pyodideInstance.FS.readdir('.');
+      let imgGenerada = false;
+      for(let file of files) {
+          if(file.endsWith('.png') || file.endsWith('.jpg')) {
+              const imgData = pyodideInstance.FS.readFile(file);
+              const blob = new Blob([imgData], { type: "image/png" });
+              const url = URL.createObjectURL(blob);
+              const img = document.createElement('img');
+              img.src = url;
+              img.style.maxWidth = "100%";
+              img.style.marginTop = "15px";
+              img.style.borderRadius = "8px";
+              
+              outputDiv.appendChild(document.createElement('br'));
+              outputDiv.appendChild(img);
+              
+              pyodideInstance.FS.unlink(file);
+              imgGenerada = true;
+          }
+          // Lógica para interceptar y descargar archivos Excel/CSV
+          else if(file.endsWith('.csv') || file.endsWith('.xlsx')) {
+              const fileData = pyodideInstance.FS.readFile(file);
+              const mimeType = file.endsWith('.csv') ? "text/csv" : "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+              const blob = new Blob([fileData], { type: mimeType });
+              const url = URL.createObjectURL(blob);
+              
+              const btnDownload = document.createElement('a');
+              btnDownload.href = url;
+              btnDownload.download = file;
+              btnDownload.className = "btn btn-outline-light btn-sm mt-3 mb-2 fw-bold";
+              btnDownload.style.border = "1px solid #10B981";
+              btnDownload.style.color = "#10B981";
+              btnDownload.innerHTML = `<i class='bi bi-file-earmark-excel-fill'></i> Descargar Dataset (${file})`;
+              
+              outputDiv.appendChild(document.createElement('br'));
+              outputDiv.appendChild(btnDownload);
+              
+              pyodideInstance.FS.unlink(file);
+          }
+      }
+      
+      if(imgGenerada) {
+          outputDiv.innerHTML = '<strong style="color: #66d9ef;">¡Gráfico Generado Exitosamente!</strong>\n\n' + outputDiv.innerHTML;
+      }
+
+    } catch (err) {
+      outputDiv.innerText += "\n⚠️ ERROR EN EL CÓDIGO:\n" + err;
+    } finally {
+      btnExecute.innerHTML = '<i class="bi bi-play-circle-fill"></i> Ejecutar ahora';
+      btnExecute.disabled = false;
+    }
+  }
+
+  // Funciones de Descarga de Archivos para VS Code
+  function autoDescargarCSV(nombre, contenido) {
+    const blob = new Blob([contenido], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = nombre;
+    a.click();
+  }
+
+  function downloadCSV_Finanzas() {
+    const csv = "Mes,Ingresos,Gastos,Meta_Ventas\nEne,15000,9000,14000\nFeb,18000,9500,15000\nMar,12000,10000,15000\nAbr,25000,11000,20000\nMay,22000,10500,20000\nJun,28000,12000,25000\nJul,31000,13500,25000\nAgo,29000,13000,25000\nSep,24000,11500,25000\nOct,26000,12500,25000\nNov,35000,15000,30000\nDic,42000,18000,35000\n";
+    autoDescargarCSV("Reporte_Financiero_Anual.csv", csv);
+  }
+
+  function downloadCSV_NLP() {
+    let csv = "cliente,score,tema,comentario\n";
+    const nombres = ["Carlos", "Ana", "Luis", "Marta", "Pedro", "Sofía", "Diego", "Laura", "Jorge", "Elena"];
+    const temas = ["Producto", "Servicio", "Envío", "Precio"];
+    const pool = {
+        "Producto": [["Cámara brutal", 10], ["Batería dura poco", 8], ["Cumple su función", 6], ["Se sobrecalienta", 3]],
+        "Servicio": [["Muy amables", 10], ["Duda resuelta", 8], ["Poco capacitados", 5], ["Pésimo soporte", 2]],
+        "Envío": [["Llegó antes", 10], ["Todo en orden", 9], ["Tardó 3 días más", 6], ["Caja rota", 1]],
+        "Precio": [["Ganga total", 10], ["Valió cada centavo", 9], ["Un poco caro", 5], ["Es un robo", 1]]
+    };
+    for(let i=0; i<100; i++) {
+        const cliente = nombres[Math.floor(Math.random() * nombres.length)];
+        const tema = temas[Math.floor(Math.random() * temas.length)];
+        const dupla = pool[tema][Math.floor(Math.random() * pool[tema].length)];
+        csv += `${cliente},${dupla[1]},${tema},${dupla[0]}\n`;
+    }
+    autoDescargarCSV("Base_Sentimientos_NLP.csv", csv);
+  }
+
+  function downloadCSV_Banco() {
+    let csv = "cliente,salario,deudas,score,monto\n";
+    const nombres = ["Juan", "María", "Carlos", "Ana", "Luis", "Sofía", "Pedro", "Elena", "Diego", "Marta"];
+    const apellidos = ["P.", "G.", "L.", "D.", "M.", "R.", "T.", "S.", "V.", "C."];
+    for(let i=0; i<100; i++) {
+        const nom = nombres[Math.floor(Math.random() * nombres.length)];
+        const ape = apellidos[Math.floor(Math.random() * apellidos.length)];
+        const salario = Math.floor(Math.random() * (150000 - 25000 + 1)) + 25000;
+        const deudas = Math.floor(Math.random() * 50001);
+        const score = Math.floor(Math.random() * (850 - 400 + 1)) + 400;
+        const monto = Math.floor(Math.random() * (2000000 - 50000 + 1)) + 50000;
+        csv += `${nom} ${ape},${salario},${deudas},${score},${monto}\n`;
+    }
+    autoDescargarCSV("Base_Solicitudes_Banco.csv", csv);
+  }
+
+  function downloadCSV_BigData() {
+    let csv = "ID_Factura,Sucursal,Producto,Cantidad,Precio_Unitario,Total_Factura\n";
+    const sucursales = ["Santo Domingo", "Santiago", "Punta Cana", "La Romana", "Baní"];
+    const productos = ["Laptop Pro", "Monitor 4K", "Mouse Inalámbrico", "Teclado Mecánico", "Webcam HD"];
+    const precios = [2500, 15000, 45000, 8000, 3500];
+    for(let i=1; i<=1000; i++) {
+        const suc = sucursales[Math.floor(Math.random() * sucursales.length)];
+        const prod = productos[Math.floor(Math.random() * productos.length)];
+        const cant = Math.floor(Math.random() * 5) + 1;
+        const precio = precios[Math.floor(Math.random() * precios.length)];
+        const total = cant * precio;
+        csv += `FAC-${1000+i},${suc},${prod},${cant},${precio},${total}\n`;
+    }
+    autoDescargarCSV("Reporte_Masivo_Ventas_1000.csv", csv);
+  }
+</script>
+<!-- Mini Toggle Button (Oculto inicialmente) -->
+<button id="timer-toggle-btn" onclick="toggleTimer()" title="Mostrar Timer" style="display:none; position:fixed; top:80px; right:20px; z-index:9999; background:var(--ink); color:white; border:2px solid var(--py-yellow); border-radius:50%; width:55px; height:55px; font-size:1.5rem; cursor:pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">⏱️</button>
+
+<!-- Floating Timer Masterclass -->
+<div id="floating-timer" style="position: fixed; top: 80px; right: 20px; z-index: 9999; background: var(--ink); color: white; padding: 15px 20px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); font-family: 'JetBrains Mono', monospace; text-align: center; border: 2px solid var(--py-yellow); min-width: 200px;">
+  
+  <!-- Botón de minimizar -->
+  <button onclick="toggleTimer()" title="Ocultar Timer" style="position:absolute; top:5px; right:8px; background:transparent; border:none; color:#888; font-size:1.5rem; cursor:pointer; line-height: 1;">&minus;</button>
+
+  <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--py-yellow); margin-bottom: 5px; font-weight: bold; margin-top: 5px;">Masterclass Timer</div>
+  
+  <!-- Panel de Configuración -->
+  <div id="timer-config">
+    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+      <label style="font-size: 0.75rem; text-align: left; color: #ccc;">Hora de Inicio (Hoy):</label>
+      <input type="time" id="input-start-time" style="padding: 4px; border-radius: 4px; border: 1px solid #444; background: #222; color: white;" required>
+      
+      <label style="font-size: 0.75rem; text-align: left; color: #ccc; margin-top: 5px;">Duración (minutos):</label>
+      <input type="number" id="input-duration" value="90" min="1" style="padding: 4px; border-radius: 4px; border: 1px solid #444; background: #222; color: white;" required>
+      
+      <button onclick="startCustomTimer()" style="margin-top: 10px; background: var(--py-yellow); color: #000; border: none; padding: 6px; border-radius: 6px; font-weight: bold; cursor: pointer;">Iniciar Timer</button>
+    </div>
+  </div>
+
+  <!-- Vista del Reloj (Oculta por defecto) -->
+  <div id="timer-view" style="display: none; flex-direction: column; align-items: center;">
+    <div id="timer-display" style="font-size: 1.5rem; font-weight: 800; margin-top: 5px;">00:00:00</div>
+    <div id="timer-status" style="font-size: 0.8rem; margin-top: 5px; opacity: 0.9; color: var(--code-ink);">--:--</div>
+    <button onclick="resetTimer()" style="margin-top: 10px; background: transparent; color: #aaa; border: 1px solid #555; padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; cursor: pointer;">Configurar</button>
+  </div>
+</div>
+
+<!-- Librería de Confeti (Fuegos Artificiales) -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+  let timerInterval;
+  let startTime;
+  let endTime;
+  let hasFinished = false;
+
+  // ==========================================
+  // 🔊 MOTOR DE AUDIO INFALIBLE (Web Audio API)
+  // ==========================================
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  let applauseBuffer = null;
+
+  // Descargar el audio de aplausos en segundo plano apenas carga la página
+  fetch("https://assets.mixkit.co/active_storage/sfx/354/354-preview.mp3")
+    .then(response => response.arrayBuffer())
+    .then(data => audioCtx.decodeAudioData(data))
+    .then(decodedData => {
+      applauseBuffer = decodedData;
+      console.log("Audio de aplausos listo en memoria.");
+    })
+    .catch(err => console.error("Error cargando el audio:", err));
+
+  // Ocultar al inicio el botón mini
+  document.getElementById("timer-toggle-btn").style.display = "none";
+
+  function toggleTimer() {
+    const timerDiv = document.getElementById("floating-timer");
+    const toggleBtn = document.getElementById("timer-toggle-btn");
+    if(timerDiv.style.display === "none") {
+        timerDiv.style.display = "block";
+        toggleBtn.style.display = "none";
+    } else {
+        timerDiv.style.display = "none";
+        toggleBtn.style.display = "flex";
+    }
+  }
+
+  function startCustomTimer() {
+    const inputTime = document.getElementById("input-start-time").value;
+    const inputDuration = parseInt(document.getElementById("input-duration").value);
+
+    if (!inputTime || !inputDuration) {
+        alert("Por favor completa la hora y la duración.");
+        return;
+    }
+
+    const now = new Date();
+    const [hours, minutes] = inputTime.split(':');
+    const startObj = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes, 0);
+    
+    startTime = startObj.getTime();
+    endTime = startTime + (inputDuration * 60000);
+    hasFinished = false;
+
+    document.getElementById("timer-config").style.display = "none";
+    document.getElementById("timer-view").style.display = "flex";
+    
+    const formatTime = (dateObj) => dateObj.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    document.getElementById("timer-status").innerHTML = `${formatTime(startObj)} - ${formatTime(new Date(endTime))}`;
+
+    // DESBLOQUEO CRÍTICO: 
+    // Para que el audio funcione sin problemas desde un temporizador,
+    // debemos reactivar el contexto de audio directamente en el clic del usuario.
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+
+    clearInterval(timerInterval);
+    updateTimer(); 
+    timerInterval = setInterval(updateTimer, 1000);
+  }
+
+  function resetTimer() {
+    clearInterval(timerInterval);
+    document.getElementById("timer-config").style.display = "block";
+    document.getElementById("timer-view").style.display = "none";
+    document.getElementById("floating-timer").style.borderColor = "var(--py-yellow)";
+  }
+
+  function lanzarConfeti() {
+    var duration = 5000;
+    var end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0, y: 1 },
+        zIndex: 10000,
+        colors: ['#F5C518', '#10B981', '#2F6D9C', '#ffffff']
+      });
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1, y: 1 },
+        zIndex: 10000,
+        colors: ['#F5C518', '#10B981', '#2F6D9C', '#ffffff']
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    }());
+  }
+
+  function updateTimer() {
+    const now = new Date().getTime(); 
+    const display = document.getElementById("timer-display");
+    const status = document.getElementById("timer-status");
+    const container = document.getElementById("floating-timer");
+    const toggleBtn = document.getElementById("timer-toggle-btn");
+    
+    if (now < startTime) {
+      const distance = startTime - now;
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      display.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      status.innerHTML = "INICIA EN";
+      display.style.color = "white";
+      container.style.borderColor = "var(--py-yellow)";
+      toggleBtn.style.borderColor = "var(--py-yellow)";
+    } else if (now >= startTime && now <= endTime) {
+      const distance = endTime - now;
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      display.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      status.innerHTML = "🔴 EN VIVO - FINALIZA EN";
+      display.style.color = "var(--accent-green)";
+      container.style.borderColor = "var(--accent-green)";
+      toggleBtn.style.borderColor = "var(--accent-green)";
+    } else {
+      display.innerHTML = "00:00:00";
+      status.innerHTML = "🔴 SECCIÓN DE PREGUNTAS";
+      display.style.color = "var(--py-yellow)";
+      container.style.borderColor = "var(--accent-rose)";
+      toggleBtn.style.borderColor = "var(--accent-rose)";
+      
+      if (!hasFinished) {
+          hasFinished = true;
+          
+          if(typeof confetti === "function") {
+              lanzarConfeti();
+          }
+
+          // Disparar Audio mediante Web Audio API (Infalible)
+          if(applauseBuffer) {
+              const source = audioCtx.createBufferSource();
+              source.buffer = applauseBuffer;
+              source.connect(audioCtx.destination);
+              source.start(0);
+              
+              // Detener a los 5 segundos exactos
+              setTimeout(() => {
+                  source.stop();
+              }, 5000);
+          } else {
+              console.log("El buffer de audio no estaba listo");
+          }
+          
+          clearInterval(timerInterval);
+      }
+    }
+  }
+  
+  window.onload = function() {
+    const d = new Date();
+    const currTime = d.getHours().toString().padStart(2, '0') + ':' + d.getMinutes().toString().padStart(2, '0');
+    document.getElementById("input-start-time").value = currTime;
+  }
+</script>
+</body>
+</html>
+
